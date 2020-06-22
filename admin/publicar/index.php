@@ -7,9 +7,12 @@
 </head>
 <body>
     <form action="" method="post">
-        <input type="text" name="Titulo">
+        <input type="text" name="titulo">
         <textarea name="escrito" id="" name="escrito" cols="30" rows="10"></textarea>
         <input type="file" name="imagen" id="imagen">
+        <button name="enviar"></button>
     </form>
+<script src="jquery.js"></script>
+<script src="funciones.js"></script>
 </body>
 </html>
