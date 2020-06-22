@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\css\estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <title><?php echo $tittle;?></title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div id="titulo">
+                <img src="..\img\logo.png" alt="" id="logo">
+            </div>
+
+                <input type="checkbox" name="btn-menu" id="btn-menu">
+                <label for="btn-menu"><img src="..\img\burguer-menu.png" alt="" width=40px></label>
+                <nav id="menu">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">¿Quien Soy?</a></li>
+                        <li><a href="#">Portafolio</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Haz tu Website</a></li>
+                    </ul>
+                </nav>
+                
+        </div>
+    </header>
