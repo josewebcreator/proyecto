@@ -1,10 +1,14 @@
 $(document).ready(
-    $("enviar").click(function () {
-        var titulo = $("titulo").val();
-        var escrito = $("escrito").val();
-        
-        $.post("../publicar.php", {
-            
+    $("#formulario").submit(function (e) { 
+        e.preventDefault() 
+        $.ajax({
+            type: "POST",
+            url: "../publicar.php",
+            data: FormData,
+            dataType: "dataType",
+            success: function (response) {
+                
+            }
         });
     })
 )
