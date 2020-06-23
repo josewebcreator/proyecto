@@ -1,4 +1,5 @@
-$(document).ready(
+$(document).ready(function(){
+
     $("#formulario").submit(function (e) { 
         e.preventDefault() 
         $.ajax({
@@ -12,12 +13,25 @@ $(document).ready(
                 $('.statusMsg').html('');
                 if(msg == 'ok'){
                     $('#formulario')[0].reset();
-                    $('.statusMsg').html('<span style="font-size:18px;color:#34A853">Form data submitted successfully.</span>');
+                    //colocar mensaje de exito
                 }else{
-                    $('.statusMsg').html('<span style="font-size:18px;color:#EA4335">Some problem occurred, please try again.</span>');
+                    //colocar aqui mensaje de error
                 }
             }
 
         });
+
     })
-)
+
+    $("#imagen").change(function () {
+        var file = this.files[0];
+        var imagefile = file.type;
+        var match = ["image/jpeg", "image/png", "image/jpg"];
+        if (!((imagefile == match[0]) || (imagefile == match[1]) || (imagefile == match[2]))) {
+            alert('Please select a valid image file (JPEG/JPG/PNG).');
+            $("#file").val('');
+            return false;
+        }
+    });
+
+})
