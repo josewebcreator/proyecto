@@ -6,13 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" method="post" id="formulario">
         <input type="text" name="titulo">
         <textarea name="escrito" id="" name="escrito" cols="30" rows="10"></textarea>
         <input type="file" name="imagen" id="imagen">
-        <button name="enviar"></button>
+        <input type="submit" value="enviar">
     </form>
-<script src="jquery.js"></script>
-<script src="funciones.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/funciones.js"></script>
 </body>
 </html>
