@@ -18,16 +18,14 @@ if(!empty($_POST['escrito']) || !empty($_POST['titulo']) || !empty($_FILES['imag
         }
     }
     
-    $name = $_POST['name'];
-    $email = $_POST['email'];
+    $escrito = $_POST['escrito'];
+    $titulo = $_POST['titulo'];
     
-    //include database configuration file
-    include_once 'dbConfig.php';
     
     //insert form data in the database
-    $insert = $db->query("INSERT form_data (name,email,file_name) VALUES ('".$name."','".$email."','".$uploadedFile."')");
+    $insert = $mysqli->query("INSERT into blog (titulo,txt,img) VALUES ('".$escrito."','".$titulo."','".$uploadedFile."')");
     
-    echo $insert?'ok':'err';
+
 }
 
 ?>
