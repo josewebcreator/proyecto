@@ -4,7 +4,7 @@ $(document).ready(function(){
         e.preventDefault() 
         $.ajax({
             type: 'POST',
-            url: 'submit.php',
+            url: 'publicar.php',
             data: new FormData(this),
             contentType: false,
             cache: false,
