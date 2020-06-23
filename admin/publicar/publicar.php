@@ -4,12 +4,12 @@ require("../cone/conexion.php");
 
 if(!empty($_POST['escrito']) || !empty($_POST['titulo']) || !empty($_FILES['imagen']['name'])){
     $uploadedFile = '';
-    if(!empty($_FILES["file"]["type"])){
+    if(!empty($_FILES["imagen"]["type"])){
         $fileName = time().'_'.$_FILES['imagen']['name'];
         $valid_extensions = array("jpeg", "jpg", "png");
         $temporary = explode(".", $_FILES["imagen"]["name"]);
         $file_extension = end($temporary);
-        if((($_FILES["hard_file"]["type"] == "image/png") || ($_FILES["imagen"]["type"] == "image/jpg") || ($_FILES["imagen"]["type"] == "image/jpeg")) && in_array($file_extension, $valid_extensions)){
+        if((($_FILES["imagen"]["type"] == "image/png") || ($_FILES["imagen"]["type"] == "image/jpg") || ($_FILES["imagen"]["type"] == "image/jpeg")) && in_array($file_extension, $valid_extensions)){
             $sourcePath = $_FILES['imagen']['tmp_name'];
             $targetPath = "uploads/".$fileName;
             if(move_uploaded_file($sourcePath,$targetPath)){
@@ -23,7 +23,7 @@ if(!empty($_POST['escrito']) || !empty($_POST['titulo']) || !empty($_FILES['imag
     
     
     //insert form data in the database
-    $insert = $mysqli->query("INSERT into blog (titulo,txt,img) VALUES ('".$escrito."','".$titulo."','".$uploadedFile."')");
+    $insert = $mysqli->query("INSERT into `blog` (`titulo`, `img`, `text`) VALUES ('".$titulo."','".$uploadedFile."','".$escrito."')");
     
 
 }
