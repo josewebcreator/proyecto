@@ -7,9 +7,10 @@
 </head>
 <body>
     <form action="" method="post" id="formulario">
-        <input type="text" name="titulo">
-        <textarea name="escrito" id="" name="escrito" cols="30" rows="10"></textarea>
-        <input type="file" name="imagen" id="imagen">
+        titulo<input type="text" name="titulo"><br>
+        <textarea name="escrito" id="" name="escrito" cols="30" rows="10"></textarea><br>
+        seleccione una imagen <br>
+        <input type="file" name="imagen" id="imagen"><br>
         <input type="submit" value="enviar">
     </form>
 <script src="js/jquery.js"></script>
