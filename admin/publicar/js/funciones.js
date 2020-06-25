@@ -34,4 +34,11 @@ $(document).ready(function(){
         }
     });
 
+
+    //incrustacion de parrado en el formulario
+
+    $("#btn-incrustar").click(function (e) {
+        e.preventDefault();
+        $("#p_secundarios").append("<p>hola</p>");
+    })
 })
