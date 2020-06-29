@@ -41,8 +41,17 @@ $(document).ready(function(){
     $("#btn-incrustar").click(function (e) {
         e.preventDefault();
         cuenta += 1;
-        $("#f_blog ul").append("<li>Titulo parrafo " + cuenta + "<br><input type=\"text\" name=\"t_parrafo" + cuenta+"\" id=\"titulo_parrafo\"><br></li><li>parrafo " + cuenta + "<br><textarea name=\"parrafo"+ cuenta +"\" id=\"texto_parrafo\" cols=\"30\" rows=\"10\"></textarea></li><li>imagen "+ cuenta +" <br><input type=\"file\" name=\"imagen"+ cuenta +"\"></li>");
+        $("#f_blog ul").append("<li>Titulo parrafo " + cuenta + "<br><input type=\"text\" name=\"t_parrafo \"class=\"titulo_parrafo\"><br>parrafo " + cuenta + "<br><textarea name=\"parrafo_apoyo\" id=\"texto_parrafo\" cols=\"30\" rows=\"10\"></textarea><br>imagen "+ cuenta +" <br><input type=\"file\" name=\"imagen"+ cuenta +"\" id=\"imagen_parrafo\"></li>");
 
-        
     })
+
+    $("#f_blog").submit(function (e) {  
+        e.preventDefault();
+        $("#f_blog ul li").each(function(){
+            if ("f_blog #titulo_entrada") {
+                console.log("ok")
+            }
+       	});
+        
+    });
 })
