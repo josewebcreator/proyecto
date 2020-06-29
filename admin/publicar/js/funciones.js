@@ -45,11 +45,14 @@ $(document).ready(function(){
 
     })
 
+    //recorrido del formulario "#f_blog" por cada elemento que lo conforma
     $("#f_blog").submit(function (e) {  
         e.preventDefault();
         $("#f_blog ul li").each(function(){
-            if ("f_blog #titulo_entrada") {
+            if (($(this).children("#titulo_entrada")).length) {
                 console.log("ok")
+            } else {
+                console.log("secundario")
             }
        	});
         
