@@ -24,7 +24,7 @@
         </ul>
         <div id="p_sedundarios"></div><br>
         haga clic para incrustar otro parrafo
-        <input type="button" value="" name="incrustar" id="btn-incrustar">
+        <input type="button" value="incrustar" name="incrustar" id="btn-incrustar">
         <input type="submit" value="enviar" name="enviar">
     </form>
     <script src="js\jquery.js"></script>
