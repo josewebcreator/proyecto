@@ -1,20 +1,20 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $("#formulario").submit(function (e) { 
-        e.preventDefault() 
+    $("#formulario").submit(function (e) {
+        e.preventDefault()
         $.ajax({
             type: 'POST',
             url: 'publicar.php',
             data: new FormData(this),
             contentType: false,
             cache: false,
-            processData:false,
-            success: function(msg){
+            processData: false,
+            success: function (msg) {
                 $('.statusMsg').html('');
-                if(msg == 'ok'){
+                if (msg == 'ok') {
                     $('#formulario')[0].reset();
                     //colocar mensaje de exito
-                }else{
+                } else {
                     //colocar aqui mensaje de error
                 }
             }
@@ -35,26 +35,26 @@ $(document).ready(function(){
     });
 
 
-    //incrustacion de parrado en el formulario
+    //incrustacion de parrafo en #crea-blog
     let cuenta = 0;
-    
+
     $("#btn-incrustar").click(function (e) {
         e.preventDefault();
         cuenta += 1;
-        $("#f_blog ul").append("<li>Titulo parrafo " + cuenta + "<br><input type=\"text\" name=\"t_parrafo \"class=\"titulo_parrafo\"><br>parrafo " + cuenta + "<br><textarea name=\"parrafo_apoyo\" id=\"texto_parrafo\" cols=\"30\" rows=\"10\"></textarea><br>imagen "+ cuenta +" <br><input type=\"file\" name=\"imagen"+ cuenta +"\" id=\"imagen_parrafo\"></li>");
+        $("#crea-blog").append("<li><form class=\"p-secundario\">Titulo parrafo " + cuenta + "<br><input type=\"text\" name=\"t_parrafo \"class=\"titulo_parrafo\"><br>parrafo " + cuenta + "<br><textarea name=\"parrafo_apoyo\" id=\"texto_parrafo\" cols=\"30\" rows=\"10\"></textarea><br>imagen " + cuenta + " <br><input type=\"file\" name=\"imagen" + cuenta + "\" id=\"imagen_parrafo\"></form></li>");
 
     })
 
-    //recorrido del formulario "#f_blog" por cada elemento que lo conforma
-    $("#f_blog").submit(function (e) {  
+    //recorrido del ul #crea-blog
+    $("#btn-enviar").click(function (e) {
         e.preventDefault();
-        $("#f_blog ul li").each(function(){
-            if (($(this).children("#titulo_entrada")).length) {
+        $("#crea-blog li").each(function () {
+            if (($(this).children(".p-principal")).length) {
                 console.log("ok")
             } else {
                 console.log("secundario")
             }
-       	});
-        
+        });
+
     });
 })
