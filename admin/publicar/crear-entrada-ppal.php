@@ -1,5 +1,6 @@
 <?php
 
+    require("../cone/conexion.php");
 if(!empty($_POST['titulo_entrada']) || !empty($_POST['parrafo']) || !empty($_FILES['imagen_cabecera']['name'])){
     $uploadedFile = '';
     if(!empty($_FILES["imagen_cabecera"]["type"])){
@@ -16,12 +17,13 @@ if(!empty($_POST['titulo_entrada']) || !empty($_POST['parrafo']) || !empty($_FIL
         }
     }
     
-    $escrito = $_POST['escrito'];
-    $titulo = $_POST['titulo'];
-    
+    $escrito = $_POST['parrafo'];
+    $titulo = $_POST['titulo_entrada'];
+    $footer = $_POST['foto-footer'];
+    $len = "es";
     
     //insert form data in the database
-    $insert = $mysqli->query("INSERT into `blog` (`titulo`, `img`, `text`) VALUES ('".$titulo."','".$uploadedFile."','".$escrito."')");
+    $insert = $mysqli->query("INSERT into `entrada_blog` (`lenguaje`, `titulo`, `imagen_central`, `foto_footer`, `texto`) VALUES ( '".$len."','".$titulo."','".$uploadedFile."','".$footer."','".$escrito."')");
     
 
 }
