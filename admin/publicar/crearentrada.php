@@ -18,6 +18,9 @@
 
                 imagen de cabecera <br>
                 <input type="file" name="imagen_cabecera" id="imagen_cabecera">
+
+                footer foto <br>
+                <textarea name="foto-footer" id="foto-footer" cols="30" rows="10"></textarea>
             </form>
         </li>
     </ul>
