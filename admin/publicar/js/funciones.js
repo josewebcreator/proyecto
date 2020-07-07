@@ -41,7 +41,7 @@ $(document).ready(function () {
     $("#btn-incrustar").click(function (e) {
         e.preventDefault();
         cuenta += 1;
-        $("#crea-blog").append("<li><form class=\"p-secundario\">Titulo parrafo " + cuenta + "<br><input type=\"text\" name=\"t_parrafo \"class=\"titulo_parrafo\"><br>parrafo " + cuenta + "<br><textarea name=\"parrafo_apoyo\" id=\"texto_parrafo\" cols=\"30\" rows=\"10\"></textarea><br>imagen " + cuenta + " <br><input type=\"file\" name=\"imagen" + cuenta + "\" id=\"imagen_parrafo\"><input type=\"hidden\" name=\"t_entrada \"></form></li>");
+        $("#crea-blog").append("<li><form class=\"p-secundario\">Titulo parrafo " + cuenta + "<br><input type=\"text\" name=\"t_parrafo \"class=\"titulo_parrafo\"><br>parrafo " + cuenta + "<br><textarea name=\"parrafo_apoyo\" id=\"texto_parrafo\" cols=\"30\" rows=\"10\"></textarea><br>imagen " + cuenta + " <br><input type=\"file\" name=\"imagen" + cuenta + "\" id=\"imagen_parrafo\"><input type=\"hidden\" name=\"t_entrada\" class=\"hidden\"></form></li>");
 
     })
 
@@ -50,18 +50,24 @@ $(document).ready(function () {
         e.preventDefault();
         $("#crea-blog li").each(function () {
             if (($(this).children(".p-principal")).length) {
-                $("form", this).each(function () {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'crear-entrada-ppal.php',
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false         
-                    })
-                })
+                // $("form", this).each(function () {
+                //     $.ajax({
+                //         type: 'POST',
+                //         url: 'crear-entrada-ppal.php',
+                //         data: new FormData(this),
+                //         contentType: false,
+                //         cache: false,
+                //         processData: false         
+                //     })
+                // })
+                console.log("ok")
             } else {
-                console.log("secundario")
+                $("form", this).each(function () {
+                    titulo = $("#crea-blog li .p-principal #titulo_entrada").val()
+                    $(".hidden", this).val(titulo)
+                    
+                })
+
             }
         });
 
