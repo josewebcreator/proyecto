@@ -1,7 +1,7 @@
 <?php
 
     require("../cone/conexion.php");
-if(!empty($_POST['titulo_entrada']) || !empty($_POST['parrafo']) || !empty($_FILES['imagen_cabecera']['name'])){
+    if(!empty($_POST['titulo_entrada']) || !empty($_POST['parrafo']) || !empty($_FILES['imagen_cabecera']['name'])){
     $uploadedFile = '';
     if(!empty($_FILES["imagen_cabecera"]["type"])){
         $fileName = time().'_'.$_FILES['imagen_cabecera']['name'];
@@ -26,6 +26,6 @@ if(!empty($_POST['titulo_entrada']) || !empty($_POST['parrafo']) || !empty($_FIL
     $insert = $mysqli->query("INSERT into `entrada_blog` (`lenguaje`, `titulo`, `imagen_central`, `foto_footer`, `texto`) VALUES ( '".$len."','".$titulo."','".$uploadedFile."','".$footer."','".$escrito."')");
     
 
-}
+    }
 
 ?>
