@@ -50,7 +50,16 @@ $(document).ready(function () {
         e.preventDefault();
         $("#crea-blog li").each(function () {
             if (($(this).children(".p-principal")).length) {
-                console.log("ok")
+                $("form", this).each(function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'crear-entrada-ppal.php',
+                        data: new FormData(this),
+                        contentType: false,
+                        cache: false,
+                        processData: false         
+                    })
+                })
             } else {
                 console.log("secundario")
             }
