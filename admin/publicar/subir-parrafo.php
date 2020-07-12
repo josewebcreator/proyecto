@@ -6,15 +6,15 @@
 
 
 
-    if(!empty($_POST['titulo_entrada']) || !empty($_POST['parrafo']) || !empty($_FILES['imagen_cabecera']['name'])){
+    if(!empty($_POST['t_parrafo']) || !empty($_POST['parrafo_apoyo']) || !empty($_FILES['imagen']['name'])){
         $uploadedFile = '';
-        if(!empty($_FILES["imagen_cabecera"]["type"])){
-            $fileName = time().'_'.$_FILES['imagen_cabecera']['name'];
+        if(!empty($_FILES["imagen"]["type"])){
+            $fileName = time().'_'.$_FILES['imagen']['name'];
             $valid_extensions = array("jpeg", "jpg", "png");
-            $temporary = explode(".", $_FILES["imagen_cabecera"]["name"]);
+            $temporary = explode(".", $_FILES["imagen"]["name"]);
             $file_extension = end($temporary);
-            if((($_FILES["imagen_cabecera"]["type"] == "image/png") || ($_FILES["imagen_cabecera"]["type"] == "image/jpg") || ($_FILES["imagen_cabecera"]["type"] == "image/jpeg")) && in_array($file_extension, $valid_extensions)){
-                $sourcePath = $_FILES['imagen_cabecera']['tmp_name'];
+            if((($_FILES["imagen"]["type"] == "image/png") || ($_FILES["imagen"]["type"] == "image/jpg") || ($_FILES["imagen"]["type"] == "image/jpeg")) && in_array($file_extension, $valid_extensions)){
+                $sourcePath = $_FILES['imagen']['tmp_name'];
                 $targetPath = "uploads/".$fileName;
                 if(move_uploaded_file($sourcePath,$targetPath)){
                     $uploadedFile = $fileName;
@@ -23,19 +23,29 @@
         }
 
 
-        $ent_titulo=$_POST['t_entrada'];
-        $consulta= $mysqli->query("SELECT `id` FROM `entrada_blog` WHERE `titulo` = '$ent_titulo'");
-        $res = $consulta->fetch_object();
-        $id_titulo= $res->id; 
-        $escrito = $_POST['parrafo'];
-        $titulo = $_POST['titulo_entrada'];
-        $footer = $_POST['foto-footer'];
-        $len = "es";
         
-        //insert form data in the database
-        $insert = $mysqli->query("INSERT into `entrada_blog` (`lenguaje`, `titulo`, `imagen_central`, `foto_footer`, `texto`) VALUES ( '".$len."','".$titulo."','".$uploadedFile."','".$footer."','".$escrito."')");
-        $insertar = $mysqli->prepare("INSERT INTO parrafo_blog(orden, id_entrada_blog, imagen_parrafo, texto) VALUES (?)");
+        $consulta= $mysqli->prepare("SELECT id FROM entrada_blog WHERE titulo = ?");
+        $ent_titulo = mysqli_real_escape_string($mysqli, $_POST['t_entrada']);
+        $consulta->bind_param("s", $ent_titulo);
+        $consulta->execute();
 
+        $consulta->bind_result($p_id);
+        $consulta->close();
+        echo $p_id; 
+               
+        //insert form data in the database
+
+        $insertar = $mysqli->prepare("INSERT INTO parrafo_blog (orden, id_entrada_blog, sub_titulo, imagen_parrafo, texto) VALUES (?, ?, ?, ?, ?)");
+
+        $titulo = mysqli_real_escape_string($mysqli, $_POST['t_parrafo']);
+        $escrito = mysqli_real_escape_string($mysqli, $_POST['parrafo_apoyo']);
+        $cuenta = mysqli_real_escape_string($mysqli, $_POST['cuenta']);
+        $insertar->bind_param("iisss", $cuenta, $p_id, $titulo, $uploadedFile, $escrito);
+        echo $mysqli->error;
+        
+        $insertar->execute();
+        echo $mysqli->error;
+        $insertar->close();
     }
 
 ?> 
