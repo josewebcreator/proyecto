@@ -23,31 +23,35 @@
         }
 
 
-        
+        //
         $consulta= $mysqli->prepare("SELECT id FROM entrada_blog WHERE titulo = ?");
         $ent_titulo = mysqli_real_escape_string($mysqli, $_POST['t_entrada']);
         $consulta->bind_param("s", $ent_titulo);
         echo $mysqli->error;
         $consulta->execute();
-        $consulta->bind_result($p_id);
-
+        $resultado = $consulta->get_result();
+        $fila = $resultado->fetch_assoc();
+        //$consulta->bind_result($p_id);
+        $p_id = $fila['id'];
         //$p_id = $row["id"][0];
         $consulta->close();
-        //echo $p_id; 
-               
+        //echo $p_id . "<br>"; 
+        
         //insert form data in the database
 
         $insertar = $mysqli->prepare("INSERT INTO parrafo_blog (orden, id_entrada_blog, sub_titulo, imagen_parrafo, texto) VALUES (?, ?, ?, ?, ?)");
-
+        //echo "44<br>" .$mysqli->error;
         $titulo = mysqli_real_escape_string($mysqli, $_POST['t_parrafo']);
         $escrito = mysqli_real_escape_string($mysqli, $_POST['parrafo_apoyo']);
         $cuenta = mysqli_real_escape_string($mysqli, $_POST['cuenta']);
+
         $insertar->bind_param("iisss", $cuenta, $p_id, $titulo, $uploadedFile, $escrito);
-        echo $mysqli->error;
+        //echo "49<br>" . $mysqli->error;
         
         $insertar->execute();
-        echo $mysqli->error;
+        //echo "52<br>" . $mysqli->error;
         $insertar->close();
+        $mysqli->close();
     }
 
 ?> 
