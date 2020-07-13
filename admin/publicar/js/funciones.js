@@ -44,6 +44,22 @@ $(document).ready(function () {
         $("#crea-blog").append("<li><form class=\"p-secundario\">Titulo parrafo " + cuenta + "<br><input type=\"text\" name=\"t_parrafo\"class=\"titulo_parrafo\"><br>parrafo " + cuenta + "<br><textarea name=\"parrafo_apoyo\" id=\"texto_parrafo\" cols=\"30\" rows=\"10\"></textarea><br>imagen " + cuenta + " <br><input type=\"file\" name=\"imagen\" id=\"imagen_parrafo\"><input type=\"hidden\" name=\"t_entrada\" class=\"hidden\"><input type=\"hidden\" name=\"cuenta\" class=\"cuenta\" value=\""+cuenta+"\"></form></li>");
 
     })
+    //delay del formulario
+    function doDelay(wait) {
+        var date = new Date();
+        var startDate = date.getTime();
+        var a = 1;
+        var b = 0;
+        while (a !== 0) {
+            date = new Date();
+            if ((date.getTime() - startDate) >= wait) {
+                a = 0;
+            }
+            b++;
+        }
+    
+    }
+
 
     //recorrido del ul #crea-blog
     $("#btn-enviar").click(function (e) {
@@ -60,7 +76,7 @@ $(document).ready(function () {
                         processData: false         
                     })
                 })
-                console.log("ok")
+                doDelay(1000);
             } else {
                 $("form", this).each(function () {
                     
