@@ -65,8 +65,9 @@ $(document).ready(function () {
     $("#btn-enviar").click(function (e) {
         e.preventDefault();
         $("#crea-blog li").each(function () {
+            doDelay(150);
             if (($(this).children(".p-principal")).length) {
-                doDelay(150);
+                
                 $("form", this).each(function () {
                     $.ajax({
                         type: 'POST',
