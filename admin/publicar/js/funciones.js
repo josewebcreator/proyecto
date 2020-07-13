@@ -41,15 +41,33 @@ $(document).ready(function () {
     $("#btn-incrustar").click(function (e) {
         e.preventDefault();
         cuenta += 1;
-        $("#crea-blog").append("<li><form class=\"p-secundario\">Titulo parrafo " + cuenta + "<br><input type=\"text\" name=\"t_parrafo \"class=\"titulo_parrafo\"><br>parrafo " + cuenta + "<br><textarea name=\"parrafo_apoyo\" id=\"texto_parrafo\" cols=\"30\" rows=\"10\"></textarea><br>imagen " + cuenta + " <br><input type=\"file\" name=\"imagen" + cuenta + "\" id=\"imagen_parrafo\"></form></li>");
+        $("#crea-blog").append("<li><form class=\"p-secundario\">Titulo parrafo " + cuenta + "<br><input type=\"text\" name=\"t_parrafo\"class=\"titulo_parrafo\"><br>parrafo " + cuenta + "<br><textarea name=\"parrafo_apoyo\" id=\"texto_parrafo\" cols=\"30\" rows=\"10\"></textarea><br>imagen " + cuenta + " <br><input type=\"file\" name=\"imagen\" id=\"imagen_parrafo\"><input type=\"hidden\" name=\"t_entrada\" class=\"hidden\"><input type=\"hidden\" name=\"cuenta\" class=\"cuenta\" value=\""+cuenta+"\"></form></li>");
 
     })
+    //delay del formulario
+    function doDelay(wait) {
+        var date = new Date();
+        var startDate = date.getTime();
+        var a = 1;
+        var b = 0;
+        while (a !== 0) {
+            date = new Date();
+            if ((date.getTime() - startDate) >= wait) {
+                a = 0;
+            }
+            b++;
+        }
+    
+    }
+
 
     //recorrido del ul #crea-blog
     $("#btn-enviar").click(function (e) {
         e.preventDefault();
         $("#crea-blog li").each(function () {
+            doDelay(150);
             if (($(this).children(".p-principal")).length) {
+                
                 $("form", this).each(function () {
                     $.ajax({
                         type: 'POST',
@@ -60,8 +78,23 @@ $(document).ready(function () {
                         processData: false         
                     })
                 })
+                doDelay(1000);
             } else {
-                console.log("secundario")
+                $("form", this).each(function () {
+                    
+                    titulo = $("#crea-blog li .p-principal #titulo_entrada").val()
+                    $(".hidden", this).val(titulo)
+                    $.ajax({
+                        type: 'POST',
+                        url: 'subir-parrafo.php',
+                        data: new FormData(this),
+                        contentType: false,
+                        cache: false,
+                        processData: false         
+                    })
+                   
+                })
+
             }
         });
 
