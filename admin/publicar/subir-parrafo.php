@@ -27,11 +27,13 @@
         $consulta= $mysqli->prepare("SELECT id FROM entrada_blog WHERE titulo = ?");
         $ent_titulo = mysqli_real_escape_string($mysqli, $_POST['t_entrada']);
         $consulta->bind_param("s", $ent_titulo);
+        echo $mysqli->error;
         $consulta->execute();
-
         $consulta->bind_result($p_id);
+
+        //$p_id = $row["id"][0];
         $consulta->close();
-        echo $p_id; 
+        //echo $p_id; 
                
         //insert form data in the database
 
