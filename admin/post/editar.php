@@ -54,11 +54,12 @@
 
                         <li class="edit-pSecundario">
                             <form>
-                            
+                                <input type="hidden" name="id" value="<?php echo $fParrafos['id']; ?>">
+                                <input type="text" name="subtitulo" value="<?php echo $fParrafos['sub_titulo']; ?>">
+                                <input type="file" name="imagen_parrafo">
+                                <p><?php echo $resFilas['imagen_parrafo']; ?></p>
+                                <input type="text" name="subtitulo" value="<?php echo $fParrafos['texto']; ?>">
                             </form>
-                            <h3><?php echo $fParrafos['sub_titulo']; ?></h3>
-                            <p><?php echo $fParrafos['imagen_parrafo']; ?></p>
-                            <p><?php echo $fParrafos['texto']; ?></p>
                         </li>
 
                         <?php
