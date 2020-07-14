@@ -31,11 +31,8 @@
                         <input type="file" name="imagen">
                         <p><?php echo $resFilas['imagen_central']; ?></p><!-- cambiar a imagen -->
                         <textarea name="foto-footer" id="" cols="30" rows="10" value="<?php echo $resFilas['foto_footer']; ?>"></textarea>
+                        <textarea name="foto-footer" id="" cols="30" rows="10" value="<?php echo $resFilas['texto']; ?>"></textarea>
                     </form>
-                    <h2></h2><br>
-                   
-                    <p></p>
-                    <p><?php echo $resFilas['texto']; ?></p>
                 </li>
             <?php
             } // fin while
