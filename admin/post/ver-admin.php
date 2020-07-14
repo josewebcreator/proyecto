@@ -13,10 +13,7 @@
         //print_r($res->num_rows);
         
         if(($res->num_rows)>0){
-            $cParrafo = $mysqli->prepare("
-            SELECT
-                e.identrada, 
-            ");
+            $cParrafo = $mysqli->prepare("SELECT * FROM parrafo_blog as p INNER JOIN entrada_blog as e WHERE p.id_entrada_blog = ? ORDER BY p.orden");
         }
 
         $mysqli->close();
