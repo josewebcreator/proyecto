@@ -1,5 +1,5 @@
 $(document).ready(function () {
     
-    $("#carga-tabla").load()
+    $("#carga-tabla").load('tabla.php')
 
 })
