@@ -26,7 +26,7 @@
                             
                             <div><a href="ver-admin.php?id=<?php echo $row['id']; ?>">Ver</a></div>
                             <div><a href="editar.php?id=<?php echo $row['id']; ?>">Editar</a></div>
-                            <div><a href="#" class="btn-borrar">Borrar</a></div>
+                            <div><a href="#" class="btn-borrar" refe="<?php echo $row['id'] ?>">Borrar</a></div>
                             
                         </td>
                     </tr>
@@ -36,7 +36,8 @@
         <?php //fin IF
         $consulta->close();
     }else{
-
+        
+        echo "No existen publicaciones"; 
         $consulta->close();
     }
 
