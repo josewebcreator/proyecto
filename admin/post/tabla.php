@@ -4,9 +4,14 @@
 
     $consulta = $mysqli->prepare("SELECT * from entrada_blog");
     $consulta->execute();
+    $cuenta =  $consulta->num_rows();
     $res = $consulta->get_result();
+    
+    print_r($res);
+    print_r($cuenta);
+ 
 
-    if (!($res==FALSE)){
+    if ($cuenta>0){
         ?>
         <table>
             <tr>
