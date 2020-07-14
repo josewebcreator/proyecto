@@ -36,12 +36,13 @@
                 while($resFilas = $res->fetch_assoc()){ ?>
                     <li id="edit-pPal">
                         <form>
+                            <input type="hidden" name="id" value="<?php echo $resFilas['id_ent']; ?>">
                             titulo principal <br>
                             <input type="text" name="titulo" value="<?php echo $resFilas['titulo']; ?>">
                             <input type="file" name="imagen">
                             <p><?php echo $resFilas['imagen_central']; ?></p><!-- cambiar a imagen -->
                             <textarea name="foto-footer" id="" cols="30" rows="10" value="<?php echo $resFilas['foto_footer']; ?>"></textarea>
-                            <textarea name="foto-footer" id="" cols="30" rows="10" value="<?php echo $resFilas['texto']; ?>"></textarea>
+                            <textarea name="texto" id="" cols="30" rows="10" value="<?php echo $resFilas['texto']; ?>"></textarea>
                         </form>
                     </li>
                 <?php
@@ -71,6 +72,7 @@
         }
 
 ?>
+    <input type="button" value="" id="btn-editar">
     </div>
 <script src="js/jquery.js"></script>
 <script src="js/funciones.js"></script>
