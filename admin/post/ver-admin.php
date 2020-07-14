@@ -13,7 +13,15 @@
         //print_r($res->num_rows);
         
         if(($res->num_rows)>0){
-            $cParrafo = $mysqli->prepare("SELECT * FROM parrafo_blog as p INNER JOIN entrada_blog as e WHERE p.id_entrada_blog = ? ORDER BY p.orden");
+            
+            $cParrafo = $mysqli->prepare("SELECT * FROM parrafo_blog WHERE id_entrada_blog = ? ORDER BY orden");
+            $cParrafo->bind_param("i",$idConsulta);
+            $parrafos = $cParrafo->get_result();
+            
+            while($resFilas = $res->fetch_assoc()){
+
+            }
+
         }
 
         $mysqli->close();
