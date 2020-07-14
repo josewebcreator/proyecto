@@ -7,6 +7,7 @@
 </head>
 <body>
     
+    <div id="carga-tabla"></div>
 
     <script src="js\jquery.js"></script>
     <script src="js\funciones.js"></script>
