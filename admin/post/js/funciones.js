@@ -1,6 +1,6 @@
 $(document).ready(function () {
     
-    //carga tabla con las entradas de blogs
+    //carga tabla con las entradas de blogs index.php
     $("#carga-tabla").load('tabla.php')
 
     //recorrido del ul #crea-blog
