@@ -28,9 +28,9 @@
                         <td><?php echo $row['titulo']; ?></td>
                         <td>
                             
-                            <div><a href="ver-admin.php?id=<?php echo $row['id']; ?>">Ver</a></div>
-                            <div><a href="editar.php?id=<?php echo $row['id']; ?>">Editar</a></div>
-                            <div><a href="#" class="btn-borrar" refe="<?php echo $row['id'] ?>">Borrar</a></div>
+                            <a href="ver-admin.php?id=<?php echo $row['id']; ?>">Ver</a>
+                            <a href="editar.php?id=<?php echo $row['id']; ?>">Editar</a>
+                            <a href="#" class="btn-borrar" refe="<?php echo $row['id'] ?>">Borrar</a>
                             
                         </td>
                     </tr>
