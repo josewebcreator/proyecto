@@ -18,10 +18,17 @@
             $cParrafo->bind_param("i",$idConsulta);
             $parrafos = $cParrafo->get_result();
             
-            while($resFilas = $res->fetch_assoc()){
-
-            }
-
+            ?>
+            <div class="entrada">
+            <?php
+            while($resFilas = $res->fetch_assoc()){ ?>
+                <div id="pPal">
+                    <h2><?php echo $resFilas['titulo']; ?></h2><br>
+                    <p><?php echo $resFilas['titulo']; ?></p><!-- cambiar a imagen -->
+                </div>
+            <?php
+            } // fin while
+            ?> </div> <?php //cierre del dif entrada
         }
 
         $mysqli->close();
