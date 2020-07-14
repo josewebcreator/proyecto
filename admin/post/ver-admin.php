@@ -12,7 +12,7 @@
         //print_r($res);
         //print_r($res->num_rows);
         
-        if($res->num_rows>0){
+        if(($res->num_rows)>0){
             
         }
 
