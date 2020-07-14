@@ -2,12 +2,11 @@
 
     require('../cone/conexion.php');
 
-    $consulta = $mysqli->prepare("SELECT * from entrada_blog");
-    $consulta->execute();
-    $cuenta =  $consulta->num_rows();
-    $res = $consulta->get_result();
+    $consulta = $mysqli->query("SELECT * from entrada_blog");
+    $cuenta =  $consulta->num_rows;
+
     
-    print_r($res);
+ 
     print_r($cuenta);
  
 
@@ -21,7 +20,7 @@
                 <td>Opciones</td>
             </tr>
             <?php
-                while ($row = $res->fetch_assoc()){
+                while ($row = $consulta->fetch_assoc()){
                     ?>
                     <tr>
                         <td><?php echo $row['id']; ?></td>
