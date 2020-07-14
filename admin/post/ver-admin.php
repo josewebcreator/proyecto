@@ -13,7 +13,10 @@
         //print_r($res->num_rows);
         
         if(($res->num_rows)>0){
-            
+            $cParrafo = $mysqli->prepare("
+            SELECT
+                e.identrada, 
+            ");
         }
 
         $mysqli->close();
