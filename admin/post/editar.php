@@ -41,8 +41,9 @@
                             <input type="text" name="titulo" value="<?php echo $resFilas['titulo']; ?>">
                             <input type="file" name="imagen">
                             <p><?php echo $resFilas['imagen_central']; ?></p><!-- cambiar a imagen -->
-                            <textarea name="foto-footer" id="" cols="30" rows="10" value="<?php echo $resFilas['foto_footer']; ?>"></textarea>
-                            <textarea name="texto" id="" cols="30" rows="10" value="<?php echo $resFilas['texto']; ?>"></textarea>
+                            <textarea name="texto" id="" cols="30" rows="10" ><?php echo $resFilas['texto']; ?></textarea><br>
+                            <textarea name="foto-footer" id="" cols="30" rows="10"><?php echo $resFilas['foto_footer']; ?></textarea><br>
+                            
                         </form>
                     </li>
                 <?php
@@ -54,11 +55,12 @@
 
                         <li class="edit-pSecundario">
                             <form>
-                                <input type="hidden" name="id" value="<?php echo $fParrafos['id']; ?>">
-                                <input type="text" name="subtitulo" value="<?php echo $fParrafos['sub_titulo']; ?>">
-                                <input type="file" name="imagen_parrafo">
-                                <p><?php echo $resFilas['imagen_parrafo']; ?></p>
-                                <input type="text" name="subtitulo" value="<?php echo $fParrafos['texto']; ?>">
+                                <input type="hidden" name="id" value="<?php echo $fParrafos['id']; ?>"><br>
+                                <input type="text" name="subtitulo" value="<?php echo $fParrafos['sub_titulo']; ?>"><br>
+                                <input type="file" name="imagen_parrafo"><br>
+                                <p><?php echo $resFilas['imagen_parrafo']; ?></p><br>
+                                <textarea name="texto" id="" cols="30" rows="10" ><?php echo $fParrafos['texto']; ?></textarea><br>
+                                
                             </form>
                         </li>
 
