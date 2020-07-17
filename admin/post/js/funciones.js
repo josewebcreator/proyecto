@@ -3,7 +3,23 @@ $(document).ready(function () {
     //carga tabla con las entradas de blogs index.php
     $("#carga-tabla").load('tabla.php')
 
-    //recorrido del ul #crea-blog
+    function doDelay(wait) {
+        var date = new Date();
+        var startDate = date.getTime();
+        var a = 1;
+        var b = 0;
+        while (a !== 0) {
+            date = new Date();
+            if ((date.getTime() - startDate) >= wait) {
+                a = 0;
+            }
+            b++;
+        }
+    
+    }
+
+    
+    //Envio de formulariosde editar.php
     $("#btn-enviar").click(function (e) {
         e.preventDefault();
         $("#crea-blog li").each(function () {
