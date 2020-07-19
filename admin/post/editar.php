@@ -39,7 +39,7 @@
                             <input type="hidden" name="principal">
                             <input type="hidden" name="id" value="<?php echo $resFilas['id_ent']; ?>">
                             titulo principal <br>
-                            <input type="text" name="titulo" value="<?php echo $resFilas['titulo']; ?>">
+                            <input type="text" name="titulo" value="<?php echo $resFilas['titulo']; ?>"><br>
                             <input type="file" name="imagen">
                             <p><?php echo $resFilas['imagen_central']; ?></p><!-- cambiar a imagen -->
                             <textarea name="texto" id="" cols="30" rows="10" ><?php echo $resFilas['texto']; ?></textarea><br>
