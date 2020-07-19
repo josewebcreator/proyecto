@@ -26,17 +26,17 @@ $(document).ready(function () {
             doDelay(150);
             if (($(this).children(".p-principal")).length) {
                 
-                // $("form", this).each(function () {
-                //     $.ajax({
-                //         type: 'POST',
-                //         url: 'crear-entrada-ppal.php',
-                //         data: new FormData(this),
-                //         contentType: false,
-                //         cache: false,
-                //         processData: false         
-                //     })
-                // })
-                // doDelay(1000);
+                $("form", this).each(function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'editar-principal.php',
+                        data: new FormData(this),
+                        contentType: false,
+                        cache: false,
+                        processData: false         
+                    })
+                })
+                doDelay(1000);
                 console.log("principal")
             } else {
                 // $("form", this).each(function () {
