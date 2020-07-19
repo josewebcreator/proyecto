@@ -36,8 +36,7 @@ $(document).ready(function () {
                         processData: false         
                     })
                 })
-                doDelay(1000);
-                console.log("principal")
+                doDelay(3000);
             } else {
                 // $("form", this).each(function () {
                     
