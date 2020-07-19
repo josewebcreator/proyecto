@@ -38,21 +38,20 @@ $(document).ready(function () {
                 })
                 doDelay(3000);
             } else {
-                // $("form", this).each(function () {
+
+                $("form", this).each(function () {
                     
-                //     titulo = $("#crea-blog li .p-principal #titulo_entrada").val()
-                //     $(".hidden", this).val(titulo)
-                //     $.ajax({
-                //         type: 'POST',
-                //         url: 'subir-parrafo.php',
-                //         data: new FormData(this),
-                //         contentType: false,
-                //         cache: false,
-                //         processData: false         
-                //     })
+                    $.ajax({
+                        type: 'POST',
+                        url: 'editar-parrafo.php',
+                        data: new FormData(this),
+                        contentType: false,
+                        cache: false,
+                        processData: false         
+                    })
                    
-                // })
-                console.log("Secundario")
+                })
+
             }
         });
 
