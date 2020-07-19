@@ -12,8 +12,10 @@
         echo $mysqli->error . "12<br>";
         if($consulta->execute()){
             echo "exito";
+            $consulta->close();
         }else{
             echo $mysqli->error . "16<br>";
+            $consulta->close();
         }
 
     //subir imagen
@@ -35,20 +37,32 @@
             }
         }
         
+        $imagen = $mysqli->prepare('SELECT imagen_central WHERE id_ent = ?');
+        $id = mysql_real_escape_string($mysqli, $_POST['id']);
+        $imagen->bind_param("i", $id);
+        $imagen->execute();
+        $rimagen->get_result();
+        $imagen->close();
+        while($rimagen = $rimagen->fetch_assoc()){
+            $ruta = "uptoads/". $rimagen['imagen_central'];  
+        }
+        
+
         $consulta = $mysqli->prepare('UPDATE entrada_blog SET titulo = ?, foto_footer = ?, texto = ?, imagen_central = ? WHERE id_ent = ?');
 
         $titulo = mysql_real_escape_string($mysqli, $_POST['titulo']);
         $foto_footer = mysql_real_escape_string($mysqli, $_POST['foto_footer']);
-        $texto = mysql_real_escape_string($mysqli, $_POST['texto']);
-        $id = mysql_real_escape_string($mysqli, $_POST['id']);
+        $texto = mysql_real_escape_string($mysqli, $_POST['texto']);       
         $consulta->bind_param("ssssi", $titulo, $foto_footer, $texto, $uploadedFile, $id);
 
         echo $mysqli->error . "46<br>";
 
         if($consulta->execute()){
             echo "exito";
+            $consulta->close();
         }else{
             echo $mysqli->error . "51<br>";
+            $consulta->close();
         }
 
     }
