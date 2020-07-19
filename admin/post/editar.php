@@ -35,7 +35,7 @@
                 <?php
                 while($resFilas = $res->fetch_assoc()){ ?>
                     <li id="edit-pPal">
-                        <form>
+                        <form class="p-principal">
                             <input type="hidden" name="principal">
                             <input type="hidden" name="id" value="<?php echo $resFilas['id_ent']; ?>">
                             titulo principal <br>
