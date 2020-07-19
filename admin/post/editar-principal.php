@@ -9,11 +9,11 @@
         $texto = mysql_real_escape_string($mysqli, $_POST['texto']);
         $id = mysql_real_escape_string($mysqli, $_POST['id']);
         $consulta->bind_param("sssi", $titulo, $foto_footer, $texto, $id);
-        echo $mysqli->error;
+        echo $mysqli->error . "12<br>";
         if($consulta->execute()){
             echo "exito";
         }else{
-            echo $mysqli->error;
+            echo $mysqli->error . "16<br>";
         }
 
     //subir imagen
@@ -35,6 +35,22 @@
             }
         }
         
+        $consulta = $mysqli->prepare('UPDATE entrada_blog SET titulo = ?, foto_footer = ?, texto = ?, imagen_central = ? WHERE id_ent = ?');
+
+        $titulo = mysql_real_escape_string($mysqli, $_POST['titulo']);
+        $foto_footer = mysql_real_escape_string($mysqli, $_POST['foto_footer']);
+        $texto = mysql_real_escape_string($mysqli, $_POST['texto']);
+        $id = mysql_real_escape_string($mysqli, $_POST['id']);
+        $consulta->bind_param("ssssi", $titulo, $foto_footer, $texto, $uploadedFile, $id);
+
+        echo $mysqli->error . "46<br>";
+
+        if($consulta->execute()){
+            echo "exito";
+        }else{
+            echo $mysqli->error . "51<br>";
+        }
+
     }
 
 ?>
