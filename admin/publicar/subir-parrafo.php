@@ -24,7 +24,7 @@
 
 
         //
-        $consulta= $mysqli->prepare("SELECT id FROM entrada_blog WHERE titulo = ?");
+        $consulta= $mysqli->prepare("SELECT id_ent FROM entrada_blog WHERE titulo = ?");
         $ent_titulo = mysqli_real_escape_string($mysqli, $_POST['t_entrada']);
         $consulta->bind_param("s", $ent_titulo);
         echo $mysqli->error;
@@ -32,7 +32,7 @@
         $resultado = $consulta->get_result();
         $fila = $resultado->fetch_assoc();
         //$consulta->bind_result($p_id);
-        $p_id = $fila['id'];
+        $p_id = $fila['id_ent'];
         //$p_id = $row["id"][0];
         $consulta->close();
         //echo $p_id . "<br>"; 
