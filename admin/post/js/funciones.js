@@ -18,41 +18,42 @@ $(document).ready(function () {
     
     }
 
-    
+
     //Envio de formulariosde editar.php
-    $("#btn-enviar").click(function (e) {
+    $("#btn-editar").click(function (e) {
         e.preventDefault();
-        $("#crea-blog li").each(function () {
+        $("#edicion li").each(function () {
             doDelay(150);
             if (($(this).children(".p-principal")).length) {
                 
-                $("form", this).each(function () {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'crear-entrada-ppal.php',
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false         
-                    })
-                })
-                doDelay(1000);
+                // $("form", this).each(function () {
+                //     $.ajax({
+                //         type: 'POST',
+                //         url: 'crear-entrada-ppal.php',
+                //         data: new FormData(this),
+                //         contentType: false,
+                //         cache: false,
+                //         processData: false         
+                //     })
+                // })
+                // doDelay(1000);
+                console.log("principal")
             } else {
-                $("form", this).each(function () {
+                // $("form", this).each(function () {
                     
-                    titulo = $("#crea-blog li .p-principal #titulo_entrada").val()
-                    $(".hidden", this).val(titulo)
-                    $.ajax({
-                        type: 'POST',
-                        url: 'subir-parrafo.php',
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false         
-                    })
+                //     titulo = $("#crea-blog li .p-principal #titulo_entrada").val()
+                //     $(".hidden", this).val(titulo)
+                //     $.ajax({
+                //         type: 'POST',
+                //         url: 'subir-parrafo.php',
+                //         data: new FormData(this),
+                //         contentType: false,
+                //         cache: false,
+                //         processData: false         
+                //     })
                    
-                })
-
+                // })
+                console.log("Secundario")
             }
         });
 
