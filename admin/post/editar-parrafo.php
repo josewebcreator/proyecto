@@ -59,7 +59,7 @@
         $orden = mysqli_real_escape_string($mysqli, $_POST['orden']);
         $texto = mysqli_real_escape_string($mysqli, $_POST['texto']);
         $id = mysqli_real_escape_string($mysqli, $_POST['id']);     
-        $consulta->bind_param("ssii", $titulo, $texto, $uploadedFile, $id, $orden);
+        $consulta->bind_param("sssii", $titulo, $texto, $uploadedFile, $id, $orden);
 
         echo $mysqli->error . "64<br>";
 
@@ -67,7 +67,7 @@
             echo "exito";
             $consulta->close();
         }else{
-            echo $mysqli->error . "51<br>";
+            echo $mysqli->error . "70<br>";
             $consulta->close();
         }
 
