@@ -3,11 +3,14 @@
     if(isset($_POST['id']) && (empty($_FILES['imagen_parrafo']['name']))){
 
         require('../cone/conexion.php');
-        $consulta = $mysqli->prepare('UPDATE parrafo_blog SET sub_titulo = ? texto = ? WHERE id = ? AND orden = ?');
+        $consulta = $mysqli->prepare('UPDATE parrafo_blog SET sub_titulo = ?, texto = ? WHERE id = ? AND orden = ?');
         $titulo = mysqli_real_escape_string($mysqli, $_POST['subtitulo']);
         $orden = mysqli_real_escape_string($mysqli, $_POST['orden']);
         $texto = mysqli_real_escape_string($mysqli, $_POST['texto']);
         $id = mysqli_real_escape_string($mysqli, $_POST['id']);
+
+        echo $mysqli->error;
+
         $consulta->bind_param("ssii", $titulo, $texto, $id, $orden);
         echo $mysqli->error . "12<br>";
         if($consulta->execute()){
