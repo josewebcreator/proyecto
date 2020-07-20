@@ -50,8 +50,26 @@
         $rimagen = $rimagen->fetch_assoc();
         $ruta = "../publicar/uploads/". $rimagen['imagen_parrafo'];  
         
-        print_r($ruta) ;
+        print_r($ruta);
         unlink($ruta);
+
+        $consulta = $mysqli->prepare('UPDATE parrafo_blog SET sub_titulo = ?, texto = ?, imagen_parrafo = ? WHERE id = ? AND orden = ?');
+
+        $titulo = mysqli_real_escape_string($mysqli, $_POST['subtitulo']);
+        $orden = mysqli_real_escape_string($mysqli, $_POST['orden']);
+        $texto = mysqli_real_escape_string($mysqli, $_POST['texto']);
+        $id = mysqli_real_escape_string($mysqli, $_POST['id']);     
+        $consulta->bind_param("ssii", $titulo, $texto, $uploadedFile, $id, $orden);
+
+        echo $mysqli->error . "64<br>";
+
+        if($consulta->execute()){
+            echo "exito";
+            $consulta->close();
+        }else{
+            echo $mysqli->error . "51<br>";
+            $consulta->close();
+        }
 
     }
 
