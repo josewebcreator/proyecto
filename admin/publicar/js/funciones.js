@@ -1,28 +1,5 @@
 $(document).ready(function () {
 
-    $("#formulario").submit(function (e) {
-        e.preventDefault()
-        $.ajax({
-            type: 'POST',
-            url: 'publicar.php',
-            data: new FormData(this),
-            contentType: false,
-            cache: false,
-            processData: false,
-            success: function (msg) {
-                $('.statusMsg').html('');
-                if (msg == 'ok') {
-                    $('#formulario')[0].reset();
-                    //colocar mensaje de exito
-                } else {
-                    //colocar aqui mensaje de error
-                }
-            }
-
-        });
-
-    })
-
     $("#imagen").change(function () {
         var file = this.files[0];
         var imagefile = file.type;
@@ -61,42 +38,61 @@ $(document).ready(function () {
     }
 
 
+
     //recorrido del ul #crea-blog
     $("#btn-enviar").click(function (e) {
         e.preventDefault();
-        $("#crea-blog li").each(function () {
-            doDelay(150);
-            if (($(this).children(".p-principal")).length) {
-                
-                $("form", this).each(function () {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'crear-entrada-ppal.php',
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false         
-                    })
-                })
-                doDelay(1000);
-            } else {
-                $("form", this).each(function () {
-                    
-                    titulo = $("#crea-blog li .p-principal #titulo_entrada").val()
-                    $(".hidden", this).val(titulo)
-                    $.ajax({
-                        type: 'POST',
-                        url: 'subir-parrafo.php',
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false         
-                    })
-                   
-                })
+        $("#crea-blog").each(function () {
 
+            var check = []
+
+            $("li", this).each(function () { 
+                $("form", this).children().each(function () {
+                    if ($(this).length) {
+                        check.push(1)
+                    } else if ($(this).is("#imagen_parrafo")) {
+                        check.push(1)
+                    } else {
+                        check.push(0)
+                    }
+                })
+            });
+
+            if(!check.includes(0)){
+                $("#crea-blog li").each(function () {
+                    doDelay(150);
+                    if (($(this).children(".p-principal")).length) {
+                        
+                        $("form", this).each(function () {
+                            $.ajax({
+                                type: 'POST',
+                                url: 'crear-entrada-ppal.php',
+                                data: new FormData(this),
+                                contentType: false,
+                                cache: false,
+                                processData: false         
+                            })
+                        })
+                        doDelay(1000);
+                    } else {
+                        $("form", this).each(function () {
+                            
+                            titulo = $("#crea-blog li .p-principal #titulo_entrada").val()
+                            $(".hidden", this).val(titulo)
+                            $.ajax({
+                                type: 'POST',
+                                url: 'subir-parrafo.php',
+                                data: new FormData(this),
+                                contentType: false,
+                                cache: false,
+                                processData: false         
+                            })
+                        
+                        })
+
+                    }
+                });
             }
         });
-
     });
 })
