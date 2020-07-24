@@ -92,6 +92,8 @@ $(document).ready(function () {
 
                     }
                 });
+            } else {
+                window.alert("Existen campos vacíos, por favor validar")
             }
         });
     });
