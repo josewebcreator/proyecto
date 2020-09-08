@@ -62,7 +62,6 @@ $(document).ready(function () {
                     
                 })
             });
-            console.log(check)
             if(!check.includes(0)){
                 $("#crea-blog li").each(function () {
                     doDelay(150);
