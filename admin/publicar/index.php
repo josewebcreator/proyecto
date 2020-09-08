@@ -11,7 +11,7 @@
     <ul id="crea-blog">
         <li>
             <form action="" class="p-principal">
-                Titulo <br><input type="text" name="titulo_entrada" id="titulo_entrada" value="nulo"><br>
+                Titulo <br><input type="text" name="titulo_entrada" id="titulo_entrada" ><br>
 
                 parrafo Principal <br>
                 <textarea name="parrafo" id="texto_parrafo" cols="30" rows="10"></textarea>
