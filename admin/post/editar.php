@@ -37,13 +37,13 @@
                     <li id="edit-pPal">
                         <form class="p-principal">
                             <input type="hidden" name="principal">
-                            <input type="hidden" name="id" value="<?php echo $resFilas['id_ent']; ?>">
+                            <input type="hidden" name="id" class="ppal-id" value="<?php echo $resFilas['id_ent']; ?>">
                             titulo principal <br>
-                            <input type="text" name="titulo" value="<?php echo $resFilas['titulo']; ?>"><br>
-                            <input type="file" name="imagen">
+                            <input type="text" name="titulo" class="ppal-ttlo" value="<?php echo $resFilas['titulo']; ?>"><br>
+                            <input type="file" name="imagen" class="ppal-img">
                             <p><?php echo $resFilas['imagen_central']; ?></p><!-- cambiar a imagen -->
-                            <textarea name="texto" id="" cols="30" rows="10" ><?php echo $resFilas['texto']; ?></textarea><br>
-                            <textarea name="foto-footer" id="" cols="30" rows="10"><?php echo $resFilas['foto_footer']; ?></textarea><br>
+                            <textarea name="texto" id="" cols="30" rows="10" class="ppal-texto"><?php echo $resFilas['texto']; ?></textarea><br>
+                            <textarea name="foto-footer" id="" cols="30" rows="10"class="ppal-footer"><?php echo $resFilas['foto_footer']; ?></textarea><br>
                             
                         </form>
                     </li>
