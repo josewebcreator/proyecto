@@ -56,12 +56,12 @@
 
                         <li class="edit-pSecundario">
                             <form>
-                                <input type="hidden" name="id" value="<?php echo $fParrafos['id']; ?>"><br>
-                                <input type="hidden" name="orden" value="<?php echo $fParrafos['orden']; ?>"><br>
-                                <input type="text" name="subtitulo" value="<?php echo $fParrafos['sub_titulo']; ?>"><br>
-                                <input type="file" name="imagen_parrafo"><br>
+                                <input type="hidden" name="id" class="parraf-id" value="<?php echo $fParrafos['id']; ?>"><br>
+                                <input type="hidden" name="orden" class="parraf-orden" value="<?php echo $fParrafos['orden']; ?>"><br>
+                                <input type="text" name="subtitulo" class="parraf-sub" value="<?php echo $fParrafos['sub_titulo']; ?>"><br>
+                                <input type="file" name="imagen_parrafo" class="parraf-img"><br>
                                 <p><?php echo $resFilas['imagen_parrafo']; ?></p><br>
-                                <textarea name="texto" id="" cols="30" rows="10" ><?php echo $fParrafos['texto']; ?></textarea><br>
+                                <textarea name="texto" id="" cols="30" rows="10" class="parraf-tex"><?php echo $fParrafos['texto']; ?></textarea><br>
                                 
                             </form>
                         </li>
