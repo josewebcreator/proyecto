@@ -22,9 +22,9 @@ $(document).ready(function () {
     //Envio de formulariosde editar.php
     $("#btn-editar").click(function (e) {
         e.preventDefault();
-
+        var check = [];
         $("#edicion").each(function () {
-            var check = [];
+           
             $("li", this).each(function () {
                 $("form", this).children().each(function () {
                     if ($(this).is(".ppal-id") || $(this).is(".ppal-ttlo") || $(this).is(".ppal-texto") || $(this).is(".ppal-footer") || $(this).is(".parraf-sub") || $(this).is(".parraf-tex") ) {
@@ -39,7 +39,6 @@ $(document).ready(function () {
                 })
             })
         })
-        console.log(check)
 
         if (!check.includes(0)) {
             $("#edicion li").each(function () {
