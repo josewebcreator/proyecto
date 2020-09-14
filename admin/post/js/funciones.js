@@ -22,38 +22,61 @@ $(document).ready(function () {
     //Envio de formulariosde editar.php
     $("#btn-editar").click(function (e) {
         e.preventDefault();
-        $("#edicion li").each(function () {
-            doDelay(150);
-            if (($(this).children(".p-principal")).length) {
-                
-                $("form", this).each(function () {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'editar-principal.php',
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false         
-                    })
-                })
-                doDelay(3000);
-            } else {
+        var check = [];
+        $("#edicion").each(function () {
+           
+            $("li", this).each(function () {
+                $("form", this).children().each(function () {
+                    if ($(this).is(".ppal-id") || $(this).is(".ppal-ttlo") || $(this).is(".ppal-texto") || $(this).is(".ppal-footer") || $(this).is(".parraf-sub") || $(this).is(".parraf-tex") ) {
+                        
+                        if ($(this).val().length>0) {
+                            check.push(1)
+                        } else {
+                            check.push(0)
+                        }
 
-                $("form", this).each(function () {
+                    }
+                })
+            })
+        })
+
+        if (!check.includes(0)) {
+            $("#edicion li").each(function () {
+                doDelay(150);
+                if (($(this).children(".p-principal")).length) {
                     
-                    $.ajax({
-                        type: 'POST',
-                        url: 'editar-parrafo.php',
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false         
+                    $("form", this).each(function () {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'editar-principal.php',
+                            data: new FormData(this),
+                            contentType: false,
+                            cache: false,
+                            processData: false         
+                        })
                     })
-                   
-                })
+                    doDelay(3000);
+                } else {
 
-            }
-        });
+                    $("form", this).each(function () {
+                        
+                        $.ajax({
+                            type: 'POST',
+                            url: 'editar-parrafo.php',
+                            data: new FormData(this),
+                            contentType: false,
+                            cache: false,
+                            processData: false         
+                        })
+                    
+                    })
+
+                }
+            });
+        } else {
+            alert("existen campos vacios, por favor validar")
+        }
+            
 
     });
 })
