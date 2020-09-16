@@ -11,6 +11,16 @@ $(document).ready(function () {
         }
     });
 
+    $(".imagen_parrafo").change(function () {
+        var file = this.files[0];
+        var imagefile = file.type;
+        var match = ["image/jpeg", "image/png", "image/jpg"];
+        if (!((imagefile == match[0]) || (imagefile == match[1]) || (imagefile == match[2]))) {
+            alert('Seleccione un formato de imagen valido (JPEG/JPG/PNG).');
+            $("#file").val('');
+            return false;
+        }
+    });
 
     //incrustacion de parrafo en #crea-blog
     let cuenta = 0;
