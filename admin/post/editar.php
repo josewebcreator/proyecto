@@ -40,7 +40,7 @@
                             <input type="hidden" name="id" class="ppal-id" value="<?php echo $resFilas['id_ent']; ?>">
                             titulo principal <br>
                             <input type="text" name="titulo" class="ppal-ttlo" value="<?php echo $resFilas['titulo']; ?>"><br>
-                            <input type="file" name="imagen" class="ppal-img">
+                            <input type="file" name="imagen" accept="image/*" class="ppal-img">
                             <p><?php echo $resFilas['imagen_central']; ?></p><!-- cambiar a imagen -->
                             <textarea name="texto" id="" cols="30" rows="10" class="ppal-texto"><?php echo $resFilas['texto']; ?></textarea><br>
                             <textarea name="foto-footer" id="" cols="30" rows="10"class="ppal-footer"><?php echo $resFilas['foto_footer']; ?></textarea><br>
@@ -59,7 +59,7 @@
                                 <input type="hidden" name="id" class="parraf-id" value="<?php echo $fParrafos['id']; ?>"><br>
                                 <input type="hidden" name="orden" class="parraf-orden" value="<?php echo $fParrafos['orden']; ?>"><br>
                                 <input type="text" name="subtitulo" class="parraf-sub" value="<?php echo $fParrafos['sub_titulo']; ?>"><br>
-                                <input type="file" name="imagen_parrafo" class="parraf-img"><br>
+                                <input type="file" name="imagen_parrafo" accept="image/*" class="parraf-img"><br>
                                 <p><?php echo $resFilas['imagen_parrafo']; ?></p><br>
                                 <textarea name="texto" id="" cols="30" rows="10" class="parraf-tex"><?php echo $fParrafos['texto']; ?></textarea><br>
                                 
