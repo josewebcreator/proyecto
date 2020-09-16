@@ -3,28 +3,6 @@ $(document).ready(function () {
     //carga tabla con las entradas de blogs index.php
     $("#carga-tabla").load('tabla.php')
 
-    $(".ppal-img").change(function () {
-        var file = this.files[0];
-        var imagefile = file.type;
-        var match = ["image/jpeg", "image/png", "image/jpg"];
-        if (!((imagefile == match[0]) || (imagefile == match[1]) || (imagefile == match[2]))) {
-            alert('Seleccione un formato de imagen valido (JPEG/JPG/PNG).');
-            $("#file").val('');
-            return false;
-        }
-    });
-
-    $(".parraf-img").change(function () {
-        var file = this.files[0];
-        var imagefile = file.type;
-        var match = ["image/jpeg", "image/png", "image/jpg"];
-        if (!((imagefile == match[0]) || (imagefile == match[1]) || (imagefile == match[2]))) {
-            alert('Seleccione un formato de imagen valido (JPEG/JPG/PNG).');
-            $("#file").val('');
-            return false;
-        }
-    });
-
     function doDelay(wait) {
         var date = new Date();
         var startDate = date.getTime();
