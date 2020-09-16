@@ -22,9 +22,7 @@ $(document).ready(function () {
 
     })
 
-    function borrarParraf(cuenta) {
-        console.log(cuenta)
-    }
+
 
     //delay del formulario
     function doDelay(wait) {
