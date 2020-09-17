@@ -3,6 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.js"></script>
+    <script>
+        function borrarParrafo(ide, ord){
+            console.log(ide, ord)
+            $.post("borrar-parrafo.php",
+                {
+                id : ide,
+                orden: ord
+                },
+                function (){
+                    location.reload()
+                }
+            )
+
+        }
+    </script>
     <title>Document</title>
 </head>
 <body>
@@ -64,6 +80,7 @@
                                 <textarea name="texto" id="" cols="30" rows="10" class="parraf-tex"><?php echo $fParrafos['texto']; ?></textarea><br>
                                 
                             </form>
+                            <input type="button" value="" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar">
                         </li>
 
                         <?php
@@ -79,7 +96,7 @@
 ?>
     <input type="button" value="" id="btn-editar">
     </div>
-<script src="js/jquery.js"></script>
+
 <script src="js/funciones.js"></script>
 
 </body>

@@ -19,6 +19,8 @@ $(document).ready(function () {
     }
 
 
+
+
     //Envio de formulariosde editar.php
     $("#btn-editar").click(function (e) {
         e.preventDefault();
