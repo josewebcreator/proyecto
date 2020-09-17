@@ -8,6 +8,8 @@
         $orden = mysqli_real_escape_string($mysqli, $_POST['orden']);
         $consulta->bind_param("ii", $id, $orden);
         $consulta->execute();
+        $consulta->close();
+        $mysqli->close()
     }
 
 ?>
