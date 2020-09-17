@@ -9,7 +9,7 @@
         $consulta->bind_param("ii", $id, $orden);
         $consulta->execute();
         $consulta->close();
-        $mysqli->close()
+        $mysqli->close();
     }
 
 ?>
