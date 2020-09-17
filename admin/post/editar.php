@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function borrarParrafo(id, orden){
+            console.log(id)
+            console.log(orden)
+        }
+    </script>
     <title>Document</title>
 </head>
 <body>
@@ -64,6 +70,7 @@
                                 <textarea name="texto" id="" cols="30" rows="10" class="parraf-tex"><?php echo $fParrafos['texto']; ?></textarea><br>
                                 
                             </form>
+                            <input type="button" value="" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar">
                         </li>
 
                         <?php
