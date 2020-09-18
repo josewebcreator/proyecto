@@ -6,7 +6,6 @@
     <script src="js/jquery.js"></script>
     <script>
         function borrarParrafo(ide, ord){
-            console.log(ide, ord)
             $.post("borrar-parrafo.php",
                 {
                 id : ide,
