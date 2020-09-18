@@ -9,6 +9,17 @@
         $consulta = $mysqli->prepare("SELECT * FROM login WHERE 'user' = ? and 'hash' = ?;");
         $consulta->bind_param("ss", $user, $hash);
         $consulta->execute();
+        $res= $consulta->get_result();
+        $consulta->close();
 
+        if(($res->num_rows)>0){
+            //iniciar secion aqui
+            
+            $mysqli->close();
+        }else{
+            //Error aqui
+
+            $mysqli->close();
+        }
     }
 ?>
