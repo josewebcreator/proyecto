@@ -17,8 +17,6 @@ $(document).ready(function () {
             
         })
 
-        console.log(check)
-
         if (!check.includes(0)) {
             console.log("ok")
         } else {
