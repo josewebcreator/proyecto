@@ -6,8 +6,8 @@
         $pass = mysqli_real_escape_string($mysqli, $_POST['keyword']);
         $hash = password_hash($pass, PASSWORD_DEFAULT);
 
-        $consulta = $mysqli->prepare("SELECT * FROM login WHERE 'user' = ? and 'hash' = ?;");
-        $consulta->bind_param("ss", $user, $hash);
+        $consulta = $mysqli->prepare("SELECT * FROM login WHERE 'user' = ?");
+        $consulta->bind_param("s", $user);
         $consulta->execute();
         $res= $consulta->get_result();
         $consulta->close();
