@@ -12,7 +12,7 @@
         
         $res= $consulta->get_result();
         $consulta->close();
-        echo $res->num_rows;
+
         if(($res->num_rows)>0){
            
             while($check=$res->fetch_assoc()){
@@ -20,7 +20,13 @@
             }
                
             if(password_verify($pass, $hash)){
-                echo "ok";
+                session_start();
+                while($check=$res->fetch_assoc()){
+
+                    $_SESSION['usuario'] = $check['user'];
+                    $_SESSION['token'] = $check['token'];
+
+                }
             }
             
             $mysqli->close();
