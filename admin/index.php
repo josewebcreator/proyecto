@@ -11,39 +11,48 @@
         $consulta->execute();
         $res = $consulta->get_result();
         $consulta->close();
-        while(){
+
+        while($check = $res->fetch_assoc()){
+
+            $checkUser = $check['user'];
+            $checktoken = $check['token'];
 
         }
 
-    }
+        if(($user==$checkUser)&&($token==$checktoken)){
+            header("location: post\tabla.php");
+        }
+
+    }else{
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="..\js\jquery.js"></script>
-    <title></title>
-</head>
-<body>
-    <div id="login">
-            <div id="titulo">
-                <h2>Login</h2>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script src="..\js\jquery.js"></script>
+            <title></title>
+        </head>
+        <body>
+            <div id="login">
+                    <div id="titulo">
+                        <h2>Login</h2>
+                    </div>
+                    <div id="datos">
+                        <form action="">
+                            <input type="text" name="usuario" id="usuario" class="datolog">
+                            <br>
+                            <input type="password" name="keyword" id="keyword" class="datolog">
+                            <br>
+                            <input type="button" value="" name="ingresar" id="ingresar">
+                        </form>
+                    </div>
             </div>
-            <div id="datos">
-                <form action="">
-                    <input type="text" name="usuario" id="usuario" class="datolog">
-                    <br>
-                    <input type="password" name="keyword" id="keyword" class="datolog">
-                    <br>
-                    <input type="button" value="" name="ingresar" id="ingresar">
-                </form>
-            </div>
-    </div>
 
 
-<script src="js\funciones.js"></script>
-</body>
-</html>
+        <script src="js\funciones.js"></script>
+        </body>
+        </html>
+    <?php  }//fin del If?>
