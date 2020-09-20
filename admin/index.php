@@ -4,7 +4,7 @@
     if(!($_SESSION["usuario"]==null)||!($_SESSION["usuario"]=="")){
 
         require("cone\conexion.php");
-        $consulta = $mysqli->prepare("SELECT * FROM `login` WHERE `user` = ?");
+        $consulta = $mysqli->prepare("SELECT * FROM `login` WHERE `usuario` = ?");
         $user = mysqli_real_escape_string($mysqli, $_SESSION["usuario"]);
         $token = mysqli_real_escape_string($mysqli, $_SESSION["token"]);
         $consulta->bind_param("s",$user);
@@ -14,13 +14,13 @@
 
         while($check = $res->fetch_assoc()){
 
-            $checkUser = $check['user'];
+            $checkUser = $check['usuario'];
             $checktoken = $check['token'];
 
         }
 
         if(($user==$checkUser)&&($token==$checktoken)){
-            header("location: post\tabla.php");
+            header("location:post/tabla.php");
         }
 
     }else{
