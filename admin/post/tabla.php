@@ -23,7 +23,7 @@
                 while ($row = $consulta->fetch_assoc()){
                     ?>
                     <tr>
-                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['id_ent']; ?></td>
                         <td><?php echo $row['lenguaje']; ?></td>
                         <td><?php echo $row['titulo']; ?></td>
                         <td>
