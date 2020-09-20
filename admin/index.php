@@ -1,3 +1,13 @@
+<?php
+
+    session_start();
+    if(!($_SESSION["usuario"]==null)||!($_SESSION["usuario"]=="")){
+        require("cone\conexion.php");
+        
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
