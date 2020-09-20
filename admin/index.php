@@ -2,8 +2,19 @@
 
     session_start();
     if(!($_SESSION["usuario"]==null)||!($_SESSION["usuario"]=="")){
+
         require("cone\conexion.php");
-        
+        $consulta = $mysqli->prepare("SELECT * FROM `login` WHERE `user` = ?");
+        $user = mysqli_real_escape_string($mysqli, $_SESSION["usuario"]);
+        $token = mysqli_real_escape_string($mysqli, $_SESSION["token"]);
+        $consulta->bind_param("s",$user);
+        $consulta->execute();
+        $res = $consulta->get_result();
+        $consulta->close();
+        while(){
+
+        }
+
     }
 
 ?>
