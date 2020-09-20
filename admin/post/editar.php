@@ -29,8 +29,8 @@
             require('../cone/conexion.php');
             $consulta = $mysqli->prepare("SELECT * FROM entrada_blog WHERE id_ent = ?");
             $idConsulta = mysqli_real_escape_string($mysqli, $_GET['id']);
-            print_r($idConsulta);
-            echo "8<br>" .$mysqli->error;
+
+
             $consulta->bind_param("i",$idConsulta);
             $consulta->execute();
             $res = $consulta->get_result();
@@ -43,8 +43,8 @@
                 $cParrafo->execute();
                 $parrafos = $cParrafo->get_result();
                 $cParrafo->close();
-                print_r($parrafos);
-                echo "23<br>" .$mysqli->error;
+
+
                 ?>
                 <ul class="edit-entrada">
                 <?php
