@@ -4,7 +4,7 @@
     session_start();
     if(!($_SESSION["usuario"]==null)||!($_SESSION["usuario"]=="")){
 
-        require("cone\conexion.php");
+        require("..\cone\conexion.php");
         $consulta = $mysqli->prepare("SELECT * FROM `login` WHERE `usuario` = ?");
         $user = mysqli_real_escape_string($mysqli, $_SESSION["usuario"]);
         $token = mysqli_real_escape_string($mysqli, $_SESSION["token"]);
@@ -28,12 +28,7 @@
 
             $consulta = $mysqli->query("SELECT * from entrada_blog");
             $cuenta =  $consulta->num_rows;
-
-            
         
-            print_r($cuenta);
-        
-
             if ($cuenta>0){
                 ?>
                 <table>
