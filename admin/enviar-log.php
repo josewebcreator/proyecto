@@ -33,9 +33,10 @@
 
             $mysqli->close();
         }else{
-            //Error aqui
-
+            
+            
             $mysqli->close();
+            header("location:../inicio/index.php");
         }
     }else{
         header("location:../inicio/index.php");
