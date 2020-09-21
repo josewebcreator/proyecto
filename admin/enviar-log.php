@@ -37,5 +37,7 @@
 
             $mysqli->close();
         }
+    }else{
+        header("location:../inicio/index.php");
     }
 ?>
