@@ -19,6 +19,8 @@
 
         }
 
+        $mysqli->close();
+
         if(($user==$checkUser)&&($token==$checktoken)){
             header("location:post/tabla.php");
         }
