@@ -27,10 +27,6 @@
 
             }
                
-
-            
-
-
             $mysqli->close();
         }else{
             

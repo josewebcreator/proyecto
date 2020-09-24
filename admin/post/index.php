@@ -21,15 +21,11 @@
 
         $mysqli->close();
 
-        if(($user==$checkUser)&&($token==$checktoken)){ ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    </head>
-    <body>
+        if(($user==$checkUser)&&($token==$checktoken)){ 
+            $tittle= "blogs";
+            require("../activos/header.php");
+            ?>
+
                 
         <div id="carga-tabla"></div>
 

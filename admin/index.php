@@ -1,7 +1,8 @@
 <?php
 
     session_start();
-    if(!($_SESSION["usuario"]==null)||!($_SESSION["usuario"]=="")){
+
+    if((isset($_SESSION["usuario"]))){
 
         require("cone\conexion.php");
         $consulta = $mysqli->prepare("SELECT * FROM `login` WHERE `usuario` = ?");
@@ -34,21 +35,25 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="css\bootstrap.min.css">
+            <link rel="stylesheet" href="css\estilos.css">
             <script src="..\js\jquery.js"></script>
-            <title></title>
+            <title>Login</title>
         </head>
-        <body>
+        <body id="body-log">
+
+
             <div id="login">
-                    <div id="titulo">
-                        <h2>Login</h2>
+                    <div class="logo-banner">
+                        <div class="logo"><h3>logo</h3></div>
                     </div>
-                    <div id="datos">
+                    <div id="datos" class="form-group">
                         <form action="">
-                            <input type="text" name="usuario" id="usuario" class="datolog">
+                            <input type="text" placeholder="Usuario" name="usuario" id="usuario" class="datolog form-control">
                             <br>
-                            <input type="password" name="keyword" id="keyword" class="datolog">
+                            <input type="password" placeholder="Contraseña" name="keyword" id="keyword" class="datolog form-control">
                             <br>
-                            <input type="button" value="" name="ingresar" id="ingresar">
+                            <input type="button" value="Enviar" name="ingresar" class="btn btn-primary" id="ingresar">
                         </form>
                     </div>
             </div>
