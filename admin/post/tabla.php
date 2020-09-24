@@ -31,12 +31,12 @@
         
             if ($cuenta>0){
                 ?>
-                <table>
+                <table class="table table-dark">
                     <tr>
-                        <td>Id</td>
-                        <td>idioma</td>
-                        <td>Titulo</td>
-                        <td>Opciones</td>
+                        <td scope="col">Id</td>
+                        <td scope="col">idioma</td>
+                        <td scope="col">Titulo</td>
+                        <td scope="col">Opciones</td>
                     </tr>
                     <?php
                         while ($row = $consulta->fetch_assoc()){
