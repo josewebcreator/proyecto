@@ -31,31 +31,34 @@
         
             if ($cuenta>0){
                 ?>
-                <table class="table table-dark">
+                <div class="cuadro table-responsive-sm">
+                  <table class="table table-dark">
                     <tr>
-                        <td scope="col">Id</td>
-                        <td scope="col">idioma</td>
-                        <td scope="col">Titulo</td>
-                        <td scope="col">Opciones</td>
+                        <td scope="col" style="text-align: center;">Id</td>
+                        <td scope="col" style="text-align: center;">idioma</td>
+                        <td scope="col" style="text-align: center;">Titulo</td>
+                        <td scope="col" style="text-align: center;">Opciones</td>
                     </tr>
                     <?php
                         while ($row = $consulta->fetch_assoc()){
                             ?>
                             <tr>
-                                <td><?php echo $row['id_ent']; ?></td>
+                                <td style="text-align: center;"><?php echo $row['id_ent']; ?></td>
                                 <td><?php echo $row['lenguaje']; ?></td>
                                 <td><?php echo $row['titulo']; ?></td>
-                                <td>
+                                <td style="text-align: center;">
                                     
-                                    <a href="ver-admin.php?id=<?php echo $row['id']; ?>">Ver</a>
-                                    <a href="editar.php?id=<?php echo $row['id']; ?>">Editar</a>
-                                    <a href="#" class="btn-borrar" refe="<?php echo $row['id'] ?>">Borrar</a>
+                                    <a href="ver-admin.php?id=<?php echo $row['id_ent']; ?>">Ver</a>
+                                    <a href="editar.php?id=<?php echo $row['id_ent']; ?>">Editar</a>
+                                    <a href="#" class="btn-borrar" refe="<?php echo $row['id_ent'] ?>">Borrar</a>
                                     
                                 </td>
                             </tr>
                         <?php }//fin del while
                     ?>
-                </table>
+                </table>  
+                </div>
+                
                 <?php //fin IF
                 $consulta->close();
             }else{
