@@ -31,6 +31,7 @@ $(document).ready(function () {
                     });
                 })
             })
+            location.reload()
         } else {
             alert("Falta usuario o Password")
         }
