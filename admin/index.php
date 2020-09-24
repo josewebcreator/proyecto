@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+
     if((isset($_SESSION["usuario"]))){
 
         require("cone\conexion.php");
@@ -41,15 +42,11 @@
         </head>
         <body id="body-log">
 
-        <header>
-            <div class="header-content">
-                <div id="titulo">
-                    <h2>Login</h2>
-                </div>             
-            </div>
-        </header>
+
             <div id="login">
-                
+                    <div class="logo-banner">
+                        <div class="logo"><h3>logo</h3></div>
+                    </div>
                     <div id="datos" class="form-group">
                         <form action="">
                             <input type="text" placeholder="Usuario" name="usuario" id="usuario" class="datolog form-control">
