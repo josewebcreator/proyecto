@@ -1,7 +1,29 @@
+
 header{
     width: 100%;
     height: 41.2px;
     display: block;
     background-color: aqua;
+
 }
 
+#login{
+
+	width: 350px;
+	background-color: aquamarine;
+	position: relative;
+	margin: 10% auto;
+	border-radius: 10px;
+	height: 300px;
+
+}
+
+#datos{
+    position: relative;
+    margin-top: 5%;
+    padding: 5%;
+}
+
+#datos #ingresar{
+    margin-left: 78%;
+}
