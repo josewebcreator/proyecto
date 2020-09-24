@@ -49,3 +49,14 @@ header{
 	padding-top: 5%;
 
 }
+
+/*tbla*/
+
+.cuadro{
+    width: 80%;
+    margin: auto;
+    margin-top: 2%;
+    overflow: hidden;
+    border-radius: 20px;
+    
+}
