@@ -34,20 +34,29 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="css\estilos.css">
             <link rel="stylesheet" href="css\bootstrap.min.css">
+            <link rel="stylesheet" href="css\estilos.css">
             <script src="..\js\jquery.js"></script>
             <title>Login</title>
         </head>
-        <body>
+        <body id="body-log">
+
+        <header>
+            <div class="header-content">
+                <div id="titulo">
+                    <h2>Login</h2>
+                </div>             
+            </div>
+        </header>
             <div id="login">
-                    <div id="datos">
+                
+                    <div id="datos" class="form-group">
                         <form action="">
-                            <input type="text" name="usuario" id="usuario" class="datolog">
+                            <input type="text" placeholder="Usuario" name="usuario" id="usuario" class="datolog form-control">
                             <br>
-                            <input type="password" name="keyword" id="keyword" class="datolog">
+                            <input type="password" placeholder="Contraseña" name="keyword" id="keyword" class="datolog form-control">
                             <br>
-                            <input type="button" value="" name="ingresar" id="ingresar">
+                            <input type="button" value="Enviar" name="ingresar" class="btn btn-primary" id="ingresar">
                         </form>
                     </div>
             </div>
