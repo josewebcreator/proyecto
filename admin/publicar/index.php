@@ -21,9 +21,9 @@
 
         $mysqli->close();
 
-        if(($user==$checkUser)&&($token==$checktoken))
+        if(($user==$checkUser)&&($token==$checktoken)){
         $tittle="Crear Entrada";
-        require("../activos/header");{ ?>
+        require("../activos/header.php");?>
 
 
     <ul id="crea-blog">
