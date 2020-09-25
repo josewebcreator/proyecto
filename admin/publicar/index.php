@@ -21,18 +21,11 @@
 
         $mysqli->close();
 
-        if(($user==$checkUser)&&($token==$checktoken)){ ?>
+        if(($user==$checkUser)&&($token==$checktoken))
+        $tittle="Crear Entrada";
+        require("../activos/header");{ ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear entrada</title>
-</head>
-
-<body>
     <ul id="crea-blog">
         <li>
             <form action="" class="p-principal">
