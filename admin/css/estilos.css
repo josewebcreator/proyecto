@@ -60,3 +60,46 @@ header{
     border-radius: 20px;
     
 }
+
+/*crear blog*/
+
+#crea-blog{
+    list-style: none;
+    position: relative;
+    margin-top: 2%;
+}
+
+#titulo_entrada{
+    border: none;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 2px groove;
+}
+
+#texto_parrafo{
+    border: none;
+    width: 100%;
+    font-size: 20px;
+}
+
+#foto-footer{
+    border: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+.titulo_parrafo{
+    border: none;
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px groove;
+}
+
+.texto_parrafo{
+    border: none;
+    width: 100%;
+    font-size: 18px;
+}
+

@@ -21,31 +21,23 @@
 
         $mysqli->close();
 
-        if(($user==$checkUser)&&($token==$checktoken)){ ?>
+        if(($user==$checkUser)&&($token==$checktoken)){
+        $tittle="Crear Entrada";
+        require("../activos/header.php");?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear entrada</title>
-</head>
-
-<body>
+    <div class="container">
     <ul id="crea-blog">
         <li>
             <form action="" class="p-principal">
-                Titulo <br><input type="text" name="titulo_entrada" id="titulo_entrada" ><br>
+                <input type="text" name="titulo_entrada" placeholder="Título" id="titulo_entrada" ><br>
 
-                parrafo Principal <br>
-                <textarea name="parrafo" id="texto_parrafo" cols="30" rows="10"></textarea>
+                <textarea name="parrafo" id="texto_parrafo" cols="30" rows="10" placeholder="Texto del parrafo"></textarea>
 
                 imagen de cabecera <br>
-                <input type="file" name="imagen_cabecera" id="imagen_cabecera">
+                <input type="file" name="imagen_cabecera" id="imagen_cabecera" class="form-control-file">
 
-                footer foto <br>
-                <textarea name="foto-footer" id="foto-footer" cols="30" rows="10"></textarea>
+                
+                <textarea name="foto-footer" placeholder="Footer de la foto" id="foto-footer" cols="30" rows="10"></textarea>
             </form>
         </li>
     </ul>
@@ -53,6 +45,8 @@
     haga clic para incrustar otro parrafo
     <input type="button" value="incrustar" name="incrustar" id="btn-incrustar">
     <input type="button" value="enviar" name="enviar" id="btn-enviar">
+    </div>
+    
 
     <script src="js\jquery.js"></script>
     <script src="js\funciones.js"></script>
