@@ -18,7 +18,7 @@ $(document).ready(function () {
     $("#btn-incrustar").click(function (e) {
         e.preventDefault();
         cuenta += 1;
-        $("#crea-blog").append("<li id=\"cuenta"+cuenta+"\"><form class=\"p-secundario\"><br><input type=\"text\"  placeholder=\" Titulo parrafo " + cuenta + " \" name=\"t_parrafo\"class=\"titulo_parrafo\"><br><textarea name=\"parrafo_apoyo\" placeholder=\"parrafo " + cuenta + "\" class=\"texto_parrafo\" cols=\"30\" rows=\"10\"></textarea><br>imagen " + cuenta + " <br><input type=\"file\" name=\"imagen\" class=\"imagen_parrafo\" accept=\"image/*\"><input type=\"hidden\" name=\"t_entrada\" class=\"hidden\"><input type=\"hidden\" name=\"cuenta\" class=\"cuenta\" value=\""+cuenta+"\"></form><br><input type=\"button\" value=\"Borrar\" class=\"borrarParraf\" onclick=\" document.getElementById('cuenta"+cuenta+"').remove() \"></li>");
+        $("#crea-blog").append("<li id=\"cuenta"+cuenta+"\"><form class=\"p-secundario\"><br><input type=\"text\"  placeholder=\" Titulo parrafo " + cuenta + " \" name=\"t_parrafo\"class=\"titulo_parrafo\"><br><textarea name=\"parrafo_apoyo\" placeholder=\"parrafo " + cuenta + "\" class=\"texto_parrafo\" cols=\"30\" rows=\"10\"></textarea><br>imagen " + cuenta + " <br><input type=\"file\" name=\"imagen\" class=\"imagen_parrafo\" accept=\"image/*\"><input type=\"hidden\" name=\"t_entrada\" class=\"hidden\"><input type=\"hidden\" name=\"cuenta\" class=\"cuenta\" value=\""+cuenta+"\"></form><br><input type=\"button\" value=\"Borrar\" class=\"borrarParraf\" onclick=\" document.getElementById('cuenta"+cuenta+"').remove() \"></li>").hide().show('slow');
 
     })
 
