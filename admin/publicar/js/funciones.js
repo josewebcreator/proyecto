@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     })
 
-    
+    //funcion para que el parrafo pricipal aumente automaticamente su tamaño
     $('#texto_parrafo').on('change, keydown',function(e) {
         window.setTimeout(function() {
 
