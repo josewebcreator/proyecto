@@ -23,7 +23,6 @@
         $mysqli->close();
 
         if(($user==$checkUser)&&($token==$checktoken)){
-
             require('../cone/conexion.php');
 
             $consulta = $mysqli->query("SELECT * from entrada_blog");
@@ -48,7 +47,7 @@
                                 <td><?php echo $row['titulo']; ?></td>
                                 <td style="text-align: center;">
                                     
-                                    <a href="ver-admin.php?id=<?php echo $row['id_ent']; ?>">Ver</a>
+                                    <a href="ver-admin.php?id=<?php echo $row['id_ent']; ?>&titulo=<?php echo $row['titulo'] ?>">Ver</a>
                                     <a href="editar.php?id=<?php echo $row['id_ent']; ?>">Editar</a>
                                     <a href="#" class="btn-borrar" refe="<?php echo $row['id_ent'] ?>">Borrar</a>
                                     
