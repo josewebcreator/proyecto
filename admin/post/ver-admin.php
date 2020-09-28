@@ -27,8 +27,6 @@
                 require('../cone/conexion.php');
                 $consulta = $mysqli->prepare("SELECT * FROM entrada_blog WHERE id_ent = ?");
                 $idConsulta = mysqli_real_escape_string($mysqli, $_GET['id']);
-                print_r($idConsulta);
-                echo "8<br>" .$mysqli->error;
                 $consulta->bind_param("i",$idConsulta);
                 $consulta->execute();
                 $res = $consulta->get_result();
@@ -44,14 +42,15 @@
                     $cParrafo->execute();
                     $parrafos = $cParrafo->get_result();
                     $cParrafo->close();
-                    print_r($parrafos);
-                    echo "23<br>" .$mysqli->error;
+
                     ?>
                     <div class="entrada">
                     <?php
+                    $tittle = $_GET['titulo'];
+                    require('../activos/header.php');
+                    ?> <div class="container"> <?php
                     while($resFilas = $res->fetch_assoc()){ ?>
                         <div id="pPal">
-                            <h2><?php echo $resFilas['titulo']; ?></h2><br>
                             <p><?php echo $resFilas['imagen_central']; ?></p><!-- cambiar a imagen -->
                             <p><?php echo $resFilas['foto_footer']; ?></p>
                             <p><?php echo $resFilas['texto']; ?></p>
@@ -73,7 +72,7 @@
                         } //fin while
                     }
 
-                    ?> </div> <?php //cierre del dif entrada
+                    ?> </div></div><?php //cierre del dif entrada
                 } // fin If
 
                 $mysqli->close();
