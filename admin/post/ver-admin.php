@@ -53,10 +53,7 @@
                         <div id="pPal">
                             <img id="img-ppal" src="../publicar/uploads/<?php echo $resFilas['imagen_central']; ?>" alt="" width="100%" height="300px">
                             <p id="footer"><?php echo str_replace('\r\n', "<br/>", $resFilas['foto_footer']);  ?></p>
-                            <?php $texto = $resFilas['texto'];
-                                $texto = str_replace('\r\n', "<br/>", $texto);
-                            ?>
-                            <p class="parra-ppal"><?php echo $texto; ?></p>
+                            <p class="parra-ppal"><?php echo str_replace('\r\n', "<br/>", $resFilas['texto']); ?></p>
                         </div>
                     <?php
                     } // fin while
@@ -68,7 +65,7 @@
                             <div class="pSecundario">
                                 <h3><?php echo $fParrafos['sub_titulo']; ?></h3>
                                 <p><?php echo $fParrafos['imagen_parrafo']; ?></p>
-                                <p><?php echo $fParrafos['texto']; ?></p>
+                                <p><?php echo  str_replace('\r\n', "<br/>", $fParrafos['texto']) ; ?></p>
                             </div>
 
                             <?php
