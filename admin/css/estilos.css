@@ -113,7 +113,15 @@ header{
     font-size: 10px;
 }
 
-.parra-ppal{
+#parra-ppal{
 
     font-size: 18px;
+}
+
+.subtitulo{
+    font-size: 24px;
+}
+
+.blog-admin{
+   margin-left: -4%;
 }
