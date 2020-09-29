@@ -103,3 +103,25 @@ header{
     font-size: 18px;
 }
 
+/*ver admin*/
+
+#img-ppal{
+    margin: 10px 0;
+}
+
+#footer{
+    font-size: 10px;
+}
+
+#parra-ppal{
+
+    font-size: 18px;
+}
+
+.subtitulo{
+    font-size: 24px;
+}
+
+.blog-admin{
+   margin-left: -4%;
+}
