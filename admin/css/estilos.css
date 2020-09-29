@@ -114,5 +114,6 @@ header{
 }
 
 .parra-ppal{
-    word-break: break-all;
+
+    font-size: 18px;
 }
