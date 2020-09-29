@@ -103,3 +103,16 @@ header{
     font-size: 18px;
 }
 
+/*ver admin*/
+
+#img-ppal{
+    margin: 10px 0;
+}
+
+#footer{
+    font-size: 10px;
+}
+
+.parra-ppal{
+    word-break: break-all;
+}
