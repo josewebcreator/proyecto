@@ -44,11 +44,12 @@
                     $cParrafo->close();
 
                     ?>
-                    <div class="entrada">
+                    <div class="entrada ">
                     <?php
                     $tittle = $_GET['titulo'];
                     require('../activos/header.php');
-                    ?> <div class="container"> <?php
+                    ?> <div class="container">
+                        <div class="blog-admin col-8"> <?php
                     while($resFilas = $res->fetch_assoc()){ ?>
                         <div id="pPal">
                             <img id="img-ppal" src="../publicar/uploads/<?php echo $resFilas['imagen_central']; ?>" alt="" width="100%" height="300px">
@@ -63,16 +64,19 @@
                             ?>
 
                             <div class="pSecundario">
-                                <h3><?php echo $fParrafos['sub_titulo']; ?></h3>
-                                <p><?php echo $fParrafos['imagen_parrafo']; ?></p>
+                                <h3 class="subtitulo"><?php echo $fParrafos['sub_titulo']; ?></h3>
                                 <p><?php echo  str_replace('\r\n', "<br/>", $fParrafos['texto']) ; ?></p>
+                                <img class="img-secun" src="../publicar/uploads/<?php echo  $fParrafos['imagen_parrafo']; ?>" alt="" width="100%" height="300px">
+                                
                             </div>
 
                             <?php
                         } //fin while
                     }
 
-                    ?> </div></div><?php //cierre del dif entrada
+                    ?> </div>
+                    </div>
+                </div><?php //cierre del dif entrada
                 } // fin If
 
                 $mysqli->close();
