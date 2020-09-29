@@ -51,8 +51,8 @@
                     ?> <div class="container"> <?php
                     while($resFilas = $res->fetch_assoc()){ ?>
                         <div id="pPal">
-                            <p><?php echo $resFilas['imagen_central']; ?></p><!-- cambiar a imagen -->
-                            <p><?php echo $resFilas['foto_footer']; ?></p>
+                            <img id="img-ppal" src="../publicar/uploads/<?php echo $resFilas['imagen_central']; ?>" alt="" width="100%" height="300px">
+                            <p id="footer"><?php echo str_replace('\r\n', "<br/>", $resFilas['foto_footer']);  ?></p>
                             <?php $texto = $resFilas['texto'];
                                 $texto = str_replace('\r\n', "<br/>", $texto);
                             ?>
