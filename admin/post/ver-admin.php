@@ -53,7 +53,10 @@
                         <div id="pPal">
                             <p><?php echo $resFilas['imagen_central']; ?></p><!-- cambiar a imagen -->
                             <p><?php echo $resFilas['foto_footer']; ?></p>
-                            <p><?php echo $resFilas['texto']; ?></p>
+                            <?php $texto = $resFilas['texto'];
+                                $texto = str_replace('\r\n', "<br/>", $texto);
+                            ?>
+                            <p class="parra-ppal"><?php echo $texto; ?></p>
                         </div>
                     <?php
                     } // fin while
