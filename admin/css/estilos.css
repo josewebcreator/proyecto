@@ -105,6 +105,10 @@ header{
 
 /*ver admin*/
 
+.entrada{
+    font-family: Helvetica
+}
+
 #img-ppal{
     margin: 10px 0;
 }
@@ -114,7 +118,6 @@ header{
 }
 
 #parra-ppal{
-
     font-size: 18px;
 }
 
@@ -122,6 +125,9 @@ header{
     font-size: 24px;
 }
 
+.paraf-secun{
+    font-size: 16px;
+}
 .blog-admin{
    margin-left: -4%;
 }

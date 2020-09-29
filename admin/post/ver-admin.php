@@ -65,7 +65,7 @@
 
                             <div class="pSecundario">
                                 <h3 class="subtitulo"><?php echo $fParrafos['sub_titulo']; ?></h3>
-                                <p><?php echo  str_replace('\r\n', "<br/>", $fParrafos['texto']) ; ?></p>
+                                <p class="paraf-secun"><?php echo  str_replace('\r\n', "<br/>", $fParrafos['texto']) ; ?></p>
                                 <img class="img-secun" src="../publicar/uploads/<?php echo  $fParrafos['imagen_parrafo']; ?>" alt="" width="100%" height="300px">
                                 
                             </div>
