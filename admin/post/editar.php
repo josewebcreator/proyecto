@@ -61,9 +61,9 @@ session_start();
                             <input type="hidden" name="id" class="ppal-id" value="<?php echo $resFilas['id_ent']; ?>">
                             <input type="file" name="imagen" accept="image/*" class="ppal-img">
                             <img src="../publicar/uploads/<?php echo $resFilas['imagen_central']; ?>" alt="" width="100%" height="300px">
-                            <textarea name="foto-footer" id="" cols="30" rows="10"class="ppal-footer"><?php echo $resFilas['foto_footer']; ?></textarea><br>
+                            <textarea name="foto-footer" id="" cols="30" rows="5"class="ppal-footer"><?php echo str_replace('\r\n', "\r\n", $resFilas['foto_footer']); ?></textarea><br>
                             <input type="text" name="titulo" class="ppal-ttlo" value="<?php echo $resFilas['titulo']; ?>"><br>
-                            <textarea name="texto" id="" cols="30" rows="10" class="ppal-texto"><?php echo $resFilas['texto']; ?></textarea><br>
+                            <textarea name="texto" id="" cols="30" rows="10" class="ppal-texto"><?php echo str_replace('\r\n', "\r\n", $resFilas['texto'])  ?></textarea><br>
                         </form>
                     </li>
                 <?php
