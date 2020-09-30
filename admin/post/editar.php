@@ -82,21 +82,22 @@ session_start();
                                 <input type="file" name="imagen_parrafo" accept="image/*" class="parraf-img"><br>
                                 <img src="../publicar/uploads/<?php echo $fParrafos['imagen_parrafo']; ?>" alt="" width="100%" height="300px">
                             </form>
-                            <input type="button" value="" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar">
+                            <input type="button" value="Borrar" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar btn btn-outline-primary">
                         </li>
 
                         <?php
                     } //fin while
                 }
 
-                ?> </ul> <?php //cierre del dif entrada
+                ?> </ul>
+                <input type="button" value="Editar" class="btn btn-warning btn-lg" id="btn-editar"> <?php //cierre del dif entrada
             } // fin If
 
             $mysqli->close();
         }
 
 ?>
-    <input type="button" value="" id="btn-editar">
+    
     </div>
     <script>
         function borrarParrafo(ide, ord){
