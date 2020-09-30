@@ -131,3 +131,23 @@ header{
 .blog-admin{
    margin-left: -4%;
 }
+
+/*Edicion*/
+
+#edicion{
+    font-family: Helvetica
+}
+
+.edit-entrada{
+    list-style: none;
+}
+
+.ppal-ttlo{
+    border: none;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 2px groove;
+    
+}
+
