@@ -22,32 +22,11 @@ session_start();
         $mysqli->close();
 
         if(($user==$checkUser)&&($token==$checktoken)){ 
-
+        $tittle="Editar";
+        require('../activos/header.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/jquery.js"></script>
-    <script>
-        function borrarParrafo(ide, ord){
-            $.post("borrar-parrafo.php",
-                {
-                id : ide,
-                orden: ord
-                },
-                function (){
-                    location.reload()
-                }
-            )
 
-        }
-    </script>
-    <title>Document</title>
-</head>
-<body>
 
     <div id="edicion">
         <?php
@@ -80,13 +59,11 @@ session_start();
                         <form class="p-principal">
                             <input type="hidden" name="principal">
                             <input type="hidden" name="id" class="ppal-id" value="<?php echo $resFilas['id_ent']; ?>">
-                            titulo principal <br>
-                            <input type="text" name="titulo" class="ppal-ttlo" value="<?php echo $resFilas['titulo']; ?>"><br>
                             <input type="file" name="imagen" accept="image/*" class="ppal-img">
-                            <p><?php echo $resFilas['imagen_central']; ?></p><!-- cambiar a imagen -->
-                            <textarea name="texto" id="" cols="30" rows="10" class="ppal-texto"><?php echo $resFilas['texto']; ?></textarea><br>
+                            <img src="../publicar/uploads/<?php echo $resFilas['imagen_central']; ?>" alt="" width="100%" height="300px">
                             <textarea name="foto-footer" id="" cols="30" rows="10"class="ppal-footer"><?php echo $resFilas['foto_footer']; ?></textarea><br>
-                            
+                            <input type="text" name="titulo" class="ppal-ttlo" value="<?php echo $resFilas['titulo']; ?>"><br>
+                            <textarea name="texto" id="" cols="30" rows="10" class="ppal-texto"><?php echo $resFilas['texto']; ?></textarea><br>
                         </form>
                     </li>
                 <?php
@@ -122,7 +99,20 @@ session_start();
 ?>
     <input type="button" value="" id="btn-editar">
     </div>
+    <script>
+        function borrarParrafo(ide, ord){
+            $.post("borrar-parrafo.php",
+                {
+                id : ide,
+                orden: ord
+                },
+                function (){
+                    location.reload()
+                }
+            )
 
+        }
+    </script>
 <script src="js/funciones.js"></script>
 
 </body>
