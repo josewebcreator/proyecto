@@ -28,7 +28,7 @@ session_start();
 
 
 
-    <div id="edicion">
+    <div id="edicion" class="container">
         <?php
 
         if(isset($_GET['id'])){
@@ -52,7 +52,7 @@ session_start();
 
 
                 ?>
-                <ul class="edit-entrada">
+                <ul class="edit-entrada col-8">
                 <?php
                 while($resFilas = $res->fetch_assoc()){ ?>
                     <li id="edit-pPal">
@@ -61,9 +61,9 @@ session_start();
                             <input type="hidden" name="id" class="ppal-id" value="<?php echo $resFilas['id_ent']; ?>">
                             <input type="file" name="imagen" accept="image/*" class="ppal-img">
                             <img src="../publicar/uploads/<?php echo $resFilas['imagen_central']; ?>" alt="" width="100%" height="300px">
-                            <textarea name="foto-footer" id="" cols="30" rows="10"class="ppal-footer"><?php echo $resFilas['foto_footer']; ?></textarea><br>
+                            <textarea name="foto-footer" id="" cols="30" rows="5"class="ppal-footer"><?php echo str_replace('\r\n', "\r\n", $resFilas['foto_footer']); ?></textarea><br>
                             <input type="text" name="titulo" class="ppal-ttlo" value="<?php echo $resFilas['titulo']; ?>"><br>
-                            <textarea name="texto" id="" cols="30" rows="10" class="ppal-texto"><?php echo $resFilas['texto']; ?></textarea><br>
+                            <textarea name="texto" id="" cols="30" rows="10" class="ppal-texto"><?php echo str_replace('\r\n', "\r\n", $resFilas['texto'])  ?></textarea><br>
                         </form>
                     </li>
                 <?php
@@ -78,26 +78,26 @@ session_start();
                                 <input type="hidden" name="id" class="parraf-id" value="<?php echo $fParrafos['id']; ?>"><br>
                                 <input type="hidden" name="orden" class="parraf-orden" value="<?php echo $fParrafos['orden']; ?>"><br>
                                 <input type="text" name="subtitulo" class="parraf-sub" value="<?php echo $fParrafos['sub_titulo']; ?>"><br>
+                                <textarea name="texto" id="" cols="30" rows="10" class="parraf-tex"><?php echo str_replace('\r\n', "\r\n", $fParrafos['texto']) ; ?></textarea><br>
                                 <input type="file" name="imagen_parrafo" accept="image/*" class="parraf-img"><br>
-                                <p><?php echo $resFilas['imagen_parrafo']; ?></p><br>
-                                <textarea name="texto" id="" cols="30" rows="10" class="parraf-tex"><?php echo $fParrafos['texto']; ?></textarea><br>
-                                
+                                <img src="../publicar/uploads/<?php echo $fParrafos['imagen_parrafo']; ?>" alt="" width="100%" height="300px">
                             </form>
-                            <input type="button" value="" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar">
+                            <input type="button" value="Borrar" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar btn btn-outline-primary">
                         </li>
 
                         <?php
                     } //fin while
                 }
 
-                ?> </ul> <?php //cierre del dif entrada
+                ?> </ul>
+                <input type="button" value="Editar" class="btn btn-warning btn-lg" id="btn-editar"> <?php //cierre del dif entrada
             } // fin If
 
             $mysqli->close();
         }
 
 ?>
-    <input type="button" value="" id="btn-editar">
+    
     </div>
     <script>
         function borrarParrafo(ide, ord){

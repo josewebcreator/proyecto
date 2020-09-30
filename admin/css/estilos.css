@@ -145,9 +145,45 @@ header{
 .ppal-ttlo{
     border: none;
     font-size: 30px;
-    text-align: center;
     width: 100%;
     border-bottom: 2px groove;
+    margin-bottom: 1.5%;
     
 }
 
+.ppal-footer{
+    border: none;
+    width: 100%;
+    font-size: 10px;
+}
+
+.ppal-texto{
+    border: none;
+    width: 100%;
+    font-size: 16px;
+
+}
+
+.parraf-sub{
+    border: none;
+    font-size: 25px;
+    width: 100%;
+    border-bottom: 1px groove;
+    margin-bottom: 1.5%;
+}
+
+.parraf-tex{
+    border: none;
+    width: 100%;
+    font-size: 18px;
+}
+
+.borrar{
+    position:relative;
+    margin-top: 5px;
+}
+
+#btn-editar{
+    
+    margin-left: 1%;
+}
