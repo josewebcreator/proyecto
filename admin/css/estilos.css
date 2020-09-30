@@ -163,3 +163,17 @@ header{
     font-size: 16px;
 
 }
+
+.parraf-sub{
+    border: none;
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px groove;
+}
+
+.parraf-tex{
+    border: none;
+    width: 100%;
+    font-size: 18px;
+}
