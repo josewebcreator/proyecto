@@ -82,6 +82,11 @@ $(document).ready(function () {
 
     });
 
+    function ordenParraf(array) {
+        orden = array
+        
+    }
+
     function orden() {
         var actual = []
         var val
@@ -116,11 +121,14 @@ $(document).ready(function () {
         })
 
         for (var con = 0; con < nVal; con = con+1){
-            console.log(con)
+            //console.log(con)
             aux.push([actual[con], nuevo[con]])
         }
 
-        console.log(aux)
+        for (con = 0; con < nVal; con = con + 1){
+            ordenParraf(aux[con])
+        }
+        
     }
     
     $(".orden").click(function (e) { 
