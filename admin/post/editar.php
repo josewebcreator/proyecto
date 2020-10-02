@@ -23,8 +23,31 @@ session_start();
 
         if(($user==$checkUser)&&($token==$checktoken)){ 
         $tittle="Editar";
-        require('../activos/header.php');
+        //require('../activos/header.php');
 ?>
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="../css/estilos.css">
+            <link rel="stylesheet" href="..\css\bootstrap.min.css">
+            <script src="js/jquery.js"></script>
+            <title><?php echo $tittle;?></title>
+        </head>
+        <body>
+            <header>
+                <div class="header-content">
+                    <div id="titulo">
+                        <h2><?php echo $tittle;?></h2>
+                    </div>
+
+                        <nav id="menu">
+                            
+                        </nav>               
+                </div>
+            </header>
 
 
 
@@ -83,6 +106,7 @@ session_start();
                                 <img src="../publicar/uploads/<?php echo $fParrafos['imagen_parrafo']; ?>" alt="" width="100%" height="300px">
                             </form>
                             <input type="button" value="Borrar" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar btn btn-outline-primary">
+                            <input type="button" value="orden" class="orden">
                         </li>
 
                         <?php
