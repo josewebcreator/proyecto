@@ -84,17 +84,43 @@ $(document).ready(function () {
 
     function orden() {
         var actual = []
+        var val
+        var nuevo = []
+        var nVal = 0
+        var aux = []
 
-        $("edicion li").each(function () {
-            if (($(this).children(".edit-pSecundario")).length) {
+        $("#edicion li").each(function () {
+            if ($(this).is(".edit-pSecundario")) {
+                //console.log("ok")
                 $("form", this).children().each(function () {
                     if ($(this).is(".parraf-orden")) {
-                        actual.push($(this).val())
+                        val = $(this).val()
+                        //console.log(val)
+                        actual.push(val)
                     }
                 })
             }
-            console.log(actual)
         })
+
+        $("#edicion li").each(function () {
+            if ($(this).is(".edit-pSecundario")) {
+                //console.log("ok")
+                $("form", this).children().each(function () {
+                    if ($(this).is(".parraf-orden")) {
+                        nVal += 1
+                        nuevo.push(nVal)
+                        //programar el cambio del val parraf orden
+                    }
+                })
+            }
+        })
+
+        for (var con = 0; con < nVal; con = con+1){
+            console.log(con)
+            aux.push([actual[con], nuevo[con]])
+        }
+
+        console.log(aux)
     }
     
     $(".orden").click(function (e) { 
