@@ -81,4 +81,26 @@ $(document).ready(function () {
             
 
     });
+
+    function orden() {
+        var actual = []
+
+        $("edicion li").each(function () {
+            if (($(this).children(".edit-pSecundario")).length) {
+                $("form", this).children().each(function () {
+                    if ($(this).is(".parraf-orden")) {
+                        actual.push($(this).val())
+                    }
+                })
+            }
+            console.log(actual)
+        })
+    }
+    
+    $(".orden").click(function (e) { 
+        e.preventDefault();
+        orden();
+    });
+    
+
 })
