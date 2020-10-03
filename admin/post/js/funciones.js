@@ -82,10 +82,17 @@ $(document).ready(function () {
 
     });
 
+    /*reorganizacion para la insercion de un nuevo parrafo*/
     function ordenParraf(array) {
-        orden = array
-        
+        var ordena = array
+        console.log(ordena)
+        return
     }
+
+    var idEnt
+
+    idEnt = $(".ppal-id").val()
+    
 
     function orden() {
         var actual = []
@@ -122,18 +129,20 @@ $(document).ready(function () {
 
         for (var con = 0; con < nVal; con = con+1){
             //console.log(con)
-            aux.push([actual[con], nuevo[con]])
+            aux.push([actual[con], nuevo[con], idEnt])
         }
 
         for (con = 0; con < nVal; con = con + 1){
             ordenParraf(aux[con])
         }
-        
+
+        return
     }
     
     $(".orden").click(function (e) { 
-        e.preventDefault();
-        orden();
+        e.preventDefault()
+        orden()
+        return
     });
     
 
