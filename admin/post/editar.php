@@ -116,7 +116,7 @@ session_start();
                 ?> </ul>
                 <input type="button" value="Editar" class="btn btn btn-outline-primary" id="btn-editar"> 
                 <br> <h6>Insertar parrafo desdpues de:</h6>
-                <select name="" id="insertSelec" class="form-control">
+                <select name="" id="insertSelec" class="form-control col-4">
                     <option value="0">Parrafo Principal</option>
                 </select> <?php //cierre del dif entrada
             } // fin If
