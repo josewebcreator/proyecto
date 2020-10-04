@@ -82,6 +82,33 @@ $(document).ready(function () {
 
     });
 
+    //Selec InsertSelec para insertar parrafos
+
+    function armarSelect() {
+        var con = 0
+        var o
+        var name
+        $("#edicion li").each(function () {
+            if ($(this).is(".edit-pSecundario")) {
+                //console.log("ok")
+                con += 1
+                $("form", this).children().each(function () {
+                    
+                    if ($(this).is(".parraf-sub")) {
+                        name = $(this).val()
+                        o = new Option(name, con);
+                        $(o).html(name);
+                        $("#insertSelec").append(o);
+                    }
+                    
+                })
+            }
+        })
+
+    }
+
+    armarSelect()
+
     /*reorganizacion para la insercion de un nuevo parrafo*/
     function ordenParraf(array) {
         var ordena = array
