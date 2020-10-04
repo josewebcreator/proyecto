@@ -105,7 +105,7 @@ session_start();
                                 <input type="file" name="imagen_parrafo" accept="image/*" class="parraf-img"><br>
                                 <img src="../publicar/uploads/<?php echo $fParrafos['imagen_parrafo']; ?>" alt="" width="100%" height="300px">
                             </form>
-                            <input type="button" value="Borrar" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar btn btn-outline-primary">
+                            <input type="button" value="Borrar" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar btn-warning btn-lg">
                             <input type="button" value="orden" class="orden">
                         </li>
 
@@ -114,7 +114,11 @@ session_start();
                 }
 
                 ?> </ul>
-                <input type="button" value="Editar" class="btn btn-warning btn-lg" id="btn-editar"> <?php //cierre del dif entrada
+                <input type="button" value="Editar" class="btn btn btn-outline-primary" id="btn-editar"> 
+                <br> <h6>Insertar parrafo desdpues de:</h6>
+                <select name="" id="insertSelec" class="form-control">
+                    <option value="0">Parrafo Principal</option>
+                </select> <?php //cierre del dif entrada
             } // fin If
 
             $mysqli->close();
