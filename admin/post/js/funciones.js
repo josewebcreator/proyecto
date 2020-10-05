@@ -107,6 +107,15 @@ $(document).ready(function () {
 
     }
 
+    //Obtencion y almacenamiento valor selec
+
+    var seleccion = 0
+
+    $("#insertSelec").change(function () {
+        seleccion = $('#insertSelec').val()
+        //console.log(seleccion)
+    })
+
     armarSelect()
 
     /*reorganizacion para la insercion de un nuevo parrafo*/
