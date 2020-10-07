@@ -104,8 +104,14 @@ $(document).ready(function () {
                 })
             }
         })
-
+        
     }
+
+    //obtencion ID de la publicacion
+
+    var idEnt
+
+    idEnt = $(".ppal-id").val()
 
     //Obtencion y almacenamiento valor selec
 
@@ -118,6 +124,16 @@ $(document).ready(function () {
 
     armarSelect()
 
+    //insercion de nuevo parrafo
+
+    $(".agregar-parraf").click(function () {
+        console.log("ok")
+        var hijo = ".hijo" + seleccion
+        $("<li class=\"edit-pSecundario\"><form><input type=\"hidden\" name=\"id\" class=\"parraf-id\" value=\"\"><br><input type=\"hidden\" name=\"orden\" class=\"parraf-orden\" value=\"provisional\"><br><input type=\"text\" name=\"subtitulo\" class=\"parraf-sub\" value=\"ingresar Subtitulo\"><br><textarea name=\"texto\" id=\"\" cols=\"30\" rows=\"10\" class=\"parraf-tex\"></textarea><br><input type=\"file\" name=\"imagen_parrafo\" accept=\"image/*\" class=\"parraf-img\"><br></form><input type=\"button\" value=\"Borrar\" name=\"borrar\" onclick=\"borrarParrafo("+ idEnt +","+ (seleccion + 1) +")\" class=\"borrar btn-warning btn-lg\"></li>").insertAfter(hijo)
+        
+        return
+    })
+
     /*reorganizacion para la insercion de un nuevo parrafo*/
     function ordenParraf(array) {
         var ordena = array
@@ -125,9 +141,7 @@ $(document).ready(function () {
         return
     }
 
-    var idEnt
-
-    idEnt = $(".ppal-id").val()
+    
     
 
     function orden() {
