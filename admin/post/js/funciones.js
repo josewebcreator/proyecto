@@ -126,6 +126,22 @@ $(document).ready(function () {
 
     //insercion de nuevo parrafo
 
+    //funcion para quitar botones de borrado
+
+    function quitarBorrado() {
+       $("#edicion li").each(function () {
+            if ($(this).is(".edit-pSecundario")) {
+                //console.log("ok")
+                $( this).children().each(function () {
+                    if ($(this).is(".borrar")) {
+                        $(this).remove()
+                    }
+                })
+            }
+        }) 
+    }
+        
+
     $(".agregar-parraf").click(function () {
         console.log("ok")
         var hijo = ".hijo" + seleccion
