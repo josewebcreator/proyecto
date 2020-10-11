@@ -148,7 +148,17 @@ $(document).ready(function () {
     /*reorganizacion para la insercion de un nuevo parrafo*/
     function ordenParraf(array) {
         var ordena = array
-        console.log(ordena)
+        //console.log(ordena)
+        $.post("reordenar.php",
+            {
+                viejo : ordena[0],
+                nuevo: ordena[1],
+                id: ordena[2]
+            },
+            function (){
+                console.log(ordena)
+            }
+        )
         return
     }
 
