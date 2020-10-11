@@ -22,7 +22,7 @@
 
         if(($user==$checkUser)&&($token==$checktoken)){
 
-            if(isset($_POST["viejo"])&&isset($_POST["nuevo"])&&isset($_POST["idEnt"])){
+            if(isset($_POST["viejo"])&&isset($_POST["nuevo"])&&isset($_POST["id"])){
  
                 if($_POST["viejo"]=="provisional"){
                     //hacer insert aqui
