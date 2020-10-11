@@ -78,7 +78,9 @@ $(document).ready(function () {
         } else {
             alert("existen campos vacios, por favor validar")
         }
-            
+        
+        doDelay(150)
+        location.reload()
 
     });
 
