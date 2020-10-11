@@ -124,36 +124,27 @@ $(document).ready(function () {
 
     armarSelect()
 
-    //insercion de nuevo parrafo
+    
 
     //funcion para reemplazar botones de borrado
+    var aux
 
     function cambiarBorrado() {
+        var i = 0
        $("#edicion li").each(function () {
             if ($(this).is(".edit-pSecundario")) {
                 //console.log("ok")
                 $( this).children().each(function () {
                     if ($(this).is(".borrar")) {
-                        $(this).replaceWith("<input type=\"button\" value=\"Borrar\" name=\"borrar\"  onclick=\"borrarParrafo(,)\" class=\"borrar btn-warning btn-lg\"></input>")
+                        $(this).replaceWith("<input type=\"button\" value=\"Borrar\" name=\"borrar\"  onclick=\"borrarParrafo(" + aux[i][1] + "," + aux[i][2] + ")\" class=\"borrar btn-warning btn-lg\"></input>")
+                        i += 1
                     }
                 })
             }
        })
-
+       return
     }
     
-
-
-    $(".agregar-parraf").click(function () {
-        console.log("ok")
-        var hijo = ".hijo" + seleccion
-        $("<li class=\"edit-pSecundario\"><form><input type=\"hidden\" name=\"id\" class=\"parraf-id\" value=\"\"><br><input type=\"hidden\" name=\"orden\" class=\"parraf-orden\" value=\"provisional\"><br><input type=\"text\" name=\"subtitulo\" class=\"parraf-sub\" value=\"ingresar Subtitulo\"><br><textarea name=\"texto\" id=\"\" cols=\"30\" rows=\"10\" class=\"parraf-tex\"></textarea><br><input type=\"file\" name=\"imagen_parrafo\" accept=\"image/*\" class=\"parraf-img\"><br></form><input type=\"button\" value=\"Borrar\" name=\"borrar\" onclick=\"borrarParrafo("+ idEnt +","+ (seleccion + 1) +")\" class=\"borrar btn-warning btn-lg\"></li>").insertAfter(hijo)
-        
-        cambiarBorrado()
-
-        return
-    })
-
     /*reorganizacion para la insercion de un nuevo parrafo*/
     function ordenParraf(array) {
         var ordena = array
@@ -162,14 +153,13 @@ $(document).ready(function () {
     }
 
     
-    
 
     function orden() {
         var actual = []
         var val
         var nuevo = []
         var nVal = 0
-        var aux = []
+        aux = []
 
         $("#edicion li").each(function () {
             if ($(this).is(".edit-pSecundario")) {
@@ -191,7 +181,7 @@ $(document).ready(function () {
                     if ($(this).is(".parraf-orden")) {
                         nVal += 1
                         nuevo.push(nVal)
-                        //programar el cambio del val parraf orden
+                        $(this).val(nVal)
                     }
                 })
             }
@@ -208,12 +198,26 @@ $(document).ready(function () {
 
         return
     }
-    
-    $(".orden").click(function (e) { 
-        e.preventDefault()
+
+    //insercion de nuevo parrafo
+
+    $(".agregar-parraf").click(function () {
+        //console.log("ok")
+        var hijo = ".hijo" + seleccion
+        $("<li class=\"edit-pSecundario\"><form><input type=\"hidden\" name=\"id\" class=\"parraf-id\" value=\"\"><br><input type=\"hidden\" name=\"orden\" class=\"parraf-orden\" value=\"provisional\"><br><input type=\"text\" name=\"subtitulo\" class=\"parraf-sub\" value=\"ingresar Subtitulo\"><br><textarea name=\"texto\" id=\"\" cols=\"30\" rows=\"10\" class=\"parraf-tex\"></textarea><br><input type=\"file\" name=\"imagen_parrafo\" accept=\"image/*\" class=\"parraf-img\"><br></form><input type=\"button\" value=\"Borrar\" name=\"borrar\" onclick=\"borrarParrafo("+ idEnt +","+ (seleccion + 1) +")\" class=\"borrar btn-warning btn-lg\"></li>").insertAfter(hijo)
+        
         orden()
+        doDelay(250)
+        cambiarBorrado()
+        
+        
+
         return
-    });
+    })
+
+
+    
+
     
 
 })
