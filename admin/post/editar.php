@@ -132,6 +132,7 @@ session_start();
     </div>
     <script>
         function borrarParrafo(ide, ord){
+            
             $.post("borrar-parrafo.php",
                 {
                 id : ide,
