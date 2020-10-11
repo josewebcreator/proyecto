@@ -25,7 +25,7 @@
             if(isset($_POST['id']) && (empty($_FILES['imagen_parrafo']['name']))){
 
                 require('../cone/conexion.php');
-                $consulta = $mysqli->prepare('UPDATE parrafo_blog SET sub_titulo = ?, texto = ? WHERE id = ? AND orden = ?');
+                $consulta = $mysqli->prepare('UPDATE parrafo_blog SET sub_titulo = ?, texto = ? WHERE id_entrada_blog = ? AND orden = ?');
                 $titulo = mysqli_real_escape_string($mysqli, $_POST['subtitulo']);
                 $orden = mysqli_real_escape_string($mysqli, $_POST['orden']);
                 $texto = mysqli_real_escape_string($mysqli, $_POST['texto']);
@@ -59,7 +59,7 @@
                     }
                 }
                 
-                $imagen = $mysqli->prepare('SELECT imagen_parrafo FROM parrafo_blog WHERE id = ? AND orden = ?');
+                $imagen = $mysqli->prepare('SELECT imagen_parrafo FROM parrafo_blog WHERE id_entrada_blog = ? AND orden = ?');
                 $id = mysqli_real_escape_string($mysqli, $_POST['id']);
                 $orden = mysqli_real_escape_string($mysqli, $_POST['orden']);
 
@@ -75,7 +75,7 @@
                 print_r($ruta);
                 unlink($ruta);
 
-                $consulta = $mysqli->prepare('UPDATE parrafo_blog SET sub_titulo = ?, texto = ?, imagen_parrafo = ? WHERE id = ? AND orden = ?');
+                $consulta = $mysqli->prepare('UPDATE parrafo_blog SET sub_titulo = ?, texto = ?, imagen_parrafo = ? WHERE id_entrada_blog = ? AND orden = ?');
 
                 $titulo = mysqli_real_escape_string($mysqli, $_POST['subtitulo']);
                 $orden = mysqli_real_escape_string($mysqli, $_POST['orden']);
