@@ -82,6 +82,24 @@ $(document).ready(function () {
 
     });
 
+    //Sustituidor de clases
+
+    function cambioHijo() {
+        var con = 0
+        var hijo = "hijo"
+        $("#edicion li").each(function () {
+            if (!($(this).is("#edit-pPal"))) {
+                //console.log("ok")
+                con += 1
+                hijo = "hijo"
+                hijo = hijo + con
+                $(this).removeClass()
+                $(this).addClass('edit-pSecundario')
+                $(this).addClass(hijo)
+            }
+        })
+    }
+
     //Selec InsertSelec para insertar parrafos
 
     function armarSelect() {
@@ -105,6 +123,7 @@ $(document).ready(function () {
             }
         })
         
+        return
     }
 
     //obtencion ID de la publicacion
@@ -219,8 +238,8 @@ $(document).ready(function () {
         orden()
         doDelay(250)
         cambiarBorrado()
-        
-        
+        doDelay(250)
+        cambioHijo()
 
         return
     })
