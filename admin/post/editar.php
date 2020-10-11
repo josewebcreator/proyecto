@@ -99,7 +99,7 @@ session_start();
 
                         <li class="edit-pSecundario hijo<?php echo $contador; ?>">
                             <form>
-                                <input type="hidden" name="id" class="parraf-id" value="<?php echo $fParrafos['id']; ?>"><br>
+                                <input type="hidden" name="id" class="parraf-id" value="<?php echo $fParrafos['id_entrada_blog']; ?>"><br>
                                 <input type="hidden" name="orden" class="parraf-orden" value="<?php echo $fParrafos['orden']; ?>"><br>
                                 <input type="text" name="subtitulo" class="parraf-sub" value="<?php echo $fParrafos['sub_titulo']; ?>"><br>
                                 <textarea name="texto" id="" cols="30" rows="10" class="parraf-tex"><?php echo str_replace('\r\n', "\r\n", $fParrafos['texto']) ; ?></textarea><br>
@@ -132,7 +132,7 @@ session_start();
     </div>
     <script>
         function borrarParrafo(ide, ord){
-            
+
             $.post("borrar-parrafo.php",
                 {
                 id : ide,
