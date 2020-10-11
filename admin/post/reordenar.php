@@ -31,7 +31,7 @@
                     $nuevo= mysqli_real_escape_string($mysqli, $_POST["nuevo"]);
                     $idEnt= mysqli_real_escape_string($mysqli, $_POST["id"]);
 
-                    $consulta->bind_param("iii", $nuevo, $viejo, $idEnt);
+                    $consulta->bind_param("ii", $nuevo, $idEnt);
                     $consulta->execute();
                     $consulta->close();
                     $mysqli->close();
