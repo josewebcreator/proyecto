@@ -240,7 +240,9 @@ $(document).ready(function () {
         cambiarBorrado()
         doDelay(250)
         cambioHijo()
-
+        $("#insertSelec").empty()
+        $('#insertSelec').append('<option value="0">Parrafo Principal</option>');
+        armarSelect()
         return
     })
 
