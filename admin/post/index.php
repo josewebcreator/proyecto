@@ -30,21 +30,22 @@
         <div id="carga-tabla"></div>
 
         <div id="menu-admin" class="container">
-        
-            <div class="menu-elem">
-                <a href=""></a>
+            <div class="row">
+                <div class="menu-elem">
+                    <a href=""><i class="fas fa-pen-alt"></i></a>
+                </div>
+                <div class="menu-elem">
+                    <a href=""><i class="fas fa-envelope"></i></a>
+                </div>
+                <div class="menu-elem">
+                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                </div>
             </div>
-            <div class="menu-elem">
-                <a href=""></a>
-            </div>
-            <div class="menu-elem">
-                <a href=""></a>
-            </div>
-        
         </div>
 
         <script src="js\jquery.js"></script>
         <script src="js\funciones.js"></script>
+        <script src="js\all.min.js"></script>
     </body>
 </html>
 <?php  
