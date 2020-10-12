@@ -29,21 +29,22 @@
                 
         <div id="carga-tabla"></div>
 
+        
         <div id="menu-admin" class="container">
             <div class="row">
                 <div class="menu-elem col-4">
                     <div class="link-background">
-                        <a href="" class="link-menu"><i class="fas fa-pen-alt"></i></a>
+                        <a href="../publicar/index.php" class="link-menu" title="Crear entrada"><i class="fas fa-pen-alt"></i></a>
                     </div>                    
                 </div>
                 <div class="menu-elem col-4">
                     <div class="link-background">
-                        <a href="" class="link-menu"><i class="fas fa-envelope"></i></a>
+                        <a href="" class="link-menu" title="Bandeja"><i class="fas fa-envelope"></i></a>
                     </div>                    
                 </div>
                 <div class="menu-elem col-4">
                     <div class="link-background">
-                        <a href="" class="link-menu"><i class="fas fa-trash-alt"></i></a>
+                        <a href="" class="link-menu" title="papelera"><i class="fas fa-trash-alt"></i></a>
                     </div>                    
                 </div>
             </div>
