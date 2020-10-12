@@ -61,6 +61,42 @@ header{
     
 }
 
+/*Menu admin*/
+
+#menu-admin{
+
+    background-color: #343a40;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+
+}
+
+.menu-elem{
+
+    height: 150px;
+    border: whitesmoke 2px solid;
+    justify-content: center;
+    text-align: center;
+}
+
+.link-background{
+    position: relative;
+    width: 60%;
+    margin: auto;
+    margin-top: 7%;
+    background-color: #007bff;
+    border-radius: 10px;   
+}
+
+.link-menu{
+
+
+    font-size: 80px;
+    color: whitesmoke;
+
+}
+
 /*crear blog*/
 
 #crea-blog{
