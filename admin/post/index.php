@@ -31,14 +31,20 @@
 
         <div id="menu-admin" class="container">
             <div class="row">
-                <div class="menu-elem">
-                    <a href=""><i class="fas fa-pen-alt"></i></a>
+                <div class="menu-elem col-4">
+                    <div class="link-background">
+                        <a href="" class="link-menu"><i class="fas fa-pen-alt"></i></a>
+                    </div>                    
                 </div>
-                <div class="menu-elem">
-                    <a href=""><i class="fas fa-envelope"></i></a>
+                <div class="menu-elem col-4">
+                    <div class="link-background">
+                        <a href="" class="link-menu"><i class="fas fa-envelope"></i></a>
+                    </div>                    
                 </div>
-                <div class="menu-elem">
-                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                <div class="menu-elem col-4">
+                    <div class="link-background">
+                        <a href="" class="link-menu"><i class="fas fa-trash-alt"></i></a>
+                    </div>                    
                 </div>
             </div>
         </div>
