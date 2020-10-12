@@ -29,6 +29,20 @@
                 
         <div id="carga-tabla"></div>
 
+        <div id="menu-admin" class="container">
+        
+            <div class="menu-elem">
+                <a href=""></a>
+            </div>
+            <div class="menu-elem">
+                <a href=""></a>
+            </div>
+            <div class="menu-elem">
+                <a href=""></a>
+            </div>
+        
+        </div>
+
         <script src="js\jquery.js"></script>
         <script src="js\funciones.js"></script>
     </body>
