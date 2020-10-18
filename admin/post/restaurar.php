@@ -1,6 +1,6 @@
 <?php
 
-     session_start();
+    session_start();
     if(!($_SESSION["usuario"]==null)||!($_SESSION["usuario"]=="")){
 
         require("..\cone\conexion.php");
@@ -23,9 +23,9 @@
 
         if(($user==$checkUser)&&($token==$checktoken)){
             require('../cone/conexion.php');
-            $consulta = $mysqli->prepare("UPDATE `entrada_blog` SET `borrado` = '1' where `id_ent` = ?");
+            $consulta = $mysqli->prepare("UPDATE `entrada_blog` SET `borrado` = '0' where `id_ent` = ?");
             $id= mysqli_real_escape_string($mysqli, $_POST['id']);
-            $consulta->bind_param("s",$id);
+            $consulta->bind_param("i",$id);
             $consulta->execute();
             $consulta->close();
             $mysqli->close();

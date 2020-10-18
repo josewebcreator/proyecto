@@ -1,6 +1,5 @@
 <?php
 
-
     session_start();
     if(!($_SESSION["usuario"]==null)||!($_SESSION["usuario"]=="")){
 
@@ -22,14 +21,41 @@
 
         $mysqli->close();
 
-        if(($user==$checkUser)&&($token==$checktoken)){
+        if(($user==$checkUser)&&($token==$checktoken)){ ?>
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="../css/estilos.css">
+            <link rel="stylesheet" href="..\css\bootstrap.min.css">
+            <script src="js/jquery.js"></script>
+            <title>Papelera</title>
+        </head>
+        <body>
+            <header>
+                <div class="header-content">
+                    <div id="titulo">
+                        <h2>Papelera</h2>
+                    </div>
+
+                        <nav id="menu">
+                            
+                        </nav>               
+                </div>
+            </header>
+            <?php
+            
             require('../cone/conexion.php');
 
-            $consulta = $mysqli->query("SELECT * from entrada_blog WHERE `borrado` = '0'");
+            $consulta = $mysqli->query("SELECT * from entrada_blog WHERE `borrado` = '1'");
             $cuenta =  $consulta->num_rows;
         
             if ($cuenta>0){
                 ?>
+                <br>
+                <br>
                 <div class="cuadro table-responsive-sm">
                   <table class="table table-dark">
                     <tr>
@@ -47,9 +73,8 @@
                                 <td><?php echo $row['titulo']; ?></td>
                                 <td style="text-align: center;">
                                     
-                                    <a href="ver-admin.php?id=<?php echo $row['id_ent']; ?>&titulo=<?php echo $row['titulo'] ?>">Ver</a>
-                                    <a href="editar.php?id=<?php echo $row['id_ent']; ?>">Editar</a>
-                                    <a href="#" class="btn-borrar" refe="<?php echo $row['id_ent']; ?>" onclick="borrar_ent(<?php echo $row['id_ent']; ?>)">Borrar</a>
+                                    <a href="#" refe="<?php echo $row['id_ent']; ?>" onclick="restaura(<?php echo $row['id_ent']; ?>)">Restaurar</a>
+                                    <a href="#" class="btn-borrar" refe="<?php echo $row['id_ent']; ?>" onclick="borrar_final(<?php echo $row['id_ent']; ?>)">Borrar</a>
                                     
                                 </td>
                             </tr>
@@ -67,13 +92,48 @@
             }
 
             $mysqli->close();
-        }else{
-            header("location:../../inicio/index.php");
+
         }
 
-    }else{
-        header("location:../../inicio/index.php");
-    }
+    ?>
+    
+    </div>
+    <script>
+        function borrar_final(ide){
 
-   
-?>
+            $.post("borrado-real.php",
+                {
+                id : ide
+                },
+                function (){
+                    location.reload()
+                }
+            )
+
+        }
+
+        function restaura(ide){
+
+            $.post("restaurar.php",
+                {
+                id : ide
+                },
+                function (){
+                    console.log(ide)
+                    location.reload()
+                }
+            )
+
+        }
+
+    </script>
+    <script src="js/funciones.js"></script>
+
+    </body>
+    </html>
+
+    <?php  
+    
+    }else{
+    header("location:../../inicio/index.php");
+    } ?>

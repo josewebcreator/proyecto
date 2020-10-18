@@ -44,7 +44,7 @@
                 </div>
                 <div class="menu-elem col-4">
                     <div class="link-background">
-                        <a href="" class="link-menu" title="papelera"><i class="fas fa-trash-alt"></i></a>
+                        <a href="papelera.php" class="link-menu" title="papelera"><i class="fas fa-trash-alt"></i></a>
                     </div>                    
                 </div>
             </div>
@@ -53,6 +53,20 @@
         <script src="js\jquery.js"></script>
         <script src="js\funciones.js"></script>
         <script src="js\all.min.js"></script>
+        <script >
+        
+        function borrar_ent (id){
+            $.post("borrar-ent.php",
+                {
+                id : id
+                },
+                function (){
+                    location.reload()
+                }
+            )
+        }
+        
+        </script>
     </body>
 </html>
 <?php  
