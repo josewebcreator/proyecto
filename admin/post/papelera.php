@@ -106,12 +106,26 @@
                 id : ide
                 },
                 function (){
-                    console.log(ide)
-                    //location.reload()
+                    location.reload()
                 }
             )
 
         }
+
+        function restaura(ide){
+
+            $.post("restaurar.php",
+                {
+                id : ide
+                },
+                function (){
+                    console.log(ide)
+                    location.reload()
+                }
+            )
+
+        }
+
     </script>
     <script src="js/funciones.js"></script>
 
