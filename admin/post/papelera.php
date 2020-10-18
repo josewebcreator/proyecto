@@ -73,8 +73,8 @@
                                 <td><?php echo $row['titulo']; ?></td>
                                 <td style="text-align: center;">
                                     
-                                    <a href="#" refe="<?php echo $row['id_ent']; ?>" onclick="restaura(<?php echo $row['id_ent']; ?>)">Borrar</a>
-                                    <a href="#" class="btn-borrar" refe="<?php echo $row['id_ent']; ?>" onclick="borrar_ent(<?php echo $row['id_ent']; ?>)">Borrar</a>
+                                    <a href="#" refe="<?php echo $row['id_ent']; ?>" onclick="restaura(<?php echo $row['id_ent']; ?>)">Restaurar</a>
+                                    <a href="#" class="btn-borrar" refe="<?php echo $row['id_ent']; ?>" onclick="borrar_final(<?php echo $row['id_ent']; ?>)">Borrar</a>
                                     
                                 </td>
                             </tr>
@@ -99,15 +99,15 @@
     
     </div>
     <script>
-        function borrarParrafo(ide, ord){
+        function borrar_final(ide){
 
-            $.post("borrar-parrafo.php",
+            $.post("borrado-real.php",
                 {
-                id : ide,
-                orden: ord
+                id : ide
                 },
                 function (){
-                    location.reload()
+                    console.log(ide)
+                    //location.reload()
                 }
             )
 
