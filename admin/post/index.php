@@ -44,7 +44,7 @@
                 </div>
                 <div class="menu-elem col-4">
                     <div class="link-background">
-                        <a href="" class="link-menu" title="papelera"><i class="fas fa-trash-alt"></i></a>
+                        <a href="papelera.php" class="link-menu" title="papelera"><i class="fas fa-trash-alt"></i></a>
                     </div>                    
                 </div>
             </div>
