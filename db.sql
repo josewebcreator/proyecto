@@ -7,9 +7,6 @@ SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
 SET NAMES utf8mb4;
 
-CREATE DATABASE `proyecto` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `proyecto`;
-
 DROP TABLE IF EXISTS `blog`;
 CREATE TABLE `blog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -50,6 +47,7 @@ CREATE TABLE `entrada_blog` (
   `imagen_central` varchar(300) NOT NULL,
   `foto_footer` longtext NOT NULL,
   `texto` longtext NOT NULL,
+  `borrado` char(1) NOT NULL,
   PRIMARY KEY (`id_ent`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -57,7 +55,7 @@ CREATE TABLE `entrada_blog` (
 DROP TABLE IF EXISTS `login`;
 CREATE TABLE `login` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(16) NOT NULL,
+  `usuario` varchar(16) NOT NULL,
   `hash` varchar(500) NOT NULL,
   `mail` varchar(100) NOT NULL,
   `token` char(4) NOT NULL,
@@ -79,4 +77,4 @@ CREATE TABLE `parrafo_blog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- 2020-07-20 00:26:00
+-- 2020-10-18 20:46:10
