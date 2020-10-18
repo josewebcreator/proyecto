@@ -24,11 +24,12 @@
         if(($user==$checkUser)&&($token==$checktoken)){
             require('../cone/conexion.php');
             $consulta = $mysqli->prepare("UPDATE `entrada_blog` SET `borrado` = '1' where `id_ent` = ?");
-            $id= mysqli_real_escape_string($mysqli, $_GET['id']);
+            $id= mysqli_real_escape_string($mysqli, $_POST['id']);
             $consulta->bind_param("s",$id);
             $consulta->execute();
             $consulta->close();
             $mysqli->close();
+
         }else{
             header("location:../../inicio/index.php");
         }
