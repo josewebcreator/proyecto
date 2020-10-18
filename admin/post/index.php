@@ -53,6 +53,20 @@
         <script src="js\jquery.js"></script>
         <script src="js\funciones.js"></script>
         <script src="js\all.min.js"></script>
+        <script >
+        
+        function borrar_ent (id){
+            $.post("borrar-ent.php",
+                {
+                id : id
+                },
+                function (){
+                    location.reload()
+                }
+            )
+        }
+        
+        </script>
     </body>
 </html>
 <?php  
