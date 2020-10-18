@@ -47,7 +47,7 @@ CREATE TABLE `entrada_blog` (
   `imagen_central` varchar(300) NOT NULL,
   `foto_footer` longtext NOT NULL,
   `texto` longtext NOT NULL,
-  `borrado` char(1) NOT NULL,
+  `borrado` char(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_ent`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -77,4 +77,4 @@ CREATE TABLE `parrafo_blog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- 2020-10-18 20:46:10
+-- 2020-10-18 20:48:21
