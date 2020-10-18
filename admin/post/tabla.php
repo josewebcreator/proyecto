@@ -49,7 +49,7 @@
                                     
                                     <a href="ver-admin.php?id=<?php echo $row['id_ent']; ?>&titulo=<?php echo $row['titulo'] ?>">Ver</a>
                                     <a href="editar.php?id=<?php echo $row['id_ent']; ?>">Editar</a>
-                                    <a href="#" class="btn-borrar" refe="borrar-ent.php?id=<?php echo $row['id_ent'] ?>">Borrar</a>
+                                    <a href="#" class="btn-borrar" refe="<?php echo $row['id_ent']; ?>" onclick="borrar_ent(<?php echo $row['id_ent']; ?>)">Borrar</a>
                                     
                                 </td>
                             </tr>
