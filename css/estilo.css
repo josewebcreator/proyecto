@@ -125,7 +125,7 @@ header label:hover{
 
 #info1{
     font-family: 'Roboto Slab', serif;
-    margin: 5% 0;
+    margin: 8% 0;
     font-size: 1.5em;
     text-align: center !important;
     color: rgba(0, 0, 0, 0.544);
@@ -133,7 +133,7 @@ header label:hover{
 
 #info2{
     font-family: 'Roboto Slab', serif;
-    margin-top: 2%;
+    margin: 5% 0;
     color: rgba(0, 0, 0, 0.544);
 }
 
