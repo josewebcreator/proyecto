@@ -106,27 +106,18 @@ header label:hover{
     width: 100%;
 }
 
-.contenido{
-    width: 100%;
-}
 
-.contenido #titulo-principal{
+
+#titulo-principal{
     margin: auto;
     font-family: 'Roboto Slab', serif;
     text-align: center;
     border: solid 4px black;
-    width: 80%;
+    width: 100%;
 }
 
-.art1{
-    position: relative;
-    top: 80px;
-    display: flex;
-    width: 80%;
-    margin: auto;
-}
 
-.contenido #logo-google{
+#logo-google{
     position: relative;
     margin-top: 20px;
     width: 100%;
@@ -134,9 +125,18 @@ header label:hover{
 
 #info1{
     font-family: 'Roboto Slab', serif;
-    width: 40%;
+    margin: 5% 0;
+    font-size: 1.5em;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 0.544);
 }
 
-#info1 p{
+#info2{
+    font-family: 'Roboto Slab', serif;
+    margin-top: 2%;
+    color: rgba(0, 0, 0, 0.544);
+}
+
+#info2 p{
     text-align: justify;
 }
