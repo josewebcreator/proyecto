@@ -9,28 +9,38 @@ require("..\activos\header.php");
 <img src="..\img\banner.png" alt="">
 </div>
 
-<div class="contenido">
+    <div class="container">
 
-    <div id="titulo-principal">
-        <h1>Anunciarte en la web nunca habia sido tan importante.</h1>
-    </div>
+        <div id="titulo-principal" >
+            <h1>Bienvenido</h1>
+        </div>
 
-    <div class="art1 row">
-
-
-        <div id="info1" class="col">
-            
+        <div id="info1" class="col-12">
+                
             <p>
-                Con el pasar del tiempo el mundo esta cada vez mas conectado. El peso que han tomado las redes sociales en los tiempos de hoy nos hace plantearnos... ¿Es realmente necesario tener un website?
-            </p>
-            <p>
-                La respuesta para esto es <strong>SI.</strong> Aparecer en Google le dara peso a tu marca, y te permitirá llegar a clientes más grandes.
+                El presente portal web fue creado con la intención de tener un curriculum que mostrara mis habilidades como programador y diseñador web, un proyecto realizado para la completación de mi diplomado que refuerza una creencia propia, ¡No hay mejor proyecto que uno mismo! 
             </p>
         </div>
 
-        <div class="col">
-            <img src="..\img\google.png" alt="" id="logo-google">
+        <div id="titulo-principal" >
+            <h2>Un refrán valido para muchos casos.</h2>
         </div>
+        
+        <div id="art-ppal" class="row">
 
+            <div id="info2" class="col-6">
+                
+                <p>
+                    A medida qué, las redes sociales toman terreno, muchas personas tienen la creencia de que crear un sitio web es innecesario para que su compañía triunfe, pero se olvidan de una cosa, si no apareces en google, para muchos clientes potenciales, <strong> NO EXISTES </strong>
+                </p>
+                <p>
+                    Es entonces, que el refrán “no hay mejor proyecto que tú mismo” entra en acción, si quieres crecer de manera constante debes ir más allá de las redes sociales y realizar la inversión de darle un sitio web a tu nombre.
+                </p>
+            </div>
+
+            <div class="col-6">
+                <img src="..\img\google.png" alt="" id="logo-google">
+            </div>
+        </div>
     </div>
-</div>
+    
