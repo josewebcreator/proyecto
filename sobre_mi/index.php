@@ -5,7 +5,7 @@ require("..\activos\header.php");
 
 ?>
 
-<div class="container">
+<div class="container" id="sobremi">
 
     <div class="row">
         <div id="datos-personales" class="col-3">
@@ -16,9 +16,9 @@ require("..\activos\header.php");
                 Estudiante||Porgramador||Diseñador
             </h5>
     
-            <h4>
+            <h6>
                 ¿Que me gusta?
-            </h4>
+            </h6>
 
             <ul id="gustos">
                 <li>Cine</li>
@@ -26,16 +26,16 @@ require("..\activos\header.php");
                 <li>Aprender cosas nuevas</li>
             </ul>
 
-            <h4>
+            <h6>
                 Ubuntu
-            </h4>
+            </h6>
 
             <p>
                 Una persona es una persona a causa de los demás.
                 Una persona no mejora sola, lo hace cuando ayuda a los demas a ser mejores.
             </p>
 
-            <h4>Conocimientos</h4>
+            <h5>Conocimientos</h5>
 
             <table class="table table-bordered">
                 <thead>
