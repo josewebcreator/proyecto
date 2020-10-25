@@ -140,3 +140,29 @@ header label:hover{
 #info2 p{
     text-align: justify;
 }
+
+/*sobre mi*/
+
+#sobremi{
+    position: relative;
+    margin-top: 5%; 
+}
+
+.cierre-bio{
+    text-align: center;
+    margin: 4% 0;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.cierre-bio p{
+    font-size: 1.7em;
+    
+}
+
+/*BLOG INDEX*/
+
+.imagen{
+    width: 100%;
+    height: 200px;
+    background-color: black;
+}

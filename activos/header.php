@@ -21,7 +21,6 @@
                     <ul>
                         <li><a href="#">Inicio</a></li>
                         <li><a href="#">¿Quien Soy?</a></li>
-                        <li><a href="#">Portafolio</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Haz tu Website</a></li>
                     </ul>
