@@ -13,6 +13,8 @@
         $consulta->execute();
         $consulta->close();
         $mysqli->close();
+    }else{
+        header("location:../inicio/index.php");
     }
 
 ?>
