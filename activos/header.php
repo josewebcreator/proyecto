@@ -19,10 +19,10 @@
                 <label for="btn-menu"><img src="..\img\burguer-menu.png" alt="" width=40px></label>
                 <nav id="menu">
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">¿Quien Soy?</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Haz tu Website</a></li>
+                        <li><a href="../inicio/index.php">Inicio</a></li>
+                        <li><a href="../sobre_mi/index.php">¿Quien Soy?</a></li>
+                        <li><a href="../blog/index.php">Blog</a></li>
+                        <li><a href="#">Contacto</a></li>
                     </ul>
                 </nav>
                 
