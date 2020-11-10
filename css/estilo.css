@@ -44,14 +44,14 @@ header label:hover{
     display: block;
     padding:8px 10px;
     margin: 0 2px;
-    color:  rgb(13, 180, 180);
+    color:  rgb(162, 162, 162);
     font-size: 0.9em;
     transition: ease 0.3s;
 }
 
 #menu li a:hover{
     text-decoration: none;
-    color: rgb(10, 134, 134);
+    color: rgb(63, 63, 63);
 
 }
 
@@ -87,7 +87,7 @@ header label:hover{
 
     #menu li a:hover{
         text-decoration: none;
-        color: rgb(10, 134, 134);
+        color: rgb(101, 101, 101);
     }
 
     #btn-menu:checked ~ #menu ul{
@@ -161,8 +161,85 @@ header label:hover{
 
 /*BLOG INDEX*/
 
-.imagen{
-    width: 100%;
-    height: 200px;
-    background-color: black;
+#entradas{
+    position: relative;
+    margin-top: 4%;
+    margin-bottom: 5%;
+    padding: 0;
+}
+
+.ultimas{
+    height: 300px;
+    border-radius: 20px;
+    padding: 1%;
+    transition: 1.2s;
+}
+
+.ultimas:hover{
+    background-color: rgb(177, 177, 177);
+}
+
+.ultimas a{
+    /*text-align: center;*/
+    color: rgb(86, 86, 86);
+    transition: 1.2s;
+}
+
+.ultimas a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.antiguas{
+    margin-top: 2%;
+    border-radius: 20px;
+    transition: 1.2s;
+    padding: 1%;
+}
+
+.antiguas a{
+    color: rgb(86, 86, 86);;
+    transition: 1.2s;
+}
+
+.antiguas a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.antiguas:hover{
+    background-color: rgb(177, 177, 177);
+}
+
+/*BLOG VER*/
+
+.entrada{
+    font-family: Helvetica
+}
+
+#img-ppal{
+    margin: 10px 0;
+}
+
+#footer{
+    font-size: 10px;
+}
+
+#parra-ppal{
+    font-size: 18px;
+    margin: 2% 0;
+}
+
+.subtitulo{
+    font-size: 24px;
+    margin: 2% 0;
+}
+
+.paraf-secun{
+    font-size: 16px;
+}
+.blog-admin{
+   margin-left: -4%;
+   margin-bottom: 3%;
+   margin-top: 2.5%;
 }

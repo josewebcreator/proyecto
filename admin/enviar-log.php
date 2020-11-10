@@ -37,4 +37,5 @@
     }else{
         header("location:../inicio/index.php");
     }
+
 ?>
