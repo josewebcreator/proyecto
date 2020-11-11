@@ -22,40 +22,38 @@ require("..\activos\header.php");
                     $cParrafo->close();
 
                     ?>
-                    <div class="entrada ">
-                    <?php
-                    ?> <div class="container">
-                        <div class="blog-admin col-10"> <?php
-                    while($resFilas = $res->fetch_assoc()){ ?>
-                        <div id="pPal">
-                            <img id="img-ppal" src="../admin/publicar/uploads/<?php echo $resFilas['imagen_central']; ?>" alt="" width="100%" height="300px">
-                            <p id="footer"><?php echo str_replace('\r\n', "<br/>", $resFilas['foto_footer']);  ?></p>
-                            <h2><?php echo  $resFilas['titulo'];; ?></h2>
-                            
-                            <p class="parra-ppal"><?php echo str_replace('\r\n', "<br/>", $resFilas['texto']); ?></p>
-                        </div>
-                    <?php
-                    } // fin while
-
-                    if(($parrafos->num_rows)>0){
-                        while($fParrafos = $parrafos->fetch_assoc()){
-                            ?>
-
-                            <div class="pSecundario">
-                                <img class="img-secun" src="../admin/publicar/uploads/<?php echo  $fParrafos['imagen_parrafo']; ?>" alt="" width="100%" height="300px">
-                                <h3 class="subtitulo"><?php echo $fParrafos['sub_titulo']; ?></h3>
-                                <p class="paraf-secun"><?php echo  str_replace('\r\n', "<br/>", $fParrafos['texto']) ; ?></p>
-                                
-                                
-                            </div>
-
+                
+                    <div class="container" id="entrada">
+                        <div class="blog-admin col-12"> <?php
+                            while($resFilas = $res->fetch_assoc()){ ?>
+                                <div id="pPal">
+                                    <img id="img-ppal" src="../admin/publicar/uploads/<?php echo $resFilas['imagen_central']; ?>" alt="" width="100%" height="500px">
+                                    <p id="footer"><?php echo str_replace('\r\n', "<br/>", $resFilas['foto_footer']);  ?></p>
+                                    <h2 id="titulo_ppal"><?php echo  $resFilas['titulo'];; ?></h2>
+                                    <p class="parra-ppal"><?php echo str_replace('\r\n', "<br/>", $resFilas['texto']); ?></p>
+                                    
+                                </div>
                             <?php
-                        } //fin while
-                    }
+                            } // fin while
 
-                    ?> </div>
+                            if(($parrafos->num_rows)>0){
+                                while($fParrafos = $parrafos->fetch_assoc()){
+                                    ?>
+
+                                    <div class="pSecundario">
+                                        
+                                        <h3 class="subtitulo"><?php echo $fParrafos['sub_titulo']; ?></h3>
+                                        <p class="paraf-secun"><?php echo  str_replace('\r\n', "<br/>", $fParrafos['texto']) ; ?></p>
+                                        <img class="img-secun" src="../admin/publicar/uploads/<?php echo  $fParrafos['imagen_parrafo']; ?>" alt="" width="100%" height="400px">
+                                        
+                                    </div>
+
+                                    <?php
+                                } //fin while
+                            }?> 
+                        </div>
                     </div>
-                </div><?php //cierre del dif entrada
+                <?php //cierre del dif entrada
                 }else{
                     $mysqli->close();
                     header("location:../inicio/index.php"); 
