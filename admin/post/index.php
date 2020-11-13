@@ -38,19 +38,21 @@
             $consulta->bind_param("i",$id_log);
             $consulta->execute();
             $res = $consulta->get_result();
-            $total=$consulta->num_rows;
+            $total=$res->num_rows;
             $consulta->close();
             
-            $consulta = $mysqli->prepare("SELECT * FROM `entrada_blog` WHERE `id_login` = ? AND `aprob` = 0 AND `borrado` = 0");
+            $consulta = $mysqli->prepare("SELECT * FROM `entrada_blog` WHERE `id_login` = ? AND `aprob` = '0' AND `borrado` = '0'");
             $consulta->bind_param("i",$id_log);
             $consulta->execute();
-            $proceso = $consulta->num_rows;
+            $cuenta = $consulta->get_result();
+            $proceso = $cuenta->num_rows;
             $consulta->close();
 
             $consulta = $mysqli->prepare("SELECT * FROM `entrada_blog` WHERE `id_login` = ? AND `aprob` = 1 AND `borrado` = 0");
             $consulta->bind_param("i",$id_log);
             $consulta->execute();
-            $aprobadas = $consulta->num_rows;
+            $cuenta = $consulta->get_result();
+            $aprobadas = $cuenta->num_rows;
             $consulta->close();
             $mysqli->close();
             ?>
@@ -124,7 +126,7 @@
                                 <?php
 
                             }else{
-                                
+
                                 ?>
                                     <div class="menu-elem col-12">
                                         <div class="link-background">
@@ -164,22 +166,7 @@
             <script src="js\jquery.js"></script>
             <script src="js\funciones.js"></script>
             <script src="js\all.min.js"></script>
-            <script >
             
-            function borrar_ent (id){
-                $.post("borrar-ent.php",
-                    {
-                    id : id
-                    },
-                    function (){
-                        location.reload()
-                    }
-                )
-            }
-        
-            </script>
-            </body>
-            </html>
         <?php  
 
 
