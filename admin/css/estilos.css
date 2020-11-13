@@ -88,12 +88,13 @@ header{
 }
 
 .ppal-admin{
-    height: 450px;
+    height: 500px;
     border-bottom: whitesmoke 2px solid;
 }
 
 .datos-user{
     border-right: whitesmoke 2px solid;
+    
 }
 
 .menu-elem{
