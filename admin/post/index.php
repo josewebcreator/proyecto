@@ -117,14 +117,21 @@
                                     </div>  
                                     <div class="menu-elem col-12">
                                         <div class="link-background">
-                                            <a href="#" class="link-menu" title="lista de entradas"><i class="fas fa-clipboard-list"></i></a>
+                                            <a href="tabla.php" class="link-menu" title="lista de entradas"><i class="fas fa-clipboard-list"></i></a>
                                         </div>                    
                                     </div>  
                                 
                                 <?php
 
                             }else{
-
+                                
+                                ?>
+                                    <div class="menu-elem col-12">
+                                        <div class="link-background">
+                                            <a href="tabla.php" class="link-menu" title="lista de entradas"><i class="fas fa-clipboard-list"></i></a>
+                                        </div>                    
+                                    </div>  
+                                <?php
                             }
 
                         ?>
