@@ -67,7 +67,8 @@
 
                             
                             <?php
-                            while($row = $res->fetch_assoc()){        
+                            while($row = $res->fetch_assoc()){      
+                                $tipo= $row['tipo'];  
                                 ?>
                                     <div id="nombre-user" class="col-12"><h3>Bienvenido <?php echo $row['nombres'] ?> <?php echo $row['apellidos'] ?></h3></div>
                                     
@@ -94,9 +95,39 @@
                             
 
                         </div>
-                    </div>
 
+
+                    </div>
+                    
                     <div class="col-4 ppal-admin">
+                        <?php
+                        
+                            if($tipo=="admin"){
+
+                                ?>
+                                    <div class="menu-elem col-12">
+                                        <div class="link-background">
+                                            <a href="#" class="link-menu" title="crear usuario"><i class="fas fa-plus"></i></a>
+                                        </div>                    
+                                    </div>  
+                                    <div class="menu-elem col-12">
+                                        <div class="link-background">
+                                            <a href="#" class="link-menu" title="aprobar publicaciones"><i class="fas fa-check"></i></a>
+                                        </div>                    
+                                    </div>  
+                                    <div class="menu-elem col-12">
+                                        <div class="link-background">
+                                            <a href="#" class="link-menu" title="lista de entradas"><i class="fas fa-clipboard-list"></i></a>
+                                        </div>                    
+                                    </div>  
+                                
+                                <?php
+
+                            }else{
+
+                            }
+
+                        ?>
                     </div>
 
                     <div class="menu-elem col-4">
