@@ -11,7 +11,14 @@
         $consulta->execute();
         $res = $consulta->get_result();
         $consulta->close();
-
+        $consulta = $mysqli->prepare("SELECT id FROM `login` WHERE `usuario` = ?");
+        $consulta->bind_param("s",$user);
+        $consulta->execute();
+        // $res = $consulta->get_result();
+        //     while($row = $res->fetch_assoc()){
+        //         $id_log = $row['id'];
+        //     }
+        // $consulta->close();
         while($check = $res->fetch_assoc()){
 
             $checkUser = $check['usuario'];
