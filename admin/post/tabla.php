@@ -23,6 +23,9 @@
         $mysqli->close();
 
         if(($user==$checkUser)&&($token==$checktoken)){
+            $title= "lista";
+            require("../activos/header.php");
+
             require('../cone/conexion.php');
 
             $consulta = $mysqli->query("SELECT * from entrada_blog WHERE `borrado` = '0'");
