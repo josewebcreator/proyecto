@@ -80,3 +80,20 @@
 
    
 ?>
+
+        <script >
+            
+            function borrar_ent (id){
+                $.post("borrar-ent.php",
+                    {
+                    id : id
+                    },
+                    function (){
+                        location.reload()
+                    }
+                )
+            }
+        
+        </script>
+</body>
+</html>
