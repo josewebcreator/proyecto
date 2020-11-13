@@ -5,6 +5,12 @@
 }
 
 /*header*/
+
+body{
+    background-image: linear-gradient(to right, #056886, #00E7FF);
+}
+
+/*
 header{
     width: 100%;
     height: 41.2px;
@@ -12,6 +18,7 @@ header{
     background-color: aqua;
 
 }
+*/
 
 /* login*/
 #login{
@@ -74,10 +81,25 @@ header{
 
 }
 
+.user{
+    position: relative;
+    margin-top: 5%;
+    color:whitesmoke;
+}
+
+.ppal-admin{
+    height: 450px;
+    border-bottom: whitesmoke 2px solid;
+}
+
+.datos-user{
+    border-right: whitesmoke 2px solid;
+}
+
 .menu-elem{
 
     height: 150px;
-    border: whitesmoke 2px solid;
+    /*border: whitesmoke 2px solid;*/
     justify-content: center;
     text-align: center;
 }
