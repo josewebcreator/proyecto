@@ -114,7 +114,7 @@
                                     </div>  
                                     <div class="menu-elem col-12">
                                         <div class="link-background">
-                                            <a href="#" class="link-menu" title="aprobar publicaciones"><i class="fas fa-check"></i></a>
+                                            <a href="aprob.php" class="link-menu" title="aprobar publicaciones"><i class="fas fa-check"></i></a>
                                         </div>                    
                                     </div>  
                                     <div class="menu-elem col-12">
