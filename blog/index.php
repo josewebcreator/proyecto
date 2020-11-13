@@ -63,7 +63,7 @@ require("..\activos\header.php");
                 </div>
                 <?php
                 if($count==$cuenta){
-                    ?></div><?php //cierre del row secundarias
+                    ?></div><?php //cierre del div secundarias
                 }
                 $count+=1;
             }
