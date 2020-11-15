@@ -248,3 +248,15 @@ header{
     
     margin-left: 1%;
 }
+
+/*crear usuario*/
+
+.user-container{
+    background-color: #343a40;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    color: white;
+    position: relative;
+    margin-top: 2%;
+}
