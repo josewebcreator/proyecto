@@ -249,7 +249,14 @@ $(document).ready(function () {
     })
 
 
-    
+    //crear nuevo usuario
+
+    $("#boton-crear-user").click(function (e) {
+        e.preventDefault();
+
+        
+
+    })
 
     
 
