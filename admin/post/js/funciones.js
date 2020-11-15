@@ -15,7 +15,7 @@ $(document).ready(function () {
             }
             b++;
         }
-    
+        return
     }
 
 
@@ -81,7 +81,7 @@ $(document).ready(function () {
         
         doDelay(150)
         location.reload()
-
+        return
     });
 
     //Sustituidor de clases
@@ -100,6 +100,7 @@ $(document).ready(function () {
                 $(this).addClass(hijo)
             }
         })
+        return
     }
 
     //Selec InsertSelec para insertar parrafos
@@ -141,6 +142,7 @@ $(document).ready(function () {
     $("#insertSelec").change(function () {
         seleccion = $('#insertSelec').val()
         //console.log(seleccion)
+        return
     })
 
     armarSelect()
@@ -253,9 +255,70 @@ $(document).ready(function () {
 
     $("#boton-crear-user").click(function (e) {
         e.preventDefault();
+        var check = []
+        var clave
+        var reclave
+        $('#new-user-form').each(function () {
+            $("form", this).each(function () {
+                $(".form-group", this).children().each(function () {
+                    if ($(this).is("#direccioncorreo") || $(this).is("#nombres") || $(this).is("#apellidos") || $(this).is("#nick") || $(this).is("#clave") || $(this).is("#reclave")) {
+                        
+                        if ($(this).val().length>0) {
+                            check.push(1)
+                        } else {
+                            check.push(0)
+                        }
 
-        
+                        console
+                    }
 
+                    if ($(this).is("#clave")) {
+                        clave = $(this).val()
+                    }
+                    if ($(this).is("#reclave")) {
+                        reclave = $(this).val()
+                    }
+
+
+                })
+            })
+
+            if (!check.includes(0)) {
+                if (clave == reclave) {
+                    $("form", this).each(function () {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'enviarnuevolog.php',
+                            data: new FormData(this),
+                            contentType: false,
+                            cache: false,
+                            processData: false         
+                        })
+                    })
+
+
+                    doDelay(250)
+
+                    $("form", this).each(function () {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'enviarnuevouser.php',
+                            data: new FormData(this),
+                            contentType: false,
+                            cache: false,
+                            processData: false         
+                        })
+                    })
+                } else {
+                    alert("la clave y la confirmacion no coinciden, por favor validar")
+                }
+
+            } else {
+                alert("todos los campos deben ser completados")
+            }
+        })
+
+        return
     })
 
     
