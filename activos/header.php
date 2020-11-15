@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\css\bootstrap.min.css">
-    <link rel="stylesheet" href="..\css\estilo.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..\css\estilo.css">
     <title><?php echo $tittle;?></title>
 </head>
 <body>
@@ -30,3 +30,4 @@
                 
         </div>
     </header>
+    
