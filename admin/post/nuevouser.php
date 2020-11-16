@@ -53,6 +53,7 @@
                         </div>
                         <div class="col-12" id="new-user-form">
                             <form action="">
+                                <input type="hidden" name="oculto" id="oculto" value="1">
                                 <div class="form-group">
                                     <label for="direccioncorreo">Email</label>
                                     <input type="email" class="form-control" id="direccioncorreo" name="direccioncorreo" placeholder="name@example.com" required>
