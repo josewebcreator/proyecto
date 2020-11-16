@@ -90,10 +90,7 @@
 
                 <?php   
             }else{
-                ?>
-                
-                    <h1>Solo los administradores tienen acceso a esta transaccion</h1>
-                <?php
+                header("location:index.php");
             }
 
             ?>
