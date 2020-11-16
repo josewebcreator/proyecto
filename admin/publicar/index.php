@@ -23,12 +23,15 @@
 
         if(($user==$checkUser)&&($token==$checktoken)){
         $tittle="Crear Entrada";
+        $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
+        $token = substr(str_shuffle($permitted_chars), 0, 6);
         require("../activos/header.php");?>
 
     <div class="container">
     <ul id="crea-blog">
         <li>
             <form action="" class="p-principal">
+                <input type="hidden" name="token" value="<?php echo $token; ?>">
                 <input type="text" name="titulo_entrada" placeholder="Título" id="titulo_entrada" ><br>
 
                 <textarea name="parrafo" id="texto_parrafo" cols="30" rows="10" placeholder="Texto del parrafo"></textarea>
