@@ -88,13 +88,13 @@
                     </div>
                 </div>
 
-                <?php   
+                <?php 
+                require("footer.php");  
             }else{
-                ?>
-                
-                    <h1>Solo los administradores tienen acceso a esta transaccion</h1>
-                <?php
+                header("location:index.php");
             }
+
+            
 
             ?>
             <script src="js\jquery.js"></script>

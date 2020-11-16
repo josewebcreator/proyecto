@@ -84,23 +84,19 @@
                     
                     <?php //fin IF
                     $consulta->close();
+                    $mysqli->close();
                 }else{
                     require("../activos/header.php");
                     echo "<h1>No existen publicaciones</h1>"; 
                     $consulta->close();
+                    $mysqli->close();
                 }
 
             }else{
-                ?>
-                    <h1>SOLO LOS ADMINISTRADORES PUEDEN REALIZAR APROBACIONES</h1>
-                <?php
-                $consulta->close();
+                header("location:index.php");
             }
-           
-
-        $mysqli->close();
-    
-    }else{
+            
+        }else{
             header("location:../../inicio/index.php");
         }  
     }else{

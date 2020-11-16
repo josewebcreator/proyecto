@@ -102,41 +102,23 @@
                     </div>
                     
                     <div class="col-4 ppal-admin">
-                        <?php
                         
-                            if($tipo=="admin"){
-
-                                ?>
-                                    <div class="menu-elem col-12">
-                                        <div class="link-background">
-                                            <a href="#" class="link-menu" title="crear usuario"><i class="fas fa-plus"></i></a>
-                                        </div>                    
-                                    </div>  
-                                    <div class="menu-elem col-12">
-                                        <div class="link-background">
-                                            <a href="aprob.php" class="link-menu" title="aprobar publicaciones"><i class="fas fa-check"></i></a>
-                                        </div>                    
-                                    </div>  
-                                    <div class="menu-elem col-12">
-                                        <div class="link-background">
-                                            <a href="tabla.php" class="link-menu" title="lista de entradas"><i class="fas fa-clipboard-list"></i></a>
-                                        </div>                    
-                                    </div>  
-                                
-                                <?php
-
-                            }else{
-
-                                ?>
-                                    <div class="menu-elem col-12">
-                                        <div class="link-background">
-                                            <a href="tabla.php" class="link-menu" title="lista de entradas"><i class="fas fa-clipboard-list"></i></a>
-                                        </div>                    
-                                    </div>  
-                                <?php
-                            }
-
-                        ?>
+                        <div class="menu-elem col-12">
+                            <div class="link-background">
+                                <a href="nuevouser.php" class="link-menu" title="crear usuario"><i class="fas fa-plus"></i></a>
+                            </div>                    
+                        </div>  
+                        <div class="menu-elem col-12">
+                            <div class="link-background">
+                                <a href="aprob.php" class="link-menu" title="aprobar publicaciones"><i class="fas fa-check"></i></a>
+                            </div>                    
+                        </div>  
+                        <div class="menu-elem col-12">
+                            <div class="link-background">
+                                <a href="tabla.php" class="link-menu" title="lista de entradas"><i class="fas fa-clipboard-list"></i></a>
+                            </div>                    
+                        </div>           
+                        
                     </div>
 
                     <div class="menu-elem col-4">
