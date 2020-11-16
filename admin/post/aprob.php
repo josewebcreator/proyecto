@@ -91,7 +91,7 @@
                     $consulta->close();
                     $mysqli->close();
                 }
-
+                require("footer.php");
             }else{
                 header("location:index.php");
             }
@@ -132,5 +132,8 @@
 
         
 </script>
+
+<script src="js\all.min.js"></script>
+
 </body>
 </html>
