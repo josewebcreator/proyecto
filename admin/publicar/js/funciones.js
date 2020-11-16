@@ -124,13 +124,18 @@ $(document).ready(function () {
                                         data: formsecun[con],
                                         contentType: false,
                                         cache: false,
-                                        processData: false,
-                                        success: function () {
-                                            alert("Se ha creado exitosamente la publicacion, queda a la espera de revicion y aceptacion")
-                                            window.location.assign('../index.php')
-                                        }
+                                        processData: false
+                                        
                                     })
+                                    
                                 }
+
+                                if (con==formsecun.length) {
+                                    alert("Se ha creado exitosamente la publicacion, queda a la espera de revicion y aceptacion")
+                                    window.location.assign('../index.php')  
+                                }
+                                
+
                             }
                         })      
                     }
