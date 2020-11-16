@@ -108,6 +108,7 @@
                     
                     <?php //fin IF
                     $consulta->close();
+                    require("footer.php");
                 }else{
                     
                     echo "No existen publicaciones"; 
@@ -155,7 +156,7 @@
 
     </script>
     <script src="js/funciones.js"></script>
-
+    <script src="js\all.min.js"></script>
     </body>
     </html>
 
