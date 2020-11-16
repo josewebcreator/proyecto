@@ -124,14 +124,18 @@ $(document).ready(function () {
                                         data: formsecun[con],
                                         contentType: false,
                                         cache: false,
-                                        processData: false         
+                                        processData: false,
+                                        success: function () {
+                                            alert("Se ha creado exitosamente la publicacion, queda a la espera de revicion y aceptacion")
+                                            window.location.assign('../index.php')
+                                        }
                                     })
                                 }
                             }
                         })      
                     }
                 })
-
+                
             } else {
                 alert("Existen campos vacíos, por favor validar")
             }
