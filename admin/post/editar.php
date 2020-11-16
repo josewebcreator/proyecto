@@ -107,6 +107,7 @@ session_start();
                                 <img src="../publicar/uploads/<?php echo $fParrafos['imagen_parrafo']; ?>" alt="" width="100%" height="300px">
                             </form>
                             <input type="button" value="Borrar" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id_entrada_blog']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar btn-warning btn-lg">
+
                             
                         </li>
 
@@ -115,7 +116,7 @@ session_start();
                 }
 
                 ?> </ul>
-                <input type="button" value="Editar" class="btn btn btn-outline-primary" id="btn-editar"> 
+                <input type="button" value="Editar" class="btn btn btn-primary" id="btn-editar"> 
                 <br> <h6>Insertar parrafo desdpues de:</h6>
                 <select name="" id="insertSelec" class="form-control col-4">
                     <option value="0">Parrafo Principal</option>
