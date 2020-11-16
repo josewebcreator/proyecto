@@ -68,7 +68,7 @@
                 echo "No existen publicaciones"; 
                 $consulta->close();
             }
-
+            require("footer.php");  
             $mysqli->close();
         }else{
             header("location:../../inicio/index.php");
@@ -95,5 +95,6 @@
             }
         
         </script>
+        <script src="js\all.min.js"></script>
 </body>
 </html>
