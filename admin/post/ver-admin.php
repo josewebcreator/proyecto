@@ -79,7 +79,7 @@
                     </div>
                 </div><?php //cierre del dif entrada
                 } // fin If
-
+                require("footer.php");
                 $mysqli->close();
             }
         }else{
@@ -89,3 +89,4 @@
         header("location:../../inicio/index.php");
     }
 ?>
+<script src="js\all.min.js"></script>
