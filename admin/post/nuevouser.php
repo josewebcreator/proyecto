@@ -88,10 +88,13 @@
                     </div>
                 </div>
 
-                <?php   
+                <?php 
+                require("footer.php");  
             }else{
                 header("location:index.php");
             }
+
+            
 
             ?>
             <script src="js\jquery.js"></script>
