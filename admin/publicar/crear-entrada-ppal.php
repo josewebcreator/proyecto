@@ -34,6 +34,15 @@
                 }
             $consulta->close();
 
+            $consulta = $mysqli->prepare("SELECT usuario FROM `login` WHERE `usuario` = ?");
+            $consulta->bind_param("s",$user);
+            $consulta->execute();
+            $res = $consulta->get_result();
+                while($row = $res->fetch_assoc()){
+                    $creador = $row['usuario'];
+                }
+            $consulta->close();
+
             if(!empty($_POST['titulo_entrada']) || !empty($_POST['parrafo']) || !empty($_FILES['imagen_cabecera']['name'])){
                 $uploadedFile = '';
                 if(!empty($_FILES["imagen_cabecera"]["type"])){
@@ -57,8 +66,8 @@
                 $len = "es";
                 
                 //insert form data in the database
-                $insert = $mysqli->prepare("INSERT INTO entrada_blog (lenguaje, titulo, imagen_central, foto_footer, texto, id_login, token) VALUES (?, ?, ?, ?, ?, ?, ?)");
-                $insert->bind_param("sssssis",$len, $titulo, $uploadedFile, $footer, $escrito, $id_log, $token);
+                $insert = $mysqli->prepare("INSERT INTO entrada_blog (lenguaje, titulo, imagen_central, foto_footer, texto, id_login, token, creador) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                $insert->bind_param("sssssiss",$len, $titulo, $uploadedFile, $footer, $escrito, $id_log, $token, $creador);
                 echo $mysqli->error;
                 
                 $insert->execute();
