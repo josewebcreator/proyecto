@@ -253,11 +253,15 @@ $(document).ready(function () {
 
     //crear nuevo usuario
 
+
+
+
     $("#boton-crear-user").click(function (e) {
         e.preventDefault();
         var check = []
         var clave
         var reclave
+        var continuar
         $('#new-user-form').each(function () {
             $("form", this).each(function () {
                 $(".form-group", this).children().each(function () {
@@ -269,7 +273,6 @@ $(document).ready(function () {
                             check.push(0)
                         }
 
-                        console
                     }
 
                     if ($(this).is("#clave")) {
@@ -285,29 +288,52 @@ $(document).ready(function () {
 
             if (!check.includes(0)) {
                 if (clave == reclave) {
+                    
+                    var nic = $("#nick").val()
                     $("form", this).each(function () {
+                        var form = new FormData(this)
+
                         $.ajax({
-                            type: 'POST',
-                            url: 'enviarnuevolog.php',
+                            type: "post",
+                            url: "checkusuario.php",
                             data: new FormData(this),
                             contentType: false,
                             cache: false,
-                            processData: false         
-                        })
-                    })
+                            processData: false,
+                            success: function (e) {
+                                continuar = e
+                                if (continuar==0) {
+                                
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'enviarnuevolog.php',
+                                        data: form,
+                                        contentType: false,
+                                        cache: false,
+                                        processData: false,
+                                        success: function () {
+                                            $.ajax({
+                                                type: 'POST',
+                                                url: 'enviarnuevouser.php',
+                                                data: form,
+                                                contentType: false,
+                                                cache: false,
+                                                processData: false,
+                                                success: function () {
+                                                    alert('se ha creado exitosamente el usuario')
+                                                }
+                                            })   
+                                        }
+                                    })
 
-
-                    doDelay(250)
-
-                    $("form", this).each(function () {
-                        $.ajax({
-                            type: 'POST',
-                            url: 'enviarnuevouser.php',
-                            data: new FormData(this),
-                            contentType: false,
-                            cache: false,
-                            processData: false         
-                        })
+                                } else {
+                                    alert("ya existe ese nick de usuario")
+                                }
+                            },
+                            complete: function () {
+                                console.log(continuar)
+                            }
+                        });
                     })
                 } else {
                     alert("la clave y la confirmacion no coinciden, por favor validar")
@@ -320,7 +346,5 @@ $(document).ready(function () {
 
         return
     })
-
-    
 
 })
