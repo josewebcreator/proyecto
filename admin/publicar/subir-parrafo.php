@@ -50,9 +50,10 @@
 
 
                 //
-                $consulta= $mysqli->prepare("SELECT id_ent FROM entrada_blog WHERE titulo = ?");
+                $consulta= $mysqli->prepare("SELECT id_ent FROM entrada_blog WHERE titulo = ? AND token = ?");
                 $ent_titulo = mysqli_real_escape_string($mysqli, $_POST['t_entrada']);
-                $consulta->bind_param("s", $ent_titulo);
+                $token = mysqli_real_escape_string($mysqli, $_POST['token']);
+                $consulta->bind_param("ss", $ent_titulo, $token);
                 echo $mysqli->error;
                 $consulta->execute();
                 $resultado = $consulta->get_result();
