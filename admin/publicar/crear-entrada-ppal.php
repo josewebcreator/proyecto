@@ -53,11 +53,12 @@
                 $escrito = mysqli_real_escape_string($mysqli, $_POST['parrafo']);
                 $titulo =  mysqli_real_escape_string($mysqli, $_POST['titulo_entrada']);
                 $footer = mysqli_real_escape_string($mysqli, $_POST['foto-footer']);
+                $token = mysqli_real_escape_string($mysqli, $_POST['token']);
                 $len = "es";
                 
                 //insert form data in the database
-                $insert = $mysqli->prepare("INSERT INTO entrada_blog (lenguaje, titulo, imagen_central, foto_footer, texto, id_login) VALUES (?, ?, ?, ?, ?, ?)");
-                $insert->bind_param("sssssi",$len, $titulo, $uploadedFile, $footer, $escrito, $id_log);
+                $insert = $mysqli->prepare("INSERT INTO entrada_blog (lenguaje, titulo, imagen_central, foto_footer, texto, id_login, token) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                $insert->bind_param("sssssis",$len, $titulo, $uploadedFile, $footer, $escrito, $id_log, $token);
                 echo $mysqli->error;
                 
                 $insert->execute();
