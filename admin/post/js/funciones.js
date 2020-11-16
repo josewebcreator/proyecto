@@ -43,44 +43,53 @@ $(document).ready(function () {
         })
 
         if (!check.includes(0)) {
+            var formppal
+            var formsecun = []
             $("#edicion li").each(function () {
                 doDelay(150);
                 if (($(this).children(".p-principal")).length) {
                     
                     $("form", this).each(function () {
+                        formppal = new FormData(this)
+                    })
+
+                } else {
+                    $("form", this).each(function () {
+                        formsecun.push(new FormData(this))  
+                    })
+                }
+                if (($(this).children(".p-principal")).length) {
+                    $("form", this).each(function () {
                         $.ajax({
                             type: 'POST',
                             url: 'editar-principal.php',
-                            data: new FormData(this),
+                            data: formppal,
                             contentType: false,
                             cache: false,
-                            processData: false         
+                            processData: false,
+                            success: function () {
+                                for (var con = 0; con < formsecun.length; con = con+1){
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'editar-parrafo.php',
+                                        data: formsecun[con],
+                                        contentType: false,
+                                        cache: false,
+                                        processData: false         
+                                    })
+                                }
+                            }
                         })
                     })
-                    doDelay(3000);
-                } else {
-
-                    $("form", this).each(function () {
-                        
-                        $.ajax({
-                            type: 'POST',
-                            url: 'editar-parrafo.php',
-                            data: new FormData(this),
-                            contentType: false,
-                            cache: false,
-                            processData: false         
-                        })
-                    
-                    })
-
                 }
+
             });
         } else {
             alert("existen campos vacios, por favor validar")
         }
         
         doDelay(150)
-        location.reload()
+        //location.reload()
         return
     });
 
@@ -216,6 +225,11 @@ $(document).ready(function () {
                         nuevo.push(nVal)
                         $(this).val(nVal)
                     }
+                    if ($(this).is(".parraf-id")) {
+
+                        $(this).val(idEnt)
+                    }
+                    
                 })
             }
         })
