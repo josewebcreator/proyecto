@@ -129,12 +129,12 @@ $(document).ready(function () {
                                     })
                                     
                                 }
-
+                                /*
                                 if (con==formsecun.length) {
                                     alert("Se ha creado exitosamente la publicacion, queda a la espera de revicion y aceptacion")
                                     window.location.assign('../index.php')  
                                 }
-                                
+                                */
 
                             }
                         })      
