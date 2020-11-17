@@ -20,7 +20,7 @@
         }
 
         $mysqli->close();
-        echo password_hash(123456, PASSWORD_DEFAULT);
+
         if(($user==$checkUser)&&($token==$checktoken)){
             $tittle= "Crear User";
             require("../activos/header.php");
