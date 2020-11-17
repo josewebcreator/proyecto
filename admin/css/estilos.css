@@ -264,6 +264,18 @@ header{
     color: white;
     position: relative;
     margin-top: 2%;
+
+}
+
+/*seguridad*/
+
+.seguridad{
+    background-color: #343a40;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 /* FOOTER */
@@ -274,7 +286,6 @@ header{
     height: 55px;
     position: relative;
     bottom: 0;
-;
 }
 
 .menu-elem-footer{
