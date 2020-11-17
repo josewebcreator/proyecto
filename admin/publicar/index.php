@@ -49,8 +49,12 @@
     <input type="button" value="incrustar" name="incrustar" id="btn-incrustar">
     <input type="button" value="enviar" name="enviar" id="btn-enviar">
     </div>
-    
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <?php require("../post/footer.php"); ?>
+    <script src="..\post\js\all.min.js"></script>
     <script src="js\jquery.js"></script>
     <script src="js\funciones.js"></script>
 </body>

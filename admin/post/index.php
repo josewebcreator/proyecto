@@ -86,8 +86,8 @@
                                     
                                     <div class="col-12 opciones">
                                         <h3>Opciones</h3>
-                                        <h4><a href="#">Seguridad</a></h4>
-                                        <h4><a href="#">Cerrar Sesion</a></h4>
+                                        <h4><a href="seguridad.php">Seguridad</a></h4>
+                                        <h4><a href="cerrarsesion.php?destroy=0">Cerrar Sesion</a></h4>
                                         
                                     </div>
                                 <?php

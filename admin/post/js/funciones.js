@@ -303,7 +303,6 @@ $(document).ready(function () {
             if (!check.includes(0)) {
                 if (clave == reclave) {
                     
-                    var nic = $("#nick").val()
                     $("form", this).each(function () {
                         var form = new FormData(this)
 
@@ -361,4 +360,107 @@ $(document).ready(function () {
         return
     })
 
+    //cambio de clave en seguridad
+
+    $("#boton-cambiar-clave").click(function (e) { 
+        e.preventDefault();
+        var check = []
+        var clave
+        var reclave
+        $(".form-cambiarclave").each(function () {
+            $("form", this).children().each(function () {
+                if ($(this).is("#clave") || $(this).is("#reclave") ) {
+                        
+                    if ($(this).val().length>0) {
+                        check.push(1)
+                    } else {
+                        check.push(0)
+                    }
+
+                    if ($(this).is("#clave")) {
+                        clave = $(this).val()
+                    }
+                    if ($(this).is("#reclave")) {
+                        reclave = $(this).val()
+                    }
+
+                }
+            })
+
+            $("form", this).each(function () {
+                var cambio = new FormData(this)
+                if (!check.includes(0)) {
+                    if (clave == reclave) {
+
+                        $.ajax({
+                            type: "post",
+                            url: "spros.php",
+                            data: cambio,
+                            contentType: false,
+                            cache: false,
+                            processData: false,
+                            success: function (response) {
+                                if (response == 1) {
+                                    alert("Clave actual incorrecta")
+                                } else {
+                                    alert("contraseña cambiada con exito")
+                                }
+                                
+                            }
+                        });
+                    } else {
+                        alert("la clave y la confirmacion no coinciden, por favor validar")
+                    }
+
+                } else {
+                    alert("todos los campos deben ser completados")
+                }    
+            })
+
+        })
+        
+    })
+
+    $("#boton-inhabilitar").click(function (e) {
+        e.preventDefault();
+        var check = []
+        $(".form-inhabilitar").each(function () {
+            if ($(this).is("#vieja") || $(this).is("#selecUsuario") ) {
+                        
+                if ($(this).val().length>0) {
+                    check.push(1)
+                } else {
+                    check.push(0)
+                }
+        
+            }
+        })
+        
+        $(".form-inhabilitar").each(function () {
+
+            $("form", this).each(function () {
+                var inhabilitar = new FormData(this)
+                if (!check.includes(0)) {
+                    $.ajax({
+                        type: "post",
+                        url: "spros.php",
+                        data: inhabilitar,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function (response) {
+                            if (response == 1) {
+                                alert("Clave incorrecta")
+                            } else {
+                                alert("Usuario Inhabilitado")
+                            }
+                                
+                        }
+                    })
+                } else {
+                    alert("todos los campos deben ser completados")
+                } 
+            })
+        })
+    })
 })
