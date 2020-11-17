@@ -25,13 +25,29 @@
             if(isset($_POST['parametro'])){
                 if($_POST['parametro']=="clave"){
                     require("..\cone\conexion.php");
-                    $consulta = $mysqli->prepare("UPDATE `login` SET `hash` = ? WHERE `usuario` = ?");
-                    $clave = mysqli_real_escape_string($mysqli, $_POST['clave']);
-                    $hash = password_hash($clave, PASSWORD_DEFAULT);
-                    $consulta->bind_param("ss", $hash, $user);
+                    $consulta = $mysqli->prepare("SELECT hash FROM `login` WHERE `usuario` = ?");
+                    $consulta->bind_param("s", $user);
                     $consulta->execute();
+                    $res = $consulta->get_result();
+                    while($row = $res->fetch_assoc()){
+                        $vhash = $row['hash'];
+                    }
+                    $vpass = $_POST['vieja'];
+
                     $consulta->close();
-                    $mysqli->close();
+                    if(password_verify($vpass, $vhash)){
+                        $consulta = $mysqli->prepare("UPDATE `login` SET `hash` = ? WHERE `usuario` = ?");
+                        $clave = mysqli_real_escape_string($mysqli, $_POST['clave']);
+                        $hash = password_hash($clave, PASSWORD_DEFAULT);
+                        $consulta->bind_param("ss", $hash, $user);
+                        $consulta->execute();
+                        $consulta->close();
+                        $mysqli->close();
+                    }else{
+                        echo 1;
+                    }
+
+                    
                 }
             }
         }
