@@ -23,6 +23,7 @@
 
         if(($user==$checkUser)&&($token==$checktoken)){
             if(isset($_POST['parametro'])){
+                //cambio de clave
                 if($_POST['parametro']=="clave"){
                     require("..\cone\conexion.php");
                     $consulta = $mysqli->prepare("SELECT hash FROM `login` WHERE `usuario` = ?");
@@ -49,6 +50,9 @@
 
                     
                 }
+
+
+
             }
         }
     }    
