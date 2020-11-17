@@ -43,7 +43,7 @@
             while($row = $res->fetch_assoc()){
                 $tipo = $row['tipo'];
             }
-
+            echo password_hash(123456, PASSWORD_DEFAULT);
             if($tipo=="admin"){
                 ?>
                    <div class="container" id="cambiodeclave">
@@ -54,6 +54,10 @@
                     <div class="col-12 form-cambiarclave">
                         <form action="">
                             <input type="hidden" name="parametro" value="clave">
+                            <div class="form-group">
+                                    
+                                <input type="password" class="form-control" id="vieja" name="vieja" placeholder="Contraseña actual" required>
+                            </div>
                             <div class="form-group">
                                     
                                     <input type="password" class="form-control" id="clave" name="clave" placeholder="Contraseña" required>
@@ -88,9 +92,13 @@
                             <input type="hidden" name="parametro" value="clave">
                             <div class="form-group">
                                     
+                                <input type="password" class="form-control" id="vieja" name="vieja" placeholder="Contraseña actual" required>
+                            </div>
+                            <div class="form-group">
+                                    
                                 <input type="password" class="form-control" id="clave" name="clave" placeholder="Contraseña" required>
                             </div>
-                                <div class="form-group">
+                            <div class="form-group">
                                 <input type="password" class="form-control" id="reclave" name="reclave" placeholder="Repita Contraseña" required>
                                 
                             </div>
