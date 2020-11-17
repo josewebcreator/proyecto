@@ -20,7 +20,7 @@
         }
 
         $mysqli->close();
-
+        echo password_hash(123456, PASSWORD_DEFAULT);
         if(($user==$checkUser)&&($token==$checktoken)){
             $tittle= "Crear User";
             require("../activos/header.php");
@@ -45,10 +45,16 @@
             }
 
             if($tipo=="admin"){
-                $consulta = $mysqli->prepare("SELECT * FROM `usuario` WHERE `tipo` != 'admin'");
+                $consulta = $mysqli->prepare("SELECT * FROM `usuario` WHERE `tipo` != 'admin' AND `activo` = 1");
                 $consulta->execute();
                 $resUsuarios = $consulta->get_result();
                 $consulta->close();
+
+                $consulta = $mysqli->prepare("SELECT * FROM `usuario` WHERE `tipo` != 'admin' AND `activo` = 0");
+                $consulta->execute();
+                $resInna = $consulta->get_result();
+                $consulta->close();
+
                 ?>
                 <div class="container" id="cambiodeclave">
                     <div class="col-12">
@@ -90,20 +96,61 @@
                             </div>
                             <select class="form-control" name="usuario" id="selecUsuario">
                                 <?php
-                                while($row =  $resUsuarios->fetch_assoc()){
-
+                                $cuenta = $resUsuarios->num_rows;
+                                if($cuenta>0){
+                                    while($row =  $resUsuarios->fetch_assoc()){
                                     ?>
                                         <option value="<?php echo $row['id_login'] ; ?>"><?php echo $row['nombres'] ; ?> <?php echo $row['apellidos'] ; ?></option>
                                     <?php
-
+                                    }
+                                }else{
+                                    ?>
+                                        <option value="">No existen usuarios habilitados</option>
+                                    <?php
                                 }
+                                
                                 ?>
                             </select>
-
+                                <br>
                                 <input type="submit" value="enviar" id="boton-inhabilitar" class="btn btn-primary mb-2">
                         </form>
                     </div>
-                </div> 
+                </div>
+
+                <div class="container" id="habilitar">
+                    <div class="col-12">
+                        <h2>Habilitar Usuario</h2>
+                    </div>
+
+                    <div class="col-12 form-habilitar">
+                        <form action="">
+                            <input type="hidden" name="parametro" value="habilitar">
+                            <div class="form-group">
+                                    
+                                <input type="password" class="form-control" id="vieja" name="vieja" placeholder="Contraseña actual" required>
+                            </div>
+                            <select class="form-control" name="usuario" id="selecUsuario">
+                                <?php
+                                $cuenta = $resInna->num_rows;
+                                if($cuenta>0){
+                                    while($row =  $resInna->fetch_assoc()){
+                                    ?>
+                                        <option value="<?php echo $row['id_login'] ; ?>"><?php echo $row['nombres'] ; ?> <?php echo $row['apellidos'] ; ?></option>
+                                    <?php
+                                    }
+                                }else{
+                                    ?>
+                                        <option value="">No existen usuarios inhabilitados</option>
+                                    <?php
+                                }
+                                
+                                ?>
+                            </select>
+                                <br>
+                                <input type="submit" value="enviar" id="boton-habilitar" class="btn btn-primary mb-2">
+                        </form>
+                    </div>
+                </div>
                 
                 <?php
                 require("footer.php");
@@ -134,7 +181,7 @@
                                 <input type="password" class="form-control" id="reclave" name="reclave" placeholder="Repita Contraseña" required>
                                 
                             </div>
-
+                                <br>
                                 <input type="submit" value="enviar" id="boton-cambiar-clave" class="btn btn-primary mb-2">
                         </form>
                     </div>
