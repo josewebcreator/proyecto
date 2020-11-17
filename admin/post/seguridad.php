@@ -56,7 +56,7 @@
                 $consulta->close();
 
                 ?>
-                <div class="container" id="cambiodeclave">
+                <div class="container seguridad" id="cambiodeclave">
                     <div class="col-12">
                         <h2>Cambiar Contraseña</h2>
                     </div>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
 
-                <div class="container" id="cambiar-datos">
+                <div class="container seguridad" id="cambiar-datos">
                     <div class="col-12">
                         <h2>Cambiar Datos</h2>
                     </div>
@@ -108,7 +108,7 @@
                     </div>
                 </div> 
                     
-                <div class="container" id="inhabilitar">
+                <div class="container seguridad" id="inhabilitar">
                     <div class="col-12">
                         <h2>Inhabilitar Usuario</h2>
                     </div>
@@ -143,7 +143,7 @@
                     </div>
                 </div>
 
-                <div class="container" id="habilitar">
+                <div class="container seguridad" id="habilitar">
                     <div class="col-12">
                         <h2>Habilitar Usuario</h2>
                     </div>
@@ -187,7 +187,7 @@
                 <?php
             }else{
                 ?>
-                   <div class="container" id="cambiodeclave">
+                   <div class="container seguridad" id="cambiodeclave">
                     <div class="col-12">
                         <h2>Cambiar Contraseña</h2>
                     </div>
@@ -212,7 +212,32 @@
                         </form>
                     </div>
                 </div> 
-                    
+                
+                <div class="container seguridad" id="cambiar-datos">
+                    <div class="col-12">
+                        <h2>Cambiar Datos</h2>
+                    </div>
+
+                    <div class="col-12 form-cambiardatos">
+                        <form action="">
+                            <input type="hidden" name="parametro" value="datos">
+                            <div class="form-group">
+                                    
+                                <input type="password" class="form-control" id="vieja" name="vieja" placeholder="Contraseña actual" required>
+                            </div>
+                            <div class="form-group">
+                                    
+                                    <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Nombres" required>
+                                </div>
+                                    <div class="form-group">
+                                    <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="apellidos" required>
+                                
+                                </div>
+
+                                <input type="submit" value="enviar" id="boton-cambiar-datos" class="btn btn-primary mb-2">
+                        </form>
+                    </div>
+                </div>
                 
                 <?php
                 require("footer.php");
