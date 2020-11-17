@@ -43,10 +43,14 @@
             while($row = $res->fetch_assoc()){
                 $tipo = $row['tipo'];
             }
-            echo password_hash(123456, PASSWORD_DEFAULT);
+
             if($tipo=="admin"){
+                $consulta = $mysqli->prepare("SELECT * FROM `usuario` WHERE `tipo` != 'admin'");
+                $consulta->execute();
+                $resUsuarios = $consulta->get_result();
+                $consulta->close();
                 ?>
-                   <div class="container" id="cambiodeclave">
+                <div class="container" id="cambiodeclave">
                     <div class="col-12">
                         <h2>Cambiar Contraseña</h2>
                     </div>
@@ -72,6 +76,34 @@
                     </div>
                 </div> 
                     
+                <div class="container" id="inhabilitar">
+                    <div class="col-12">
+                        <h2>Inhabilitar Usuario</h2>
+                    </div>
+
+                    <div class="col-12 form-inhabilitar">
+                        <form action="">
+                            <input type="hidden" name="parametro" value="inhabilitar">
+                            <div class="form-group">
+                                    
+                                <input type="password" class="form-control" id="vieja" name="vieja" placeholder="Contraseña actual" required>
+                            </div>
+                            <select class="form-control" name="usuario" id="selecUsuario">
+                                <?php
+                                while($row =  $resUsuarios->fetch_assoc()){
+
+                                    ?>
+                                        <option value="<?php echo $row['id_login'] ; ?>"><?php echo $row['nombres'] ; ?> <?php echo $row['apellidos'] ; ?></option>
+                                    <?php
+
+                                }
+                                ?>
+                            </select>
+
+                                <input type="submit" value="enviar" id="boton-inhabilitar" class="btn btn-primary mb-2">
+                        </form>
+                    </div>
+                </div> 
                 
                 <?php
                 require("footer.php");
