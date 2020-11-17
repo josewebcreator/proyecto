@@ -420,7 +420,7 @@ $(document).ready(function () {
         })
         
     })
-
+    //Inhabilitar usuario
     $("#boton-inhabilitar").click(function (e) {
         e.preventDefault();
         var check = []
@@ -465,6 +465,7 @@ $(document).ready(function () {
         })
     })
 
+    //Habilitar Usuario
     $("#boton-habilitar").click(function (e) {
         e.preventDefault();
         var check = []
@@ -498,6 +499,49 @@ $(document).ready(function () {
                             } else {
                                 alert("Usuario habilitado")
                                 location.reload()
+                            }
+                                
+                        }
+                    })
+                } else {
+                    alert("todos los campos deben ser completados")
+                } 
+            })
+        })
+    })
+
+    $("#boton-cambiar-datos").click(function (e) {
+        e.preventDefault();
+        var check = []
+        $(".form-cambiardatos").each(function () {
+            if ($(this).is("#vieja") || $(this).is("#nombres")|| $(this).is("#apellidos")  ) {
+                        
+                if ($(this).val().length>0) {
+                    check.push(1)
+                } else {
+                    check.push(0)
+                }
+        
+            }
+        })
+        
+        $(".form-cambiardatos").each(function () {
+
+            $("form", this).each(function () {
+                var datos = new FormData(this)
+                if (!check.includes(0)) {
+                    $.ajax({
+                        type: "post",
+                        url: "spros.php",
+                        data: datos,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function (response) {
+                            if (response == 1) {
+                                alert("Clave incorrecta")
+                            } else {
+                                alert("Datos modificados")
                             }
                                 
                         }
