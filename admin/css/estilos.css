@@ -264,6 +264,18 @@ header{
     color: white;
     position: relative;
     margin-top: 2%;
+
+}
+
+/*seguridad*/
+
+.seguridad{
+    background-color: #343a40;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-bottom: 3%;
 }
 
 /* FOOTER */
@@ -271,25 +283,25 @@ header{
 .footer{
     background-color: #343a40;
     width: 100%;
-    height: 55px;
-    position: relative;
+    height: 60px;
+    position: absolute;
+    margin-top: 50px;
     bottom: 0;
-;
+    top:93%;
+    clear: both;
 }
 
-.menu-elem-footer{
-    height: 30px;
-    justify-content: center;
-    text-align: center;
-}
 
 .link-background-footer{
-    position: relative;
-    width: 60%;
-    margin: auto;
-    margin-top: 5%;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px;
     background-color: #007bff;
-    border-radius: 10px;  
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;  
 }
 
 .link-menu-footer{
