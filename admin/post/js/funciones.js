@@ -419,7 +419,48 @@ $(document).ready(function () {
 
         })
         
-    });
+    })
 
+    $("#boton-inhabilitar").click(function (e) {
+        e.preventDefault();
+        var check = []
+        $(".form-inhabilitar").each(function () {
+            if ($(this).is("#vieja") || $(this).is("#selecUsuario") ) {
+                        
+                if ($(this).val().length>0) {
+                    check.push(1)
+                } else {
+                    check.push(0)
+                }
+        
+            }
+        })
+        
+        $(".form-inhabilitar").each(function () {
 
+            $("form", this).each(function () {
+                var inhabilitar = new FormData(this)
+                if (!check.includes(0)) {
+                    $.ajax({
+                        type: "post",
+                        url: "spros.php",
+                        data: inhabilitar,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function (response) {
+                            if (response == 1) {
+                                alert("Clave incorrecta")
+                            } else {
+                                alert("Usuario Inhabilitado")
+                            }
+                                
+                        }
+                    })
+                } else {
+                    alert("todos los campos deben ser completados")
+                } 
+            })
+        })
+    })
 })
