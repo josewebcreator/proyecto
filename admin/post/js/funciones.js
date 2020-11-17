@@ -360,6 +360,8 @@ $(document).ready(function () {
         return
     })
 
+    //cambio de clave en seguridad
+
     $("#boton-cambiar-clave").click(function (e) { 
         e.preventDefault();
         var check = []
@@ -398,7 +400,12 @@ $(document).ready(function () {
                             cache: false,
                             processData: false,
                             success: function (response) {
-                                alert("contraseña cambiada con exito")
+                                if (response == 1) {
+                                    alert("Clave actual incorrecta")
+                                } else {
+                                    alert("contraseña cambiada con exito")
+                                }
+                                
                             }
                         });
                     } else {
