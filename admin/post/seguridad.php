@@ -80,6 +80,32 @@
                                 <input type="submit" value="enviar" id="boton-cambiar-clave" class="btn btn-primary mb-2">
                         </form>
                     </div>
+                </div>
+
+                <div class="container" id="cambiar-datos">
+                    <div class="col-12">
+                        <h2>Cambiar Datos</h2>
+                    </div>
+
+                    <div class="col-12 form-cambiardatos">
+                        <form action="">
+                            <input type="hidden" name="parametro" value="datos">
+                            <div class="form-group">
+                                    
+                                <input type="password" class="form-control" id="vieja" name="vieja" placeholder="Contraseña actual" required>
+                            </div>
+                            <div class="form-group">
+                                    
+                                    <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Nombres" required>
+                                </div>
+                                    <div class="form-group">
+                                    <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="apellidos" required>
+                                
+                                </div>
+
+                                <input type="submit" value="enviar" id="boton-cambiar-datos" class="btn btn-primary mb-2">
+                        </form>
+                    </div>
                 </div> 
                     
                 <div class="container" id="inhabilitar">
