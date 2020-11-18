@@ -278,6 +278,33 @@ header{
     margin-bottom: 3%;
 }
 
+/*Ver mensaje*/
+
+#mensaje{
+    position: relative;
+    margin-top: 10px;
+    padding-top: 20px;
+    color: aliceblue;
+    background-color: #343a40;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+#mensajeTexto{
+    color: #343a40;
+    position: relative;
+    margin-top: 10px;
+    background-color: #b5babf;
+    width: 30%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
 /* FOOTER */
 
 .footer{
@@ -285,7 +312,6 @@ header{
     width: 100%;
     height: 60px;
     position: absolute;
-
     bottom: 0;
     top:94%;
     clear: both;
