@@ -130,7 +130,7 @@
                     
                     <div class="menu-elem col-4">
                         <div class="link-background">
-                            <a href="" class="link-menu" title="Bandeja"><i class="fas fa-envelope"></i></a>
+                            <a href="bandeja.php" class="link-menu" title="Bandeja"><i class="fas fa-envelope"></i></a>
                         </div>                    
                     </div>                    
                                          
