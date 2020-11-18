@@ -83,6 +83,8 @@ header{
     width: 100%;
     height: auto;
     border-radius: 20px;
+    position: relative;
+    margin-top: 5%;
 
 }
 
@@ -94,13 +96,11 @@ header{
 
 .ppal-admin{
     height: 500px;
-    border-bottom: whitesmoke 2px solid;
+    /*border-bottom: whitesmoke 2px solid;*/
 }
 
-.datos-user{
-    border-right: whitesmoke 2px solid;
-    
-}
+
+
 
 .menu-elem{
 
