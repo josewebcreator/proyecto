@@ -126,6 +126,8 @@ session_start();
             } // fin If
 
             $mysqli->close();
+            require("footer.php");
+            
         }
 
 ?>
@@ -147,6 +149,7 @@ session_start();
         }
     </script>
 <script src="js/funciones.js"></script>
+<script src="..\post\js\all.min.js"></script>
 
 </body>
 </html>
