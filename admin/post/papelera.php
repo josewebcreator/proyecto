@@ -112,6 +112,7 @@
                 }else{
                     
                     echo "No existen publicaciones"; 
+                    require("footer.php");
                     $consulta->close();
                 }
             }else{

@@ -49,11 +49,12 @@
                     $tittle = $_GET['titulo'];
                     require('../activos/header.php');
                     ?> <div class="container">
-                        <div class="blog-admin col-8"> <?php
+                        <div class="blog-admin col-12"> <?php
                     while($resFilas = $res->fetch_assoc()){ ?>
                         <div id="pPal">
                             <img id="img-ppal" src="../publicar/uploads/<?php echo $resFilas['imagen_central']; ?>" alt="" width="100%" height="300px">
                             <p id="footer"><?php echo str_replace('\r\n', "<br/>", $resFilas['foto_footer']);  ?></p>
+                            <h2 id="titulo_ppal"><?php echo  $resFilas['titulo']; ?></h2>
                             <p class="parra-ppal"><?php echo str_replace('\r\n', "<br/>", $resFilas['texto']); ?></p>
                         </div>
                     <?php
