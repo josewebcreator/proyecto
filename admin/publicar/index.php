@@ -45,7 +45,6 @@
         </li>
     </ul>
     <br>
-    haga clic para incrustar otro parrafo
     <input type="button" value="incrustar" name="incrustar" id="btn-incrustar">
     <input type="button" value="enviar" name="enviar" id="btn-enviar">
     </div>
