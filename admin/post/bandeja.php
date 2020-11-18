@@ -1,6 +1,6 @@
 <?php
 
-        session_start();
+    session_start();
     if(!($_SESSION["usuario"]==null)||!($_SESSION["usuario"]=="")){
 
         require("..\cone\conexion.php");
@@ -76,7 +76,7 @@
                                     <td><?php echo $row['identificacion']; ?></td>
                                     <td style="text-align: center;">
                                         
-                                        <a href="#">ver</a>
+                                        <a href="ver-mensaje.php?id=<?php echo $row['id'] ?>">ver</a>
                                         <a href="#" class="btn-borrar" refe="<?php echo $row['id']; ?>" onclick="borrar_ent(<?php echo $row['id']; ?>)">Borrar</a>
                                         
                                     </td>
@@ -101,7 +101,7 @@
                 }
 
             }else{
-                //header("location:index.php");
+                header("location:index.php");
             }
 
         }else{
