@@ -64,7 +64,7 @@
             <div id="menu-admin" class="container">
                 <div class="row">
 
-                    <div class="col-8 ppal-admin datos-user">
+                    <div class="col-12 col-xl-8 col-lg-8 col-md-12 ppal-admin datos-user">
                         <div class="row user">
 
                             
@@ -101,9 +101,9 @@
 
                     </div>
                     
-                    <div class="col-4 ppal-admin">
+                    <div class="col-12 col-xl-4 col-lg-4 col-md-12 ppal-admin">
                         
-                        <div class="menu-elem col-12">
+                        <div class="menu-elem col-12 ">
                             <div class="link-background">
                                 <a href="nuevouser.php" class="link-menu" title="crear usuario"><i class="fas fa-plus"></i></a>
                             </div>                    
@@ -121,21 +121,21 @@
                         
                     </div>
 
-                    <div class="menu-elem col-4">
+                    <div class="menu-elem col-12 col-xl-4 col-lg-4 col-md-12">
                         <div class="link-background">
                             <a href="../publicar/index.php" class="link-menu" title="Crear entrada"><i class="fas fa-pen-alt"></i></a>
                         </div>                    
                     </div>                    
                                         
                     
-                    <div class="menu-elem col-4">
+                    <div class="menu-elem col-12 col-xl-4 col-lg-4 col-md-12">
                         <div class="link-background">
                             <a href="bandeja.php" class="link-menu" title="Bandeja"><i class="fas fa-envelope"></i></a>
                         </div>                    
                     </div>                    
                                          
                     
-                    <div class="menu-elem col-4">
+                    <div class="menu-elem col-12 col-xl-4 col-lg-4 col-md-12">
                         <div class="link-background">
                             <a href="papelera.php" class="link-menu" title="papelera"><i class="fas fa-trash-alt"></i></a>
                         </div>                    
