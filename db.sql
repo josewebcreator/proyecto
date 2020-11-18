@@ -32,9 +32,11 @@ CREATE TABLE `comentario_blog` (
 DROP TABLE IF EXISTS `contacto`;
 CREATE TABLE `contacto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `lenguaje` char(2) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `solicitud` varchar(1000) NOT NULL,
+  `identificacion` varchar(300) NOT NULL,
+  `mensaje` mediumtext NOT NULL,
+  `borrado` int(1) NOT NULL DEFAULT 0,
+  `visto` int(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -44,11 +46,17 @@ CREATE TABLE `entrada_blog` (
   `id_ent` int(11) NOT NULL AUTO_INCREMENT,
   `lenguaje` char(2) NOT NULL,
   `titulo` varchar(100) NOT NULL,
+  `creador` varchar(100) NOT NULL,
   `imagen_central` varchar(300) NOT NULL,
   `foto_footer` longtext NOT NULL,
   `texto` longtext NOT NULL,
   `borrado` char(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_ent`)
+  `aprob` char(1) NOT NULL DEFAULT '0',
+  `id_login` int(11) NOT NULL,
+  `token` char(6) NOT NULL,
+  PRIMARY KEY (`id_ent`),
+  KEY `id_login` (`id_login`),
+  CONSTRAINT `entrada_blog_ibfk_1` FOREIGN KEY (`id_login`) REFERENCES `login` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -58,7 +66,8 @@ CREATE TABLE `login` (
   `usuario` varchar(16) NOT NULL,
   `hash` varchar(500) NOT NULL,
   `mail` varchar(100) NOT NULL,
-  `token` char(4) NOT NULL,
+  `token` char(6) NOT NULL,
+  `activo` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -71,10 +80,25 @@ CREATE TABLE `parrafo_blog` (
   `sub_titulo` varchar(300) NOT NULL,
   `imagen_parrafo` varchar(300) DEFAULT NULL,
   `texto` longtext NOT NULL,
+  `token` char(6) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_entrada_blog` (`id_entrada_blog`),
   CONSTRAINT `parrafo_blog_ibfk_1` FOREIGN KEY (`id_entrada_blog`) REFERENCES `entrada_blog` (`id_ent`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- 2020-10-18 20:48:21
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_login` int(11) NOT NULL,
+  `nombres` varchar(300) NOT NULL,
+  `apellidos` varchar(300) NOT NULL,
+  `tipo` varchar(20) NOT NULL,
+  `activo` int(11) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`),
+  KEY `id_login` (`id_login`),
+  CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_login`) REFERENCES `login` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- 2020-11-17 23:58:55
