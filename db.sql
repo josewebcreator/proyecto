@@ -71,6 +71,8 @@ CREATE TABLE `login` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `login` (`id`, `usuario`, `hash`, `mail`, `token`, `activo`) VALUES
+(1,	'prueba',	'$2y$10$z4KNwbxDcEtOYyTjpyb2iOHw9cxED7HEqOprvY9pfzpqwRIMbwTPm',	'',	'123456',	'1');
 
 DROP TABLE IF EXISTS `parrafo_blog`;
 CREATE TABLE `parrafo_blog` (
@@ -101,4 +103,4 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- 2020-11-17 23:58:55
+-- 2020-11-18 00:01:29
