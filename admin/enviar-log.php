@@ -6,7 +6,7 @@
         $pass = mysqli_real_escape_string($mysqli, $_POST['keyword']);
         
         
-        $consulta = $mysqli->prepare("SELECT * FROM `login` WHERE `usuario` = ?");
+        $consulta = $mysqli->prepare("SELECT * FROM `login` WHERE `usuario` = ? AND `activo` = 1");
         $consulta->bind_param("s",$user);
         $consulta->execute();
         
