@@ -225,6 +225,7 @@ $(document).ready(function () {
                         nuevo.push(nVal)
                         $(this).val(nVal)
                     }
+                    
                     if ($(this).is(".parraf-id")) {
 
                         $(this).val(idEnt)

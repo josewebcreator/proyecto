@@ -37,19 +37,6 @@ session_start();
             <title><?php echo $tittle;?></title>
         </head>
         <body>
-            <header>
-                <div class="header-content">
-                    <div id="titulo">
-                        <h2><?php echo $tittle;?></h2>
-                    </div>
-
-                        <nav id="menu">
-                            
-                        </nav>               
-                </div>
-            </header>
-
-
 
     <div id="edicion" class="container">
         <?php
@@ -75,7 +62,7 @@ session_start();
 
 
                 ?>
-                <ul class="edit-entrada col-8">
+                <ul class="edit-entrada col-12">
                 <?php
                 while($resFilas = $res->fetch_assoc()){ ?>
                     <li id="edit-pPal" class="hijo<?php echo $contador; ?>">
@@ -115,24 +102,30 @@ session_start();
                     } //fin while
                 }
 
-                ?> </ul>
-                <input type="button" value="Editar" class="btn btn btn-primary" id="btn-editar"> 
-                <br> <h6>Insertar parrafo desdpues de:</h6>
-                <select name="" id="insertSelec" class="form-control col-4">
-                    <option value="0">Parrafo Principal</option>
-                </select> 
-                <input type="button" value="agregar" class="agregar-parraf">
+                ?> 
+                </ul>
+                <div class="row">
+                    <div class="col">
+                        <select name="" id="insertSelec" class="form-control">
+                            <option value="0">Parrafo Principal</option>
+                        </select> 
+                    </div>
+                    <div class="col">
+                        <input type="button" value="agregar" class="agregar-parraf">
+                    </div>
+                    <div class="col"><input type="button" value="Editar" class="btn btn btn-primary" id="btn-editar"> </div>
+                </div>
+                             
                 <?php //cierre del dif entrada
             } // fin If
 
             $mysqli->close();
-            require("footer.php");
             
-        }
-
-?>
-    
+            
+        } ?>
+ 
     </div>
+    <?php require("footer.php"); ?>
     <script>
         function borrarParrafo(ide, ord){
 
