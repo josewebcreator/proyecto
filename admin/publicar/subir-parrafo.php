@@ -32,7 +32,7 @@
 
             require("../cone/conexion.php");
 
-            if(!empty($_POST['t_parrafo']) || !empty($_POST['parrafo_apoyo']) || !empty($_FILES['imagen']['name'])){
+            if(!empty($_POST['t_parrafo']) || !empty($_POST['parrafo_apoyo'])){
                 $uploadedFile = '';
                 if(!empty($_FILES["imagen"]["type"])){
                     $fileName = time().'_'.$_FILES['imagen']['name'];
@@ -46,6 +46,8 @@
                             $uploadedFile = $fileName;
                         }
                     }
+                }else{
+                    $uploadedFile="nulo";
                 }
 
 
