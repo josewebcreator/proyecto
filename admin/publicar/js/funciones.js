@@ -72,7 +72,7 @@ $(document).ready(function () {
             $("li", this).each(function () { 
                 $("form", this).children().each(function () {
                     
-                    if ($(this).is("#titulo_entrada") || $(this).is("#texto_parrafo") || $(this).is("#imagen_cabecera") || $(this).is("#foto-footer") || $(this).is(".p-secundario") || $(this).is(".titulo_parrafo") || $(this).is(".texto_parrafo") || $(this).is(".imagen_parrafo") ||  $(this).is(".cuenta")) {
+                    if ($(this).is("#titulo_entrada") || $(this).is("#texto_parrafo") || $(this).is("#imagen_cabecera") || $(this).is("#foto-footer") || $(this).is(".p-secundario") || $(this).is(".titulo_parrafo") || $(this).is(".texto_parrafo") ||  $(this).is(".cuenta")) {
                         
                         if ($(this).val().length>0) {
                             check.push(1)
