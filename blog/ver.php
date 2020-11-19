@@ -1,5 +1,5 @@
 <?php
-require("..\activos\header.php");
+
     if(isset($_GET['id'])){
         require('../conexion.php');
         if(isset($_GET['id'])){
@@ -20,7 +20,19 @@ require("..\activos\header.php");
                     $cParrafo->execute();
                     $parrafos = $cParrafo->get_result();
                     $cParrafo->close();
+                    
+                    $ctitulo = $mysqli->prepare("SELECT * FROM entrada_blog WHERE id_ent = ?");
+                    $ctitulo->bind_param("i",$idConsulta);
+                    $ctitulo->execute();
+                    $resT = $ctitulo->get_result();
+                    $ctitulo->close();
 
+                    while($rowT = $resT->fetch_assoc()){
+                        $tittle= $rowT['titulo'];
+                    }
+
+
+                    require("..\activos\header.php");   
                     ?>
                 
                     <div class="container" id="entrada">
