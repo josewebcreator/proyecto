@@ -38,7 +38,6 @@
             $consulta->bind_param("i",$id_log);
             $consulta->execute();
             $res = $consulta->get_result();
-            $total=$res->num_rows;
             $consulta->close();
             
             $consulta = $mysqli->prepare("SELECT * FROM `entrada_blog` WHERE `id_login` = ? AND `aprob` = '0' AND `borrado` = '0'");
@@ -55,6 +54,8 @@
             $aprobadas = $cuenta->num_rows;
             $consulta->close();
             $mysqli->close();
+
+            $total = $proceso + $aprobadas;
             ?>
 
                 
