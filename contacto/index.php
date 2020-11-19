@@ -1,5 +1,5 @@
 <?php
-
+    $tittle = "contacto";
     require('../activos/header.php');
 
 ?>

@@ -249,3 +249,16 @@ header label:hover{
     font-size: 40px;
     margin: 15px 0;
 }
+
+/*contacto*/
+
+#contacto{
+    position: relative;
+    margin-top: 10%;
+    width: 100%;
+}
+
+#textoform{
+    position: relative;
+    margin-bottom: 40px;
+}
