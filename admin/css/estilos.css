@@ -213,7 +213,12 @@ header{
 /*Edicion*/
 
 #edicion{
-    font-family: Helvetica
+    font-family: Helvetica;
+    background-color: white;
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 8%;
+    padding-bottom: 20px;
 }
 
 .edit-entrada{
@@ -226,6 +231,7 @@ header{
     width: 100%;
     border-bottom: 2px groove;
     margin-bottom: 1.5%;
+    text-align: center;
     
 }
 
@@ -261,10 +267,7 @@ header{
     margin-top: 5px;
 }
 
-#btn-editar{
-    
-    margin-left: 1%;
-}
+
 
 /*crear usuario*/
 
