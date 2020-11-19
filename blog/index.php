@@ -1,6 +1,6 @@
 <?php
 
-$tittle= "Inicio";
+$tittle= "Blogs";
 require("..\activos\header.php");
 
 ?>
@@ -23,7 +23,7 @@ require("..\activos\header.php");
                     <div class="col-12 row" id="principales">
                     
                     
-                    <div class="col-6 ultimas">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ultimas">
                         <a href="ver.php?id=<?php echo $row['id_ent']; ?>">
                             <img src="../admin/publicar/uploads/<?php echo $row['imagen_central'];?>" alt=""width="100%" height="200px">
                             <h3><?php echo $row['titulo']; ?></h3>
@@ -35,7 +35,7 @@ require("..\activos\header.php");
                     ?>
                     
                         
-                        <div class="col-6 ultimas">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ultimas">
                             <a href="ver.php?id=<?php echo $row['id_ent']; ?>">
                                 <img src="../admin/publicar/uploads/<?php echo $row['imagen_central']; ?>" alt=""width="100%" height="200px">
                                 <h3><?php echo $row['titulo']; ?></h3>
@@ -55,7 +55,7 @@ require("..\activos\header.php");
                 ?>
                     
                 
-                <div class="col-4 antiguas">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 antiguas">
                     <a href="ver.php?id=<?php echo $row['id_ent']; ?>">
                         <img src="../admin/publicar/uploads/<?php echo $row['imagen_central']; ?>" alt=""width="100%" height="200px">
                         <h4><?php echo $row['titulo']; ?></h4>
