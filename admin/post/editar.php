@@ -91,7 +91,12 @@ session_start();
                                 <input type="text" name="subtitulo" class="parraf-sub" value="<?php echo $fParrafos['sub_titulo']; ?>"><br>
                                 <textarea name="texto" id="" cols="30" rows="10" class="parraf-tex"><?php echo str_replace('\r\n', "\r\n", $fParrafos['texto']) ; ?></textarea><br>
                                 <input type="file" name="imagen_parrafo" accept="image/*" class="parraf-img"><br>
-                                <img src="../publicar/uploads/<?php echo $fParrafos['imagen_parrafo']; ?>" alt="" width="100%" height="300px">
+                                <?php if(!($fParrafos['imagen_parrafo']=="nula")){
+                                    ?>
+                                        <img src="../publicar/uploads/<?php echo $fParrafos['imagen_parrafo']; ?>" alt="" width="100%" height="300px">
+                                    <?php
+                                } ?>
+                                
                             </form>
                             <input type="button" value="Borrar" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id_entrada_blog']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar btn-warning btn-lg">
 
