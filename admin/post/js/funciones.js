@@ -88,8 +88,7 @@ $(document).ready(function () {
             alert("existen campos vacios, por favor validar")
         }
         
-        doDelay(150)
-        //location.reload()
+        location.reload()
         return
     });
 
@@ -262,6 +261,52 @@ $(document).ready(function () {
         $("#insertSelec").empty()
         $('#insertSelec').append('<option value="0">Parrafo Principal</option>');
         armarSelect()
+
+        $("#edicion").each(function () {
+           
+            var formppal
+            var formsecun = []
+            $("#edicion li").each(function () {
+                doDelay(150);
+                if (($(this).children(".p-principal")).length) {
+                    
+                    $("form", this).each(function () {
+                        formppal = new FormData(this)
+                    })
+
+                } else {
+                    $("form", this).each(function () {
+                        formsecun.push(new FormData(this))  
+                    })
+                }
+                if (($(this).children(".p-principal")).length) {
+                    $("form", this).each(function () {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'editar-principal.php',
+                            data: formppal,
+                            contentType: false,
+                            cache: false,
+                            processData: false,
+                            success: function () {
+                                for (var con = 0; con < formsecun.length; con = con+1){
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'editar-parrafo.php',
+                                        data: formsecun[con],
+                                        contentType: false,
+                                        cache: false,
+                                        processData: false         
+                                    })
+                                }
+                                location.reload()
+                            }
+                        })
+                    })
+                }
+
+            });
+        })
         return
     })
 
