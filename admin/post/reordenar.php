@@ -27,7 +27,7 @@
                 if($_POST["viejo"]=="provisional"){
                     //hacer insert aqui
                     require("..\cone\conexion.php");
-                    $consulta = $mysqli->prepare("INSERT INTO `parrafo_blog` (`orden`, `id_entrada_blog`, `sub_titulo`, `imagen_parrafo`, `texto`) VALUES ( 0, ?, 'Temporal', 'nula', 'tmporal');");
+                    $consulta = $mysqli->prepare("INSERT INTO `parrafo_blog` (`orden`, `id_entrada_blog`, `sub_titulo`, `imagen_parrafo`, `texto`) VALUES ( 0, ?, 'inserte titulo', 'nula', 'Texto');");
                     $nuevo= mysqli_real_escape_string($mysqli, $_POST["nuevo"]);
                     $idEnt= mysqli_real_escape_string($mysqli, $_POST["id"]);
                     $consulta->bind_param("i",  $idEnt);
