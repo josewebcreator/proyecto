@@ -71,7 +71,7 @@ session_start();
                             <input type="hidden" name="id" class="ppal-id" value="<?php echo $resFilas['id_ent']; ?>">
                             <input type="file" name="imagen" accept="image/*" class="ppal-img">
                             <img src="../publicar/uploads/<?php echo $resFilas['imagen_central']; ?>" alt="" width="100%" height="300px">
-                            <textarea name="foto-footer" id="" cols="30" rows="5"class="ppal-footer"><?php echo str_replace('\r\n', "\r\n", $resFilas['foto_footer']); ?></textarea><br>
+                            <textarea name="foto-footer" cols="30" rows="5"class="ppal-footer"><?php echo str_replace('\r\n', "\r\n", $resFilas['foto_footer']); ?></textarea><br>
                             <input type="text" name="titulo" class="ppal-ttlo" value="<?php echo $resFilas['titulo']; ?>"><br>
                             <textarea name="texto" id="" cols="30" rows="10" class="ppal-texto"><?php echo str_replace('\r\n', "\r\n", $resFilas['texto'])  ?></textarea><br>
                         </form>
@@ -89,7 +89,7 @@ session_start();
                                 <input type="hidden" name="id" class="parraf-id" value="<?php echo $fParrafos['id_entrada_blog']; ?>"><br>
                                 <input type="hidden" name="orden" class="parraf-orden" value="<?php echo $fParrafos['orden']; ?>"><br>
                                 <input type="text" name="subtitulo" class="parraf-sub" value="<?php echo $fParrafos['sub_titulo']; ?>"><br>
-                                <textarea name="texto" id="" cols="30" rows="10" class="parraf-tex"><?php echo str_replace('\r\n', "\r\n", $fParrafos['texto']) ; ?></textarea><br>
+                                <textarea name="texto" cols="30" rows="10" class="parraf-tex"><?php echo str_replace('\r\n', "\r\n", $fParrafos['texto']) ; ?></textarea><br>
                                 <input type="file" name="imagen_parrafo" accept="image/*" class="parraf-img"><br>
                                 <?php if(!($fParrafos['imagen_parrafo']=="nula")){
                                     ?>
@@ -98,7 +98,7 @@ session_start();
                                 } ?>
                                 
                             </form>
-                            <input type="button" value="Borrar" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id_entrada_blog']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar btn-warning btn-lg">
+                            <input type="button" value="Borrar" name="borrar" onclick="borrarParrafo(<?php echo $fParrafos['id_entrada_blog']; ?>, <?php echo $fParrafos['orden']; ?>)" class="borrar btn-warning">
 
                             
                         </li>
