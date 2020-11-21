@@ -8,7 +8,7 @@ require("..\activos\header.php");
 <?php
 
     require('../conexion.php');
-    $consulta = $mysqli->query("SELECT * from entrada_blog WHERE `borrado` = '0' ORDER BY `id_ent` DESC");
+    $consulta = $mysqli->query("SELECT * from entrada_blog WHERE `borrado` = '0' AND `aprob` = 1 ORDER BY `id_ent` DESC");
     $cuenta = $consulta->num_rows;
 
     if($cuenta>0){
