@@ -82,7 +82,7 @@ CREATE TABLE `parrafo_blog` (
   `sub_titulo` varchar(300) NOT NULL,
   `imagen_parrafo` varchar(300) DEFAULT NULL,
   `texto` longtext NOT NULL,
-  `token` char(6) NOT NULL,
+  `tiempo` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `id_entrada_blog` (`id_entrada_blog`),
   CONSTRAINT `parrafo_blog_ibfk_1` FOREIGN KEY (`id_entrada_blog`) REFERENCES `entrada_blog` (`id_ent`)
@@ -102,5 +102,7 @@ CREATE TABLE `usuario` (
   CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_login`) REFERENCES `login` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `usuario` (`id`, `id_login`, `nombres`, `apellidos`, `tipo`, `activo`) VALUES
+(1,	1,	'Jose Manuel',	'Garcia Garcia',	'admin',	1);
 
--- 2020-11-18 00:01:29
+-- 2020-11-21 21:25:44
