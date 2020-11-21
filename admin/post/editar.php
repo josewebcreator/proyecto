@@ -134,15 +134,21 @@ session_start();
     <script>
         function borrarParrafo(ide, ord){
 
-            $.post("borrar-parrafo.php",
-                {
-                id : ide,
-                orden: ord
-                },
-                function (){
-                    location.reload()
-                }
-            )
+            var confirma = confirm("Si ha realizado algún cambio guardelo antes de borrar el parrafo")
+
+            if(confirma==true){
+                
+                $.post("borrar-parrafo.php",
+                    {
+                    id : ide,
+                    orden: ord
+                    },
+                    function (){
+                        location.reload()
+                    }
+                )
+            }
+            
 
         }
     </script>

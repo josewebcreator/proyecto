@@ -75,9 +75,11 @@ $(document).ready(function () {
                                         data: formsecun[con],
                                         contentType: false,
                                         cache: false,
-                                        processData: false         
+                                        processData: false,
+                                        
                                     })
                                 }
+                                location.reload()
                             }
                         })
                     })
@@ -88,7 +90,7 @@ $(document).ready(function () {
             alert("existen campos vacios, por favor validar")
         }
         
-        location.reload()
+        //location.reload()
         return
     });
 

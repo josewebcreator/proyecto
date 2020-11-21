@@ -26,7 +26,7 @@ session_start();
             if(isset($_POST['principal']) && (empty($_FILES['imagen']['name']))){
 
                 require('../cone/conexion.php');
-                $consulta = $mysqli->prepare('UPDATE entrada_blog SET titulo = ?, foto_footer = ?, texto = ? WHERE id_ent = ?');
+                $consulta = $mysqli->prepare('UPDATE entrada_blog SET titulo = ?, foto_footer = ?, texto = ?, aprob = 0 WHERE id_ent = ?');
                 $titulo = mysqli_real_escape_string($mysqli, $_POST['titulo']);
                 $foto_footer = mysqli_real_escape_string($mysqli, $_POST['foto-footer']);
                 $texto = mysqli_real_escape_string($mysqli, $_POST['texto']);
@@ -76,7 +76,7 @@ session_start();
 
                 
 
-                $consulta = $mysqli->prepare('UPDATE entrada_blog SET titulo = ?, foto_footer = ?, texto = ?, imagen_central = ? WHERE id_ent = ?');
+                $consulta = $mysqli->prepare('UPDATE entrada_blog SET titulo = ?, foto_footer = ?, texto = ?, imagen_central = ?,  aprob = 0 WHERE id_ent = ?');
 
                 $titulo = mysqli_real_escape_string($mysqli, $_POST['titulo']);
                 $foto_footer = mysqli_real_escape_string($mysqli, $_POST['foto-footer']);
