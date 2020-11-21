@@ -3,7 +3,7 @@
     if(isset($_GET['id'])){
         require('../conexion.php');
         if(isset($_GET['id'])){
-                $consulta = $mysqli->prepare("SELECT * FROM entrada_blog WHERE id_ent = ?");
+                $consulta = $mysqli->prepare("SELECT * FROM entrada_blog WHERE id_ent = ? AND borrado = 0 AND aprob = 1");
                 $idConsulta = mysqli_real_escape_string($mysqli, $_GET['id']);
                 $consulta->bind_param("i",$idConsulta);
                 $consulta->execute();
