@@ -23,7 +23,7 @@
 
         if(($user==$checkUser)&&($token==$checktoken)){
 
-            $title= "Por aprobar";
+            $tittle= "Por aprobar";
             require('../cone/conexion.php');
             $consulta = $mysqli->prepare("SELECT id FROM `login` WHERE `usuario` = ?");
             $consulta->bind_param("s",$user);
